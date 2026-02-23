@@ -14,25 +14,25 @@ const stats = [
 
 const featuredCases = [
   {
-    slug: "fintech-platform-redesign",
-    company: "Meridian Finance",
-    role: "VP of Product",
-    outcome: "Led end-to-end redesign that increased user activation by 34% and unlocked €2M in new ARR within 6 months.",
-    year: "2023",
+    slug: "sphere-architectural-reset",
+    company: "MDOTM · Sphere",
+    role: "CPO",
+    outcome: "Diagnosed structural misalignment and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
+    year: "2022–2023",
   },
   {
-    slug: "ai-analytics-zero-to-one",
-    company: "Synthex AI",
-    role: "Head of Product",
-    outcome: "Took an AI-powered analytics platform from concept to €1.2M ARR in 14 months with a team of 12.",
-    year: "2022",
+    slug: "sphere-investment-infrastructure",
+    company: "MDOTM · Sphere",
+    role: "CPO",
+    outcome: "Closed every layer of distance between the platform and institutional operational reality — making Sphere infrastructure teams operate inside, not just visit.",
+    year: "2023–2024",
   },
   {
-    slug: "marketplace-growth",
-    company: "Novawork",
-    role: "Senior Product Manager",
-    outcome: "Drove 3x growth in marketplace GMV through data-driven experimentation and a redesigned onboarding flow.",
-    year: "2020",
+    slug: "storyfolio",
+    company: "MDOTM · Storyfolio",
+    role: "CPO",
+    outcome: "Introduced an AI-driven narrative layer that cut mass reporting time from ~2 hours to ~2 minutes per portfolio with ~50% increase in adoption.",
+    year: "2024",
   },
 ];
 
