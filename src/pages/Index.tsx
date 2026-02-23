@@ -46,17 +46,17 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
             <p className="text-sm font-medium text-primary tracking-wide uppercase mb-4">
-              Principal Product Manager
+              Chief Product Officer
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight">
-              Marco Valenti
+              Mario Ciardulli
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              I build products that create measurable business impact — at the intersection of strategy, design, and data.
+              I turn complex systems into products people actually want to use — at the intersection of strategy, design, and engineering.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -141,7 +141,7 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              With over a decade at the intersection of product, design, and technology, I bring a rare blend of strategic thinking and hands-on execution. From zero-to-one ventures to scaling enterprise platforms, I've led cross-functional teams to ship products that move metrics and delight users.
+              I'm a product leader with a hands-on background in UX design and product strategy. Over the past 12+ years, I've worked on products ranging from zero-to-one MVPs to scaling platforms — always with the same goal: making complex systems simple, usable, and commercially viable.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
