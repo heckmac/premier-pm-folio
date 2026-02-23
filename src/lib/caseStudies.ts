@@ -95,7 +95,7 @@ export const caseStudies: CaseStudyData[] = [
     company: "MDOTM",
     project: "From Adoptable Product to Investment Infrastructure",
     role: "CPO",
-    year: "2023–2024",
+    year: "2023–2025",
     heroTagline:
       "Closed every layer of distance between Sphere and institutional operational reality — organizational, structural, data and systemic — transforming the platform from a tool professionals visit into infrastructure they operate inside.",
     context: [
@@ -162,7 +162,7 @@ export const caseStudies: CaseStudyData[] = [
     company: "MDOTM · Sphere",
     project: "Productizing Narrative Explanation for Investment Decisions",
     role: "CPO",
-    year: "2024",
+    year: "2024–2025",
     heroTagline:
       "Introduced an AI-driven narrative layer that transformed portfolio logic into reliable, decision-consistent explanations — cutting mass reporting time from ~2 hours to ~2 minutes per portfolio.",
     highlightMetrics: [
