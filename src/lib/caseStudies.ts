@@ -21,8 +21,8 @@ export const caseStudies: CaseStudyData[] = [
     slug: "sphere-architectural-reset",
     company: "MDOTM",
     project: "From Quantitative Engine to Adoptable Product",
-    role: "CPO",
-    year: "2022–2023",
+    role: "VP of Product",
+    year: "2021–2023",
     heroTagline:
       "Diagnosed structural misalignment in a fintech platform and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
     context: [

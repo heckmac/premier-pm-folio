@@ -4,14 +4,13 @@ import FadeIn from "./FadeIn";
 
 interface CaseStudyCardProps {
   slug: string;
-  company: string;
-  role: string;
+  title: string;
+  subtitle: string;
   outcome: string;
-  year: string;
   index?: number;
 }
 
-const CaseStudyCard = ({ slug, company, role, outcome, year, index = 0 }: CaseStudyCardProps) => {
+const CaseStudyCard = ({ slug, title, subtitle, outcome, index = 0 }: CaseStudyCardProps) => {
   return (
     <FadeIn delay={index * 0.1}>
       <Link
@@ -26,14 +25,14 @@ const CaseStudyCard = ({ slug, company, role, outcome, year, index = 0 }: CaseSt
         <div className="p-6">
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                {company}
+              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
+                {title}
               </h3>
-              <p className="text-sm text-subtle mt-0.5">{role} · {year}</p>
+              <p className="text-sm text-subtle mt-1.5">{subtitle}</p>
             </div>
             <ArrowUpRight
               size={18}
-              className="text-subtle group-hover:text-primary transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 mt-1"
+              className="text-subtle group-hover:text-primary transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 mt-1 shrink-0 ml-3"
             />
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">{outcome}</p>
