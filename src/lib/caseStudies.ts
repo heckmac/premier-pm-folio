@@ -75,7 +75,7 @@ export const caseStudies: CaseStudyData[] = [
       { value: "4.6→4.9", label: "App Store rating" },
     ],
     quote: {
-      text: "Marco transformed our product organization. He brought clarity to a chaotic roadmap and delivered results that directly impacted our Series B narrative.",
+      text: "Mario transformed our product organization. He brought clarity to a chaotic roadmap and delivered results that directly impacted our Series B narrative.",
       author: "Elena Richter",
       title: "CEO, Meridian Finance",
     },
@@ -136,7 +136,7 @@ export const caseStudies: CaseStudyData[] = [
       { value: "€8M", label: "Series A raised" },
     ],
     quote: {
-      text: "Marco built our product from nothing. His ability to translate ambiguous market signals into a focused, lovable product was the key to our Series A.",
+      text: "Mario built our product from nothing. His ability to translate ambiguous market signals into a focused, lovable product was the key to our Series A.",
       author: "Liam Chen",
       title: "CTO & Co-Founder, Synthex AI",
     },
@@ -197,7 +197,7 @@ export const caseStudies: CaseStudyData[] = [
       { value: "4.7★", label: "Buyer satisfaction (NPS 72)" },
     ],
     quote: {
-      text: "Marco brought rigor and speed to our product team. His experimentation-driven approach transformed how we think about growth.",
+      text: "Mario brought rigor and speed to our product team. His experimentation-driven approach transformed how we think about growth.",
       author: "Sara Lindqvist",
       title: "COO, Novawork",
     },
