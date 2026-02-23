@@ -4,203 +4,226 @@ export interface CaseStudyData {
   project: string;
   role: string;
   year: string;
-  duration: string;
-  team: string;
-  tools: string[];
   heroTagline: string;
   context: string[];
   problem: string[];
+  positioning: string[];
   myRole: string[];
-  process: { title: string; description: string }[];
-  solution: string[];
-  results: { value: string; label: string }[];
-  quote?: { text: string; author: string; title: string };
+  strategy: { title: string; description: string }[];
+  execution: string[];
+  impact: string[];
+  learnings: string[];
+  highlightMetrics?: { value: string; label: string }[];
 }
 
 export const caseStudies: CaseStudyData[] = [
   {
-    slug: "fintech-platform-redesign",
-    company: "Meridian Finance",
-    project: "Platform Redesign & Activation Overhaul",
-    role: "VP of Product",
-    year: "2023",
-    duration: "8 months",
-    team: "12 engineers, 3 designers, 2 data analysts",
-    tools: ["Figma", "Amplitude", "Jira", "Looker", "Miro"],
+    slug: "sphere-architectural-reset",
+    company: "MDOTM",
+    project: "From Quantitative Engine to Adoptable Product",
+    role: "CPO",
+    year: "2022–2023",
     heroTagline:
-      "Redesigned a legacy fintech platform to unlock €2M in new ARR and lift user activation by 34%.",
+      "Diagnosed structural misalignment in a fintech platform and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
     context: [
-      "Meridian Finance is a B2B fintech platform serving over 800 mid-market companies across Europe. The product had grown organically for five years, accumulating feature debt and a fragmented user experience that was hurting retention and expansion revenue.",
-      "I joined as VP of Product to lead a cross-functional initiative to modernize the core platform, improve onboarding, and establish a scalable product operating model.",
+      "Sphere originated as a technically advanced quantitative engine built around MDOTM's internal investment methodology. The platform could ingest a portfolio, apply MDOTM's market view, and produce an optimized result. The analytical depth was genuine.",
+      "Early client reactions were consistent: they were impressed by the vision. They could not use the product.",
     ],
     problem: [
-      "New user activation had plateaued at 41%, with most drop-offs occurring within the first three sessions. Customer support tickets related to navigation and discoverability had increased 60% year-over-year.",
-      "The existing information architecture was built around internal team structures rather than user workflows, making it nearly impossible for new customers to find value quickly.",
+      "The failure was structural. The platform reflected internal model logic rather than how portfolio managers actually construct and manage mandates. Asset classes could not be expressed through a coherent hierarchy. Portfolio construction constraints did not exist as first-class concepts — only risk targets and rebalance thresholds were available, neither of which matched professional mandate definitions. The investment universe existed in the system but was opaque to users.",
+      "UX compensated for engine limitations rather than guiding product logic. The result was a fragmented interface that mirrored internal constraints rather than professional workflows.",
+      "The scale of the problem became clear when early beta clients — who had paid a symbolic subscription — did not renew autonomously. The product required active retention effort. Intellectual excitement was not translating into operational dependency.",
+      "Incremental improvements would have preserved the incoherence. The product required an architectural reset.",
+    ],
+    positioning: [
+      "Sphere needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
+      "The objective was not to add capabilities but to restructure the product around how professionals actually define mandates — and to create the technical and commercial foundations that would allow the product to evolve from there.",
     ],
     myRole: [
-      "I owned the product strategy end-to-end: from conducting the initial discovery research through to launch and post-launch iteration. I reported directly to the CEO and presented progress to the board quarterly.",
-      "Day-to-day, I led a squad of 12 engineers, 3 designers, and 2 data analysts. I defined the roadmap, facilitated design sprints, and established a metrics framework tied to business outcomes.",
+      "Product direction and judgment over the architectural redesign. Responsible for diagnosing structural misalignment, abstracting the meta investment process into a product blueprint, and advocating for a full architectural reset.",
+      "During the discovery and blueprint phase, worked closely with the Chief Investment and Research Officer and Customer Success to map client workflows and investment process logic. During implementation, coordinated across Product, Engineering and R&D to align execution with the architectural decisions made in the blueprint.",
+      "Acted as decision maker on redesign scope, structural priorities and phasing throughout.",
     ],
-    process: [
+    strategy: [
       {
-        title: "Discovery & Research",
+        title: "Process Abstraction and Architectural Inversion",
         description:
-          "Conducted 30+ user interviews, analyzed 6 months of product analytics, and mapped the full customer journey to identify the highest-impact friction points.",
+          "A structured analysis of both the product and the underlying technology was conducted alongside the CIRO and Customer Success, mapping how professionals actually define mandates versus how the engine had structured decisions. The output was a product blueprint: a phased investment backbone — define universe, define mandate structure, apply portfolio-level risk constraints, apply allocation constraints, apply operative constraints, express market view — that became the shared reference for the entire rebuild. The blueprint was visualized through high-fidelity design concepts before any implementation began, allowing R&D and business stakeholders to align on architectural direction. UX would define technical requirements, not the other way around.",
       },
       {
-        title: "Strategy & Prioritization",
+        title: "Implementation",
         description:
-          "Used an impact/effort matrix to prioritize initiatives. Aligned stakeholders around three strategic bets: simplified onboarding, role-based navigation, and proactive in-app guidance.",
+          "With the blueprint validated, the portfolio configurator was redesigned and rebuilt around mandate phases. Optimization pipelines were restructured to reflect the new process logic. The risk model was extended to support a coherent asset class hierarchy. A constraint validation layer was introduced to handle infeasible configurations at the product level — users could express any constraint logic, with guided feedback when combinations were mathematically unworkable. The architecture was designed for extensibility from the start.",
       },
       {
-        title: "Design & Prototyping",
+        title: "Incremental Validation and Configuration Levers",
         description:
-          "Ran two design sprints to validate concepts with real users. Iterated on high-fidelity prototypes in Figma, testing with 15 customers before engineering handoff.",
+          "As clients began using the rebuilt configurator, recurring gaps emerged — missing asset classes, incomplete constraint types, configuration levers that existed in their daily work but not yet in the product. Each gap was addressed incrementally, progressively reducing the distance between what Sphere could express and what clients actually needed. KANO-based prioritization workshops were introduced to impose discipline — clustering must-haves, deferring non-critical items, surfacing structural risks — under continuous acquisition pressure from the business.",
       },
       {
-        title: "Build & Ship",
+        title: "Connecting to Client Systems",
         description:
-          "Delivered in three phased releases over 8 months. Each phase included A/B tests to measure impact before full rollout, reducing risk and building internal confidence.",
+          "Integration with external PMS systems allowed portfolios to flow from client environments into Sphere automatically, removing the manual recreation that had been a persistent operational barrier. Portfolio Studio was made available as a standalone module, decoupled from Market Insights — acknowledging that not every client would adopt MDOTM's investment methodology. Sphere stopped assuming it was the origin of all data and all logic. The product became connectable.",
       },
     ],
-    solution: [
-      "We rebuilt the onboarding flow around a 'time-to-first-value' framework, reducing required setup steps from 14 to 5 and introducing contextual tooltips powered by usage patterns.",
-      "The navigation was restructured around three core user personas, surfacing the most relevant features first. A new dashboard gave users an instant snapshot of their key metrics upon login.",
-      "We also introduced a lightweight in-app education system that adapts based on user role and tenure, reducing support tickets by 45% within two months of launch.",
+    execution: [
+      "Investment process abstracted and mapped into a phased product blueprint",
+      "Blueprint validated through high-fidelity design concepts to align R&D and business stakeholders before implementation",
+      "Portfolio configurator redesigned around mandate phases with modular extensibility",
+      "Risk model expanded to support a coherent asset class hierarchy",
+      "Constraint validation layer introduced as a product-level feasibility framework",
+      "KANO-based prioritization workshops used to impose roadmap discipline under continuous acquisition pressure",
+      "PMS integration introduced with import/export aligned to client templates and proprietary codes",
+      "Portfolio Studio made available as a standalone module, decoupled from Market Insights",
     ],
-    results: [
-      { value: "+34%", label: "User activation rate" },
-      { value: "€2M", label: "New ARR within 6 months" },
-      { value: "-45%", label: "Support ticket volume" },
-      { value: "4.6→4.9", label: "App Store rating" },
+    impact: [
+      "Clients could simulate realistic multi-asset mandates for the first time",
+      "Coherent asset class hierarchy replaced opaque, logically inconsistent structure",
+      "Portfolio, allocation and operative constraints separated as distinct concepts",
+      "Commercial conversations shifted from vision pitching to mandate simulation",
+      "Configurator architecture enabled continuous incremental expansion without structural rewrites",
+      "Product became commercially separable from MDOTM's investment methodology",
     ],
-    quote: {
-      text: "Mario transformed our product organization. He brought clarity to a chaotic roadmap and delivered results that directly impacted our Series B narrative.",
-      author: "Elena Richter",
-      title: "CEO, Meridian Finance",
-    },
+    learnings: [
+      "Structural incoherence cannot be resolved through feature additions — it requires architectural intervention.",
+      "Reversing the relationship between UX and engine is a product decision, not a technical one. Reframing infeasibility as a design problem rather than an engine problem can unlock both usability and technical progress simultaneously.",
+      "Building for extensibility from the first reset is what makes future iteration possible without rebuilding.",
+    ],
   },
   {
-    slug: "ai-analytics-zero-to-one",
-    company: "Synthex AI",
-    project: "AI Analytics Platform — 0→1",
-    role: "Head of Product",
-    year: "2022",
-    duration: "14 months",
-    team: "8 engineers, 2 designers, 1 ML engineer",
-    tools: ["Linear", "Figma", "Mixpanel", "Notion", "dbt"],
+    slug: "sphere-investment-infrastructure",
+    company: "MDOTM",
+    project: "From Adoptable Product to Investment Infrastructure",
+    role: "CPO",
+    year: "2023–2024",
     heroTagline:
-      "Took an AI-powered analytics platform from concept to €1.2M ARR in 14 months.",
+      "Closed every layer of distance between Sphere and institutional operational reality — organizational, structural, data and systemic — transforming the platform from a tool professionals visit into infrastructure they operate inside.",
     context: [
-      "Synthex AI was a seed-stage startup building an AI-powered analytics layer for e-commerce companies. When I joined, the founding team had a working ML model but no product, no users, and no go-to-market strategy.",
-      "I was brought on as Head of Product to define the product vision, build the v1, and establish product-market fit.",
+      "After the architectural reset, Sphere had become structurally usable. Clients could express real mandates, connect their existing portfolios via PMS integration, and work within a coherent product logic. The foundations for iteration were in place.",
+      "The question was what to build on them.",
     ],
     problem: [
-      "The founding team had deep technical expertise but lacked a clear understanding of which customer segment to target and what specific problem to solve first. Early conversations with potential users revealed conflicting needs.",
-      "Without a focused value proposition, the team was building features reactively, leading to scope creep and a product that tried to do everything for everyone.",
+      "Usability was a starting point, not a destination. Clients were using Sphere when they chose to — not because their daily operations depended on it.",
+      "The gap between a tool professionals visit and infrastructure they operate inside is not closed by a single intervention. It is closed by progressively eliminating the distance between the product and the client's operational reality — at every layer.",
+      "That distance showed up in three ways. Sphere didn't scale to how investment teams actually work — portfolios, market views and reference data are owned and managed collaboratively, across many mandates simultaneously. It didn't accurately represent how real portfolios are structured — institutional mandates are composed of sleeves, built from hybrid combinations of instruments and indices. And it remained disconnected from the data environments and execution systems clients already operated inside.",
+    ],
+    positioning: [
+      "The strategic direction was to close that distance, layer by layer — not by adding features, but by making Sphere progressively more compatible with how institutional investment operations actually work.",
     ],
     myRole: [
-      "I led the full product lifecycle: customer discovery, value proposition design, roadmap definition, UX strategy, and go-to-market positioning. I worked directly with the CTO and reported to the board.",
-      "I also hired and managed the design team, established the product development process, and represented the product to investors during the Series A fundraise.",
+      "Product direction over the embedability strategy. Responsible for identifying the structural gaps, sequencing interventions and managing the trade-off between feature expansion and integration depth at each phase.",
+      "Worked with Engineering, Customer Success and the CIRO to align product evolution around client operational reality. Expanded product signal capacity by restructuring Customer Success as a product intelligence function — trained to decode underlying user intent rather than transcribe feature requests, connect qualitative observations to backlog context, and participate in prioritization workshops. Product intelligence grew without growing the product team.",
     ],
-    process: [
+    strategy: [
       {
-        title: "Customer Discovery",
+        title: "Scaling the Operation",
         description:
-          "Interviewed 50+ e-commerce operators to identify the sharpest pain point: understanding why conversion rates fluctuate, not just tracking them.",
+          "The first layer of distance was organizational and operational scale. A governance layer was introduced — shared objects with differentiated access rights across read, edit and ownership. This was a prerequisite for institutional use. Scale also meant managing hundreds of portfolios simultaneously. The Bulk Analysis Tool was introduced as MVP: aggregated exposure views, cross-portfolio metrics, filtering by strategy, desk or channel. Bulk Actions extended the same logic in the opposite direction — enabling fleet-level operations with clear inclusion and exclusion reporting.",
       },
       {
-        title: "Value Proposition Design",
+        title: "Aligning to Client Reality",
         description:
-          "Defined a focused ICP (mid-market DTC brands, €5-50M revenue) and crafted a positioning statement: 'The AI copilot that explains your conversion data.'",
+          "The second layer was fidelity. Institutional mandates are composed of sleeves — discrete sub-portfolios each governed by its own strategy and risk profile, often built using hybrid combinations of instruments and indices. Nested portfolio support and hybrid portfolio composition corrected foundational modeling assumptions. The data assumption was equally limiting — real client portfolios contained bonds, custom instruments, proprietary indices and bespoke taxonomies. The platform was extended to absorb data on client terms: custom instruments with client-defined attributes, price series uploaded directly, cash as a first-class portfolio component.",
       },
       {
-        title: "MVP Definition & Build",
+        title: "Connecting to the Execution Loop",
         description:
-          "Scoped an opinionated MVP around three core use cases. Shipped v1 in 10 weeks with a small cross-functional squad using weekly sprints.",
-      },
-      {
-        title: "Iteration & Scale",
-        description:
-          "Ran 40+ experiments in the first 6 months post-launch. Identified the 'aha moment' and optimized the onboarding to reach it within 8 minutes.",
+          "Sphere remained a place where decisions were made but not carried through. Integration with OMS systems introduced a complete cycle: proposal generated in Sphere, sent to execution, executed positions and performance data returned. The path surfaced an architectural lesson — Sphere's internal APIs had been built for UI consumption, not system-to-system communication. Progressive API refactoring driven by real client use cases shifted the team's default orientation to API-first. Integration cost dropped, adoption accelerated, and the product became more systemically coherent.",
       },
     ],
-    solution: [
-      "We launched a focused product that automatically surfaces the top drivers behind conversion changes, delivered as a daily digest with drill-down capabilities.",
-      "The product was designed to feel like a smart colleague sending you insights, rather than a traditional dashboard. This narrative-first approach resonated strongly with non-technical operators.",
+    execution: [
+      "Customer Success restructured as a product intelligence function with dedicated feedback database linked to backlog epics",
+      "Recurring prioritization rituals established with dual-track structure balancing tactical and strategic roadmap",
+      "Governance layer introduced across portfolios, universes, market views and benchmarks",
+      "Bulk Analysis Tool introduced as MVP for fleet-level cross-portfolio visibility and metric aggregation",
+      "Bulk Actions introduced to enable fleet-level operations with inclusion/exclusion reporting",
+      "Nested portfolio support introduced to reflect institutional sleeve-based portfolio architecture",
+      "Hybrid portfolio composition introduced to support mixed instrument and index structures",
+      "Client-driven data support introduced: custom instruments, uploaded price series, bond integration, cash management",
+      "OMS integration implemented with UUID-based portfolio identity across systems",
+      "Internal APIs progressively refactored and exposed as public APIs",
     ],
-    results: [
-      { value: "€1.2M", label: "ARR in 14 months" },
-      { value: "92%", label: "Monthly retention" },
-      { value: "180+", label: "Paying customers" },
-      { value: "€8M", label: "Series A raised" },
+    impact: [
+      "Team-based workflows replaced individual usage, enabling institutional-scale adoption",
+      "Fleet-level visibility enabled identification of dispersion and priority interventions across hundreds of portfolios",
+      "Nested and hybrid portfolio structures enabled clients to reflect real mandate architecture inside Sphere for the first time",
+      "Client data — instruments, indices, taxonomies — became native to the platform rather than exceptions to it",
+      "The full cycle from portfolio proposal to execution to performance monitoring became operable within a single environment",
+      "Commercial positioning sharpened as clients began articulating their own use cases for Sphere without prompting",
     ],
-    quote: {
-      text: "Mario built our product from nothing. His ability to translate ambiguous market signals into a focused, lovable product was the key to our Series A.",
-      author: "Liam Chen",
-      title: "CTO & Co-Founder, Synthex AI",
-    },
+    learnings: [
+      "A product becomes infrastructure when it eliminates every layer of distance between itself and the client's operational reality — organizational, structural, data and systemic.",
+      "Flat data models are invisible constraints. They don't surface as bugs but as ceilings on adoption, only visible when clients try to reflect their real operational structure inside the product.",
+      "Building APIs reactively to support integrations is expensive and produces fragile connections. Designing API-first from the start reduces integration cost, accelerates adoption and produces a more systemically coherent product.",
+    ],
   },
   {
-    slug: "marketplace-growth",
-    company: "Novawork",
-    project: "Marketplace Growth & Onboarding Redesign",
-    role: "Senior Product Manager",
-    year: "2020",
-    duration: "12 months",
-    team: "6 engineers, 2 designers, 1 growth analyst",
-    tools: ["Figma", "Google Analytics", "Optimizely", "Hotjar", "Asana"],
+    slug: "storyfolio",
+    company: "MDOTM · Sphere",
+    project: "Productizing Narrative Explanation for Investment Decisions",
+    role: "CPO",
+    year: "2024",
     heroTagline:
-      "Drove 3x growth in marketplace GMV through data-driven experimentation and onboarding redesign.",
+      "Introduced an AI-driven narrative layer that transformed portfolio logic into reliable, decision-consistent explanations — cutting mass reporting time from ~2 hours to ~2 minutes per portfolio.",
+    highlightMetrics: [
+      { value: "~50%", label: "Increase in portfolio adoption" },
+      { value: "~2h → ~2min", label: "Mass reporting time per portfolio" },
+    ],
     context: [
-      "Novawork is a B2B marketplace connecting companies with vetted freelance professionals. With 15,000 registered freelancers and 2,000 active buyers, the platform had strong supply but struggled with demand-side activation and repeat usage.",
-      "I was hired as Senior Product Manager to own the buyer experience and drive GMV growth.",
+      "Storyfolio emerged within Sphere, an enterprise fintech platform used by portfolio managers and wealth managers to design and manage investment portfolios.",
+      "Over time, Sphere's analytical engine — particularly within Portfolio Studio — became increasingly sophisticated. Non-linear optimization rules generated advanced and often non-obvious portfolio proposals. The analytical quality was strong, but communication lagged behind the intelligence of the system.",
+      "As portfolio complexity increased, so did the cognitive effort required to explain decisions to clients.",
     ],
     problem: [
-      "Only 23% of registered buyers completed their first transaction. Exit surveys and session recordings revealed that buyers were overwhelmed by choice and lacked confidence in freelancer quality.",
-      "The matching algorithm was accurate but opaque — buyers didn't understand why certain freelancers were recommended, leading to low trust and high abandonment.",
+      "The first signal was internal: Portfolio Studio could generate high-quality investment decisions, but there was no structured explanation layer to make those decisions consistently communicable.",
+      "As we examined this gap more closely, a broader market pattern became evident. Wealth managers were not struggling to generate reports — most competitors already offered flexible and visually polished reporting tools. The real challenge was producing coherent, decision-aligned narratives.",
+      "Existing solutions automated layout and formatting. They did not generate content. The burden of interpretation and storytelling remained entirely on the user.",
+    ],
+    positioning: [
+      "Storyfolio was intentionally positioned not as a reporting tool, but as an intelligence layer.",
+      "While competitors focused on report flexibility and design customization, Storyfolio focused on coherence with underlying portfolio decisions, alignment with portfolio movements and optimization logic, and content generation rather than layout automation.",
+      "The ambition was to move from automated documents to structured investment intelligence.",
     ],
     myRole: [
-      "I owned the buyer-side product experience, including search, matching, onboarding, and post-hire feedback loops. I worked closely with the data team to build an experimentation culture.",
-      "I also partnered with marketing to align product improvements with acquisition campaigns, ensuring new users landed in optimized experiences.",
+      "Product direction and judgment over the narrative domain. Responsible for problem framing, validation approach and productization strategy.",
+      "Worked with a focused cross-functional team including the Head of Mission Control (content and abstraction logic owner), a Product Manager, one Backend Engineer, one Frontend Engineer and a Designer.",
+      "Acted as decision maker on scope, guardrails and sequencing.",
     ],
-    process: [
+    strategy: [
       {
-        title: "Quantitative Analysis",
+        title: "Static MVP (Feature Inside Portfolio Studio)",
         description:
-          "Built a conversion funnel dashboard and identified the three biggest drop-off points: profile browsing, shortlisting, and first message.",
+          "A single static comment was released directly inside Portfolio Studio. It was generated from curated inputs and designed to support one primary reporting scenario. The objective was simple: validate whether structured narrative support increased clarity and perceived value in real client workflows. Validation happened through real usage — via the operations team presenting the feature to wealth managers and collecting feedback from actual client interactions.",
       },
       {
-        title: "Qualitative Research",
+        title: "Iteration, Gap-Filling and Guardrails",
         description:
-          "Conducted 20 buyer interviews and 50 session recording reviews to understand the emotional journey and trust barriers.",
+          "As adoption grew, feedback revealed recurring gaps: missing explanations for specific portfolio moves, inconsistent tone across different contexts, overly generic language in certain scenarios. The comment evolved incrementally. Prompt engineering techniques were refined to introduce guardrails and ensure zero hallucinations — critical in a financial context where even small inaccuracies could undermine trust. The optimization variable was reliability, not generative creativity. This phase followed a tight loop: collect feedback → adjust narrative logic → test in real client-facing contexts.",
       },
       {
-        title: "Experimentation Program",
+        title: "Productization as a Configurable Capability",
         description:
-          "Launched a structured A/B testing program, running 25+ experiments over 12 months across onboarding, search, and matching.",
-      },
-      {
-        title: "Iterative Shipping",
-        description:
-          "Shipped bi-weekly releases, each tied to a specific metric. Used a 'build-measure-learn' cadence with weekly growth reviews.",
+          "Once narrative structures stabilized and reliability reached acceptable thresholds, explanation was reframed from a static output to a configurable capability. Builder and Editor tools were introduced to generate multiple narrative variants, adapt tone and depth to different reporting contexts, and allow user control over structure and emphasis. Explanation became a structured product domain embedded in Sphere, rather than a single AI-powered feature.",
       },
     ],
-    solution: [
-      "Redesigned the onboarding flow to capture buyer intent upfront (project type, budget, timeline) and deliver a curated shortlist of 5 freelancers within 60 seconds of signup.",
-      "Added transparency features: match-score explanations, verified portfolio samples, and real-time availability indicators. These changes addressed the core trust gap.",
+    execution: [
+      "Definition of reusable narrative components aligned with portfolio logic",
+      "Data-aware integration to ensure explanations reflected actual portfolio drivers",
+      "Incremental guardrail refinement to prevent factual inconsistencies",
+      "Bulk generation workflows for recurring reporting cycles",
     ],
-    results: [
-      { value: "3x", label: "GMV growth in 12 months" },
-      { value: "+58%", label: "Buyer activation rate" },
-      { value: "-30%", label: "Time to first hire" },
-      { value: "4.7★", label: "Buyer satisfaction (NPS 72)" },
+    impact: [
+      "~50% increase in portfolio adoption following introduction of structured narrative support",
+      "Reduction of mass reporting time from ~2 hours to ~2 minutes per portfolio",
+      "More consistent narrative quality across hundreds of portfolios",
+      "Reduced cognitive load for wealth managers",
+      "Closed Sphere's explainability gap, making advanced portfolio decisions communicable and therefore usable",
     ],
-    quote: {
-      text: "Mario brought rigor and speed to our product team. His experimentation-driven approach transformed how we think about growth.",
-      author: "Sara Lindqvist",
-      title: "COO, Novawork",
-    },
+    learnings: [
+      "Explanation is a product capability, not a reporting add-on.",
+      "Reliability and financial correctness must precede scale in AI-driven communication tools.",
+      "Competitive differentiation can come from intelligence, not interface flexibility.",
+    ],
   },
 ];
 
