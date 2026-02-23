@@ -80,12 +80,6 @@ const Contact = () => {
           <FadeIn delay={0.2}>
             <div className="mt-14 pt-10 border-t divider flex flex-wrap gap-6">
               <a
-                href="mailto:mario.ciardulli@gmail.com"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Mail size={16} /> mario.ciardulli@gmail.com
-              </a>
-              <a
                 href="https://www.linkedin.com/in/mariociardulli"
                 target="_blank"
                 rel="noopener noreferrer"
