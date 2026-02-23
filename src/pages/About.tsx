@@ -179,10 +179,12 @@ const About = () => (
             <h2 className="text-2xl md:text-3xl font-bold text-foreground">
               Career
             </h2>
-            <Button variant="outline" size="sm" className="gap-2">
-              <Download size={16} />
-              Download CV
-            </Button>
+            <a href="/cv_ciardulli.pdf" download>
+              <Button variant="outline" size="sm" className="gap-2">
+                <Download size={16} />
+                Download CV
+              </Button>
+            </a>
           </div>
         </FadeIn>
 

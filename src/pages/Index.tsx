@@ -66,7 +66,8 @@ const Index = () => {
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="#"
+                href="/cv_ciardulli.pdf"
+                download
                 className="inline-flex items-center gap-2 border divider bg-background text-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-secondary transition-colors"
               >
                 <Download size={16} />
