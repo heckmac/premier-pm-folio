@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { caseStudies } from "@/lib/caseStudies";
+import { caseStudyImages } from "@/lib/caseStudyImages";
 
 const Work = () => (
   <div className="min-h-screen bg-background">
@@ -24,6 +25,7 @@ const Work = () => (
               title={cs.project}
               subtitle={`${cs.company.includes("Sphere") ? "Sphere" : cs.project.includes("Storyfolio") ? "Storyfolio" : cs.company} · ${cs.role} · MDOTM · ${cs.year}`}
               outcome={cs.heroTagline}
+              image={caseStudyImages[cs.slug]}
               index={i}
             />
           ))}

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import { caseStudyImages } from "@/lib/caseStudyImages";
 
 const featuredCases = [
   {
@@ -91,7 +92,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredCases.map((cs, i) => (
-              <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.title} subtitle={cs.subtitle} outcome={cs.outcome} index={i} />
+              <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.title} subtitle={cs.subtitle} outcome={cs.outcome} image={caseStudyImages[cs.slug]} index={i} />
             ))}
           </div>
 
