@@ -15,24 +15,21 @@ const stats = [
 const featuredCases = [
   {
     slug: "sphere-architectural-reset",
-    company: "MDOTM · Sphere",
-    role: "CPO",
+    title: "From Quantitative Engine to Adoptable Product",
+    subtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
     outcome: "Diagnosed structural misalignment and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
-    year: "2022–2023",
   },
   {
     slug: "sphere-investment-infrastructure",
-    company: "MDOTM · Sphere",
-    role: "CPO",
+    title: "From Adoptable Product to Investment Infrastructure",
+    subtitle: "Sphere · CPO · MDOTM · 2023–2024",
     outcome: "Closed every layer of distance between the platform and institutional operational reality — making Sphere infrastructure teams operate inside, not just visit.",
-    year: "2023–2024",
   },
   {
     slug: "storyfolio",
-    company: "MDOTM · Storyfolio",
-    role: "CPO",
+    title: "Productizing Narrative Explanation for Investment Decisions",
+    subtitle: "Storyfolio · CPO · MDOTM · 2024",
     outcome: "Introduced an AI-driven narrative layer that cut mass reporting time from ~2 hours to ~2 minutes per portfolio with ~50% increase in adoption.",
-    year: "2024",
   },
 ];
 
@@ -116,7 +113,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredCases.map((cs, i) => (
-              <CaseStudyCard key={cs.slug} {...cs} index={i} />
+              <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.title} subtitle={cs.subtitle} outcome={cs.outcome} index={i} />
             ))}
           </div>
 

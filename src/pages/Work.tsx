@@ -21,10 +21,9 @@ const Work = () => (
             <CaseStudyCard
               key={cs.slug}
               slug={cs.slug}
-              company={cs.company}
-              role={cs.role}
+              title={cs.project}
+              subtitle={`${cs.company.includes("Sphere") ? "Sphere" : cs.project.includes("Storyfolio") ? "Storyfolio" : cs.company} · ${cs.role} · MDOTM · ${cs.year}`}
               outcome={cs.heroTagline}
-              year={cs.year}
               index={i}
             />
           ))}
