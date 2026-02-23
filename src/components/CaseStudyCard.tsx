@@ -7,19 +7,25 @@ interface CaseStudyCardProps {
   title: string;
   subtitle: string;
   outcome: string;
+  image?: string;
   index?: number;
 }
 
-const CaseStudyCard = ({ slug, title, subtitle, outcome, index = 0 }: CaseStudyCardProps) => {
+const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: CaseStudyCardProps) => {
   return (
     <FadeIn delay={index * 0.1}>
       <Link
         to={`/work/${slug}`}
         className="group block surface-elevated rounded-lg border divider overflow-hidden transition-all hover:shadow-lg hover:shadow-foreground/5"
       >
-        {/* Thumbnail placeholder */}
-        <div className="aspect-[16/10] bg-secondary flex items-center justify-center">
-          <span className="text-subtle text-sm">Project Visual</span>
+        <div className="aspect-[16/10] bg-secondary overflow-hidden">
+          {image ? (
+            <img src={image} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-subtle text-sm">Project Visual</span>
+            </div>
+          )}
         </div>
 
         <div className="p-6">

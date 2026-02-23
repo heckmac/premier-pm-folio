@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import MetricCallout from "@/components/MetricCallout";
 import { getCaseStudy, getNextCaseStudy } from "@/lib/caseStudies";
+import { caseStudyImages } from "@/lib/caseStudyImages";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
@@ -82,6 +83,18 @@ const CaseStudy = () => {
               {study.heroTagline}
             </p>
           </FadeIn>
+
+          {caseStudyImages[slug || ""] && (
+            <FadeIn delay={0.2}>
+              <div className="mt-10 rounded-xl overflow-hidden">
+                <img
+                  src={caseStudyImages[slug || ""]}
+                  alt={study.project}
+                  className="w-full h-auto"
+                />
+              </div>
+            </FadeIn>
+          )}
         </div>
       </section>
 
