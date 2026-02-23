@@ -5,13 +5,6 @@ import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import CaseStudyCard from "@/components/CaseStudyCard";
 
-const stats = [
-  { label: "Years of Experience", value: "12+" },
-  { label: "Products Shipped at Scale", value: "20+" },
-  { label: "0→1 & Growth Stage", value: "B2B & B2C" },
-  { label: "Teams Led", value: "50+" },
-];
-
 const featuredCases = [
   {
     slug: "sphere-architectural-reset",
@@ -78,24 +71,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 border-y divider">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.08}>
-                <div className="text-center">
-                  <p className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-subtle mt-1">{stat.label}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Case Studies */}
-      <section className="py-20 lg:py-28">
+      <section className="pb-20 lg:pb-28">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-end justify-between mb-12">
