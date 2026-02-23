@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, User } from "lucide-react";
+import { Download } from "lucide-react";
+import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 
 const timeline = [
   {
@@ -131,8 +132,12 @@ const About = () => (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Photo placeholder */}
           <FadeIn className="lg:col-span-1">
-            <div className="aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center">
-              <User className="w-16 h-16 text-muted-foreground/30" />
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
+              <img
+                src={profilePhoto}
+                alt="Mario Ciardulli"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </FadeIn>
 
