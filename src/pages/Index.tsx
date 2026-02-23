@@ -22,13 +22,13 @@ const featuredCases = [
   {
     slug: "sphere-investment-infrastructure",
     title: "From Adoptable Product to Investment Infrastructure",
-    subtitle: "Sphere · CPO · MDOTM · 2023–2024",
+    subtitle: "Sphere · CPO · MDOTM · 2023–2025",
     outcome: "Closed every layer of distance between the platform and institutional operational reality — making Sphere infrastructure teams operate inside, not just visit.",
   },
   {
     slug: "storyfolio",
     title: "Productizing Narrative Explanation for Investment Decisions",
-    subtitle: "Storyfolio · CPO · MDOTM · 2024",
+    subtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
     outcome: "Introduced an AI-driven narrative layer that cut mass reporting time from ~2 hours to ~2 minutes per portfolio with ~50% increase in adoption.",
   },
 ];
