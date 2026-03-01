@@ -13,6 +13,7 @@ import SmartwatchGestures from "./pages/design/SmartwatchGestures";
 import SharafDG from "./pages/design/SharafDG";
 import InsuranceDataCollection from "./pages/design/InsuranceDataCollection";
 import Design from "./pages/Design";
+import MollieLanding from "./pages/MollieLanding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/design/insurance-data-collection" element={<InsuranceDataCollection />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mollie" element={<MollieLanding />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
