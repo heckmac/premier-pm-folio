@@ -144,7 +144,21 @@ const CaseStudy = () => {
             ))}
           </div>
         </section>
+      </div>
 
+      {/* Gallery — full width */}
+      {caseStudyGalleries[slug || ""] && (
+        <section className="py-16 lg:py-20 border-b divider">
+          <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+            <SectionHeading>Product Gallery</SectionHeading>
+            <FadeIn>
+              <CaseStudyGallery slides={caseStudyGalleries[slug || ""]} />
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
         {/* Execution */}
         <section className="py-16 lg:py-20 border-b divider">
           <SectionHeading>Execution</SectionHeading>
@@ -183,16 +197,6 @@ const CaseStudy = () => {
             ))}
           </ul>
         </section>
-
-        {/* Gallery */}
-        {caseStudyGalleries[slug || ""] && (
-          <section className="py-16 lg:py-20 border-b divider">
-            <SectionHeading>Product Gallery</SectionHeading>
-            <FadeIn>
-              <CaseStudyGallery slides={caseStudyGalleries[slug || ""]} />
-            </FadeIn>
-          </section>
-        )}
 
         {/* Learnings */}
         <section className="py-16 lg:py-20 border-b divider">
