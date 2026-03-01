@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import DesignBridgeSection from "@/components/DesignBridgeSection";
 import { caseStudies } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
 
@@ -32,6 +33,9 @@ const Work = () => (
         </div>
       </div>
     </section>
+
+    <DesignBridgeSection />
+
     <Footer />
   </div>
 );
