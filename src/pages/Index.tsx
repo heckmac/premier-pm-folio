@@ -25,6 +25,12 @@ const featuredCases = [
     subtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
     outcome: "Introduced an AI-driven narrative layer that cut mass reporting time from ~2 hours to ~2 minutes per portfolio with ~50% increase in adoption.",
   },
+  {
+    slug: "mercurius",
+    title: "Building Toward a Fund You Cannot Yet Build",
+    subtitle: "Mercurius · Co-Founder · 2017–2021",
+    outcome: "Co-founded a startup turning sports betting into an alternative asset class — €1.2M+ deployed, 3,000+ accounts, successful fundraising and acquisition.",
+  },
 ];
 
 const Index = () => {
@@ -90,7 +96,7 @@ const Index = () => {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {featuredCases.map((cs, i) => (
               <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.title} subtitle={cs.subtitle} outcome={cs.outcome} image={caseStudyImages[cs.slug]} index={i} />
             ))}

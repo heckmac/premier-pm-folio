@@ -23,7 +23,7 @@ const Work = () => (
               key={cs.slug}
               slug={cs.slug}
               title={cs.project}
-              subtitle={`${cs.company.includes("Sphere") ? "Sphere" : cs.project.includes("Storyfolio") ? "Storyfolio" : cs.company} · ${cs.role} · MDOTM · ${cs.year}`}
+              subtitle={`${cs.company.includes("Sphere") ? "Sphere" : cs.slug === "mercurius" ? "Mercurius" : cs.project.includes("Storyfolio") ? "Storyfolio" : cs.company} · ${cs.role} · ${cs.slug === "mercurius" ? "" : "MDOTM · "}${cs.year}`}
               outcome={cs.heroTagline}
               image={caseStudyImages[cs.slug]}
               index={i}
