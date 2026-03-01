@@ -4,8 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import MetricCallout from "@/components/MetricCallout";
+import CaseStudyGallery from "@/components/CaseStudyGallery";
 import { getCaseStudy, getNextCaseStudy } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
+import { caseStudyGalleries } from "@/lib/caseStudyGallery";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
@@ -181,6 +183,16 @@ const CaseStudy = () => {
             ))}
           </ul>
         </section>
+
+        {/* Gallery */}
+        {caseStudyGalleries[slug || ""] && (
+          <section className="py-16 lg:py-20 border-b divider">
+            <SectionHeading>Product Gallery</SectionHeading>
+            <FadeIn>
+              <CaseStudyGallery slides={caseStudyGalleries[slug || ""]} />
+            </FadeIn>
+          </section>
+        )}
 
         {/* Learnings */}
         <section className="py-16 lg:py-20 border-b divider">
