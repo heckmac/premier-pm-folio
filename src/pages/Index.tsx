@@ -43,7 +43,7 @@ const Index = () => {
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
             <p className="text-sm font-medium text-primary tracking-wide uppercase mb-4">
-              Chief Product Officer
+              Product Strategist
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -123,7 +123,7 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              I'm a product leader with a hands-on background in UX design and product strategy. Over the past 12+ years, I've worked on products ranging from zero-to-one MVPs to scaling platforms — always with the same goal: making complex systems simple, usable, and commercially viable.
+              I'm a product strategist with a hands-on background in UX design and strategic design. Over the past 12+ years, I've worked on products ranging from zero-to-one MVPs to enterprise platforms — always at the same level: what should this product be, for whom, and why.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
