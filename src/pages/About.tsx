@@ -169,31 +169,6 @@ const About = () => (
           </FadeIn>
         </div>
 
-        {/* Design Bridge Block */}
-        <FadeIn delay={0.2}>
-          <div className="mt-12 border border-border rounded-xl bg-muted/30 px-6 py-8 md:px-8 md:py-10">
-            <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-              From Design to Product
-            </p>
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">
-              The method hasn't changed. The output has.
-            </h3>
-            <div className="space-y-4 text-foreground/80 text-base md:text-lg leading-relaxed">
-              <p>
-                Before moving into product management, I spent years at Designit doing strategic design — working at the intersection of business strategy and experience, where every project started from a business problem and positioning came before a single screen.
-              </p>
-              <p>
-                That foundation never left. I still work closely on UX — challenging directions, co-creating with designers, making sure the experience holds together from first principle to final interaction. What has changed is the perimeter: today I operate across the full product, from vision to roadmap to execution. The method is the same. The scope is wider.
-              </p>
-            </div>
-            <Link
-              to="/design"
-              className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-5 text-sm"
-            >
-              See my design work →
-            </Link>
-          </div>
-        </FadeIn>
       </div>
     </section>
 
@@ -311,6 +286,32 @@ const About = () => (
             </FadeIn>
           ))}
         </div>
+
+        {/* Design Bridge Block */}
+        <FadeIn delay={0.3}>
+          <div className="mt-14 rounded-2xl bg-primary/5 border border-primary/15 px-6 py-8 md:px-10 md:py-10">
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary/70 mb-2">
+              From Design to Product
+            </p>
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">
+              The method hasn't changed. The output has.
+            </h3>
+            <div className="space-y-4 text-foreground/75 text-[15px] md:text-base leading-relaxed max-w-3xl">
+              <p>
+                Before moving into product management, I spent years at Designit doing strategic design — working at the intersection of business strategy and experience, where every project started from a business problem and positioning came before a single screen.
+              </p>
+              <p>
+                That foundation never left. I still work closely on UX — challenging directions, co-creating with designers, making sure the experience holds together from first principle to final interaction. What has changed is the perimeter: today I operate across the full product, from vision to roadmap to execution. The method is the same. The scope is wider.
+              </p>
+            </div>
+            <Link
+              to="/design"
+              className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-6 text-sm"
+            >
+              See my design work →
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
 
