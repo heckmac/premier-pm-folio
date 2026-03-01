@@ -48,8 +48,8 @@ const SmartwatchGestures = () => {
       <section className="pt-28 pb-16 lg:pt-40 lg:pb-24 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
-            <Link to="/work" className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8">
-              <ArrowLeft size={14} /> Work
+            <Link to="/design" className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8">
+              <ArrowLeft size={14} /> Design
             </Link>
           </FadeIn>
           <FadeIn delay={0.05}>
