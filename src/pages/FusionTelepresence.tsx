@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
+import DesignImage from "@/components/design/DesignImage";
+import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
 // Result images
 import intention1 from "@/assets/fusion/intention1.jpg";
@@ -67,33 +69,6 @@ const SubHeading = ({ children }: { children: React.ReactNode }) => (
   </FadeIn>
 );
 
-const Img = ({ src, alt, className = "" }: { src: string; alt: string; className?: string }) => (
-  <FadeIn>
-    <img
-      src={src}
-      alt={alt}
-      className={`w-full h-auto rounded-lg ${className}`}
-      loading="lazy"
-    />
-  </FadeIn>
-);
-
-const ImageGrid2 = ({ images }: { images: { src: string; alt: string }[] }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {images.map((img, i) => (
-      <Img key={i} src={img.src} alt={img.alt} />
-    ))}
-  </div>
-);
-
-const ImageGrid3 = ({ images }: { images: { src: string; alt: string }[] }) => (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {images.map((img, i) => (
-      <Img key={i} src={img.src} alt={img.alt} />
-    ))}
-  </div>
-);
-
 const FusionTelepresence = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -103,27 +78,20 @@ const FusionTelepresence = () => {
       <section className="pt-28 pb-16 lg:pt-40 lg:pb-24 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
-            <Link
-              to="/design"
-              className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
-            >
-              <ArrowLeft size={14} />
-              Design
+            <Link to="/design" className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8">
+              <ArrowLeft size={14} /> Design
             </Link>
           </FadeIn>
-
           <FadeIn delay={0.05}>
             <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
               Digital Design · 5 Months · Germany
             </p>
           </FadeIn>
-
           <FadeIn delay={0.1}>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight">
               Fusion Telepresence System
             </h1>
           </FadeIn>
-
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
               Designing a holistic telepresence experience for China's largest telecommunication company — creating a unified design language across industrial and digital design for the flagship product family.
@@ -176,23 +144,21 @@ const FusionTelepresence = () => {
       <section className="py-16 lg:py-20 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
           <SectionHeading>Results</SectionHeading>
-          <div className="space-y-4">
-            <ImageGrid3 images={[
-              { src: intention1, alt: "Fusion concept intention 1" },
-              { src: intention2, alt: "Fusion concept intention 2" },
-              { src: intention3, alt: "Fusion concept intention 3" },
-            ]} />
-            <Img src={exp001} alt="Fusion experience overview" />
-            <Img src={exp002} alt="Fusion experience flow" />
-            <Img src={exp003} alt="Fusion experience detail" />
-            <Img src={exp004} alt="Fusion experience screens" />
-            <Img src={exp005} alt="Fusion experience interaction" />
-            <Img src={exp006} alt="Fusion experience components" />
-            <Img src={exp007} alt="Fusion experience UI" />
-            <Img src={exp008} alt="Fusion experience collaboration" />
-            <Img src={exp009} alt="Fusion experience system" />
-            <Img src={exp010} alt="Fusion experience final" />
-          </div>
+          <DesignImageCarousel images={[
+            { src: intention1, alt: "Fusion concept intention 1" },
+            { src: intention2, alt: "Fusion concept intention 2" },
+            { src: intention3, alt: "Fusion concept intention 3" },
+            { src: exp001, alt: "Fusion experience overview" },
+            { src: exp002, alt: "Fusion experience flow" },
+            { src: exp003, alt: "Fusion experience detail" },
+            { src: exp004, alt: "Fusion experience screens" },
+            { src: exp005, alt: "Fusion experience interaction" },
+            { src: exp006, alt: "Fusion experience components" },
+            { src: exp007, alt: "Fusion experience UI" },
+            { src: exp008, alt: "Fusion experience collaboration" },
+            { src: exp009, alt: "Fusion experience system" },
+            { src: exp010, alt: "Fusion experience final" },
+          ]} />
         </div>
       </section>
 
@@ -207,14 +173,12 @@ const FusionTelepresence = () => {
               Due to budget restrictions, we couldn't run a real research phase nor access research insights. In order to get our shoes into the topic and plan the product strategy we ran a desk research aimed both at getting to know how office environments and working behaviours are changing, and to map the market offering in terms of products, features, approaches and styles.
             </p>
           </FadeIn>
-          <div className="space-y-4 mb-8">
-            <Img src={deskResearch} alt="Desk research wall" />
-            <ImageGrid3 images={[
-              { src: trends1, alt: "Trends analysis 1" },
-              { src: trends2, alt: "Trends analysis 2" },
-              { src: trends3, alt: "Trends analysis 3" },
-            ]} />
-          </div>
+          <DesignImageCarousel images={[
+            { src: deskResearch, alt: "Desk research wall" },
+            { src: trends1, alt: "Trends analysis 1" },
+            { src: trends2, alt: "Trends analysis 2" },
+            { src: trends3, alt: "Trends analysis 3" },
+          ]} />
 
           <SubHeading>Product Strategy</SubHeading>
           <FadeIn>
@@ -222,7 +186,7 @@ const FusionTelepresence = () => {
               We identified three main competitors: Google, Microsoft and Cisco; we compared their solutions from different angles: value proposition, target segment, experience, system and platform, design language. Based on the client's goal we refined the scope of the briefing to bring consistency into client's requests and define a product vision.
             </p>
           </FadeIn>
-          <Img src={strategy} alt="Product strategy framework" />
+          <DesignImage src={strategy} alt="Product strategy framework" />
 
           <SubHeading>Experience Mapping and Ideation</SubHeading>
           <FadeIn>
@@ -230,25 +194,23 @@ const FusionTelepresence = () => {
               After the research, we created a UX blueprint to visualise the breakdown of the user experience along the whole product life-cycle. It presents both the physical and the digital interactions, highlighting the synergy moments between them.
             </p>
           </FadeIn>
-          <div className="space-y-4 mb-6">
-            <Img src={productLifecycle} alt="Product lifecycle map" />
-            <ImageGrid2 images={[
-              { src: uxblueprint2, alt: "UX blueprint overview" },
-              { src: uxblueprint1, alt: "UX blueprint detail" },
-            ]} />
-          </div>
+          <DesignImageCarousel images={[
+            { src: productLifecycle, alt: "Product lifecycle map" },
+            { src: uxblueprint2, alt: "UX blueprint overview" },
+            { src: uxblueprint1, alt: "UX blueprint detail" },
+          ]} />
           <FadeIn>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg mb-6">
+            <p className="text-muted-foreground leading-relaxed text-base md:text-lg mt-6 mb-6">
               We used the bodystorming method to have a deeper understanding of usability requirements, relations between users and the digital whiteboard, and possible synergies between the physical object and the software.
             </p>
           </FadeIn>
-          <Img src={bodystorming} alt="Bodystorming session" />
+          <DesignImage src={bodystorming} alt="Bodystorming session" />
           <FadeIn>
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg mt-6 mb-6">
               The ideation phase was run in parallel by both the industrial design team and the digital design team, we met regularly to challenge and contaminate ideas and to ensure consistency between the two experiences.
             </p>
           </FadeIn>
-          <ImageGrid3 images={[
+          <DesignImageCarousel images={[
             { src: ideation, alt: "Ideation sketches" },
             { src: progressSummary, alt: "Progress summary" },
             { src: ideationPhoto, alt: "Ideation workshop" },
@@ -260,17 +222,13 @@ const FusionTelepresence = () => {
               Ideas were generated to cover the whole user journey and then used to create two different UX concepts, exploring different approaches to information architecture, windows management, file sync and pairing, and cloud structure. These elements combined together were suggesting different styles and degrees of collaboration, focusing differently on co-operation and co-creation.
             </p>
           </FadeIn>
-          <div className="space-y-4">
-            <ImageGrid2 images={[
-              { src: uxdirections, alt: "UX concept directions" },
-              { src: navigation, alt: "Navigation concept" },
-            ]} />
-            <ImageGrid2 images={[
-              { src: ia, alt: "Information architecture" },
-              { src: wireflow, alt: "Wireflow diagram" },
-            ]} />
-            <Img src={wireframe} alt="Wireframe detail" />
-          </div>
+          <DesignImageCarousel images={[
+            { src: uxdirections, alt: "UX concept directions" },
+            { src: navigation, alt: "Navigation concept" },
+            { src: ia, alt: "Information architecture" },
+            { src: wireflow, alt: "Wireflow diagram" },
+            { src: wireframe, alt: "Wireframe detail" },
+          ]} />
 
           <SubHeading>Visual Concept</SubHeading>
           <FadeIn>
@@ -278,16 +236,12 @@ const FusionTelepresence = () => {
               We analysed the style of the main competitors' products and we identified a style that was aligned with the brand values and market position. The visual directions were identified by using mood boards and samples of UI libraries to showcase the same components in different styles. Design critiques meetings helped us to guide the client to define and select the desired style.
             </p>
           </FadeIn>
-          <ImageGrid2 images={[
+          <DesignImageCarousel images={[
             { src: visual1, alt: "Visual concept exploration 1" },
             { src: visual2, alt: "Visual concept exploration 2" },
+            { src: visual3, alt: "Visual concept exploration 3" },
+            { src: visual4, alt: "Visual concept exploration 4" },
           ]} />
-          <div className="mt-4">
-            <ImageGrid2 images={[
-              { src: visual3, alt: "Visual concept exploration 3" },
-              { src: visual4, alt: "Visual concept exploration 4" },
-            ]} />
-          </div>
 
           <SubHeading>Screen Design</SubHeading>
           <FadeIn>
@@ -295,21 +249,15 @@ const FusionTelepresence = () => {
               After defining the visual style we created mockups for all the screens using Sketch and InVision to prototype it and test it with colleagues.
             </p>
           </FadeIn>
-          <div className="space-y-4">
-            <Img src={screenDesignHero} alt="Screen design overview" />
-            <ImageGrid2 images={[
-              { src: screenHello, alt: "Hello screen" },
-              { src: screenSpacemanager, alt: "Space manager overview" },
-            ]} />
-            <ImageGrid2 images={[
-              { src: screenConference, alt: "Conference call screen" },
-              { src: screenWhiteboard, alt: "Whiteboard collaboration" },
-            ]} />
-            <ImageGrid2 images={[
-              { src: screenDocuments, alt: "Documents browser" },
-              { src: screenMixedCall, alt: "Mixed call screen" },
-            ]} />
-          </div>
+          <DesignImageCarousel images={[
+            { src: screenDesignHero, alt: "Screen design overview" },
+            { src: screenHello, alt: "Hello screen" },
+            { src: screenSpacemanager, alt: "Space manager overview" },
+            { src: screenConference, alt: "Conference call screen" },
+            { src: screenWhiteboard, alt: "Whiteboard collaboration" },
+            { src: screenDocuments, alt: "Documents browser" },
+            { src: screenMixedCall, alt: "Mixed call screen" },
+          ]} />
 
           <SubHeading>Prototyping for Usability</SubHeading>
           <FadeIn>
@@ -327,7 +275,7 @@ const FusionTelepresence = () => {
               The project won an iF Design Award 2019 both for the UX/UI and for the product.
             </p>
           </FadeIn>
-          <ImageGrid2 images={[
+          <DesignImageCarousel images={[
             { src: ifAwardUi, alt: "iF Design Award 2019 — UX/UI" },
             { src: ifAwardProduct, alt: "iF Design Award 2019 — Product" },
           ]} />

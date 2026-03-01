@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
+import DesignImage from "@/components/design/DesignImage";
+import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
@@ -18,25 +20,6 @@ const SubHeading = ({ children }: { children: React.ReactNode }) => (
       {children}
     </h3>
   </FadeIn>
-);
-
-const Img = ({ src, alt, caption }: { src: string; alt: string; caption?: string }) => (
-  <FadeIn>
-    <figure>
-      <img src={src} alt={alt} className="w-full h-auto rounded-lg" loading="lazy" />
-      {caption && (
-        <figcaption className="text-sm text-muted-foreground mt-2 italic">{caption}</figcaption>
-      )}
-    </figure>
-  </FadeIn>
-);
-
-const ImageGrid = ({ images, cols = 2 }: { images: { src: string; alt: string; caption?: string }[]; cols?: 2 | 3 | 4 }) => (
-  <div className={`grid grid-cols-1 ${cols === 3 ? "md:grid-cols-3" : cols === 4 ? "md:grid-cols-4" : "md:grid-cols-2"} gap-4`}>
-    {images.map((img, i) => (
-      <Img key={i} {...img} />
-    ))}
-  </div>
 );
 
 const SharafDG = () => {
@@ -126,7 +109,7 @@ const SharafDG = () => {
               The scope of the project was to deliver a fully working system able to convey the design concepts developed during the previous phase. The final design covered different touchpoints both digital and physical: architecture and interior design, in-store digital experiences, mobile applications, and backend systems.
             </p>
           </FadeIn>
-          <ImageGrid cols={2} images={[
+          <DesignImageCarousel images={[
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938370014-I91YRLYSHHFCV5W7QWI8/01_nug-0d5dd0b3bfb69e024b64888c7b517649b.png", alt: "Sharaf DG result 1" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938382246-C0GBRS7J5R52GBEH60H2/02_nug-1d515c4f8932d0d3a5911b47660d88b5d.jpeg", alt: "Sharaf DG result 2" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938381886-WC5GS96W089WOIFV5L12/03_nug-183886c25529f732e373c850db956a17c.jpeg", alt: "Sharaf DG result 3" },
@@ -163,23 +146,11 @@ const SharafDG = () => {
               ))}
             </ul>
           </FadeIn>
-          <div className="space-y-4">
-            <Img
-              src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527268164473-5NSEAA6VBUVCP6N4DA4X/note-bedc3839c7834004a479fe671a3a7b24-file.jpg"
-              alt="Sales process"
-              caption="The sales process — We analysed the sales and purchase experience both from the customer and staff member point of view."
-            />
-            <Img
-              src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527271003909-MSDG4T55P7TA68MPDDRL/photowall_sketch.jpg"
-              alt="User journey"
-              caption="The user journey — We ideated a new user journey to enhance both the customer and the staff members experience."
-            />
-            <Img
-              src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270994346-UWFT38LK7XFAVZE82AML/note-7b1999ad50f1497daf0860646753d283-file.jpg"
-              alt="UX Concept"
-              caption="UX Concept — We described the UX concept of all the touch points to align stakeholders' expectations."
-            />
-          </div>
+          <DesignImageCarousel images={[
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527268164473-5NSEAA6VBUVCP6N4DA4X/note-bedc3839c7834004a479fe671a3a7b24-file.jpg", alt: "Sales process", caption: "The sales process — We analysed the sales and purchase experience both from the customer and staff member point of view." },
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527271003909-MSDG4T55P7TA68MPDDRL/photowall_sketch.jpg", alt: "User journey", caption: "The user journey — We ideated a new user journey to enhance both the customer and the staff members experience." },
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270994346-UWFT38LK7XFAVZE82AML/note-7b1999ad50f1497daf0860646753d283-file.jpg", alt: "UX Concept", caption: "UX Concept — We described the UX concept of all the touch points to align stakeholders' expectations." },
+          ]} />
 
           <SubHeading>Team Coordination and Processes Setup</SubHeading>
           <FadeIn>
@@ -222,32 +193,12 @@ const SharafDG = () => {
               ))}
             </ul>
           </FadeIn>
-          <div className="space-y-4">
-            <ImageGrid images={[
-              {
-                src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269262439-Y1QNCCGTW01F3W43J23I/2014-10-09_SharafDG_Photography_wall_Concept_3.jpg",
-                alt: "Visual concept",
-                caption: "Visual concept — We created a visual concept for all the touch-points to create a consistent design language.",
-              },
-              {
-                src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269211913-YUBBIV6MKPOEWTMX5C5U/2014-10-09_SharafDG_Photography_wall_Concept_2.jpg",
-                alt: "Design specifications",
-                caption: "Design specifications — All the concepts were refined and described in design specifications documents.",
-              },
-            ]} />
-            <ImageGrid images={[
-              {
-                src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269558925-KMZ597KPXX5N8PVHPNE9/IMG_9241.JPG",
-                alt: "Prototype implementation",
-                caption: "Prototype Implementation — Developers implemented all the touch-points while the design team was testing them and ensuring usability.",
-              },
-              {
-                src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270254052-500X7KA33UG3VT0TTAVT/IMG_8530.JPG",
-                alt: "Run test",
-                caption: "Runtest — The final setup and debug in a warehouse in Dubai.",
-              },
-            ]} />
-          </div>
+          <DesignImageCarousel images={[
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269262439-Y1QNCCGTW01F3W43J23I/2014-10-09_SharafDG_Photography_wall_Concept_3.jpg", alt: "Visual concept", caption: "Visual concept — We created a visual concept for all the touch-points to create a consistent design language." },
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269211913-YUBBIV6MKPOEWTMX5C5U/2014-10-09_SharafDG_Photography_wall_Concept_2.jpg", alt: "Design specifications", caption: "Design specifications — All the concepts were refined and described in design specifications documents." },
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269558925-KMZ597KPXX5N8PVHPNE9/IMG_9241.JPG", alt: "Prototype implementation", caption: "Prototype Implementation — Developers implemented all the touch-points while the design team was testing them and ensuring usability." },
+            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270254052-500X7KA33UG3VT0TTAVT/IMG_8530.JPG", alt: "Run test", caption: "Runtest — The final setup and debug in a warehouse in Dubai." },
+          ]} />
         </section>
 
         {/* What happened next */}
@@ -258,7 +209,7 @@ const SharafDG = () => {
               After we delivered the proof of concept, the system was engineered and maintained by a software house able to provide constant support. The digital experiences we designed became the blueprint of the digital transformation of the company; the system was extended to all the Sharaf DG shops in Dubai.
             </p>
           </FadeIn>
-          <ImageGrid cols={3} images={[
+          <DesignImageCarousel images={[
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270690780-R6GI8O0ESZR86EGVK85N/%26MaxW%3D960%26imageVersion%3Ddefault%26AR-150619059.jpg", alt: "Sharaf DG store 1" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270687424-1HK2XV2A44OMH6Z4DAVZ/EP-150619059-1.jpg", alt: "Sharaf DG store 2" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270687428-UQJJ12UJHA764OBRQVYR/EP-150619059.jpg", alt: "Sharaf DG store 3" },
