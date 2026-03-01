@@ -264,32 +264,9 @@ const About = () => (
           </h2>
         </FadeIn>
 
-        <div className="space-y-8">
-          {skillGroups.map((group, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                  {group.label}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-primary/10 text-primary border-transparent font-medium px-3 py-1 text-sm"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
         {/* Design Bridge Block */}
-        <FadeIn delay={0.3}>
-          <div className="mt-14 rounded-2xl bg-primary/5 border border-primary/15 px-6 py-8 md:px-10 md:py-10">
+        <FadeIn delay={0.05}>
+          <div className="mb-12 rounded-2xl bg-primary/5 border border-primary/15 px-6 py-8 md:px-10 md:py-10">
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary/70 mb-2">
               From Design to Product
             </p>
@@ -312,6 +289,29 @@ const About = () => (
             </Link>
           </div>
         </FadeIn>
+
+        <div className="space-y-8">
+          {skillGroups.map((group, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                  {group.label}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="bg-primary/10 text-primary border-transparent font-medium px-3 py-1 text-sm"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
 
