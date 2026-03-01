@@ -172,7 +172,11 @@ const About = () => (
                 co-founded a company, led a $1M fundraising round, and scaled a
                 platform to acquisition. I believe great products come from tight
                 collaboration, intellectual honesty, and a genuine obsession with the
-                problem space.
+                problem space. You can see an example of my earlier design work in the{" "}
+                <Link to="/work/fusion-telepresence" className="text-primary hover:underline">
+                  Fusion Telepresence System
+                </Link>{" "}
+                project.
               </p>
             </div>
           </FadeIn>
