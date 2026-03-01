@@ -120,7 +120,7 @@ const About = () => (
             Mario Ciardulli
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-2">
-            Chief Product Officer
+            Product Strategist
           </p>
           <p className="text-lg md:text-xl text-foreground/80 mt-6 max-w-3xl leading-relaxed italic">
             "I turn complex systems into products people actually want to use —
@@ -149,21 +149,24 @@ const About = () => (
           <FadeIn delay={0.1} className="lg:col-span-2">
             <div className="space-y-6 text-foreground/85 text-base md:text-lg" style={{ lineHeight: 1.75 }}>
               <p>
-                I'm a product leader with a hands-on background in UX design and
-                product strategy. Over the past 12+ years, I've worked on products
-                ranging from zero-to-one MVPs to scaling platforms — always with the
-                same goal: making complex systems simple, usable, and commercially
-                viable. Today I'm CPO at MDOTM, a fintech platform in the
-                decision-intelligence space.
+                I'm a product strategist with a hands-on background in UX design and
+                strategic design. Over the past 12+ years, I've worked on products
+                ranging from zero-to-one MVPs to enterprise platforms — always at the
+                same level: what should this product be, for whom, and why.
               </p>
               <p>
-                My approach centers on high-ambiguity problems, where clarity and
-                product judgment matter more than process. I work closely with
-                engineering leadership on delivery outcomes and long-term
-                sustainability, while keeping a strong focus on UX quality and system
-                thinking. I define decision frameworks, guide discovery, and make sure
-                product coherence holds across user experience, technology, and
-                business constraints.
+                I operate at the intersection of product vision, UX quality, and
+                engineering reality. I work best in high-ambiguity environments, where
+                the problem isn't yet well-defined and the solution requires judgment
+                more than process. My instinct is to get close to the work — challenging
+                design directions, co-creating with designers, aligning engineering on
+                what actually matters — while keeping the full product system coherent.
+              </p>
+              <p>
+                My foundation is in strategic design. Before moving into product
+                management, I spent years at Designit working at the intersection of
+                business strategy and experience — where every project started from a
+                business problem, not a brief. That approach never left.
               </p>
             </div>
           </FadeIn>
