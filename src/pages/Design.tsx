@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
@@ -41,6 +41,12 @@ const Design = () => (
     <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
       <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
         <FadeIn>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
+          >
+            <ArrowLeft size={14} /> About
+          </Link>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">Design</h1>
           <p className="text-muted-foreground mt-3 max-w-2xl">
             Strategic design projects from my years at Designit — where every brief started from a business problem and positioning came before a single screen.
