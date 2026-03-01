@@ -179,24 +179,43 @@ const CaseStudy = () => {
         <section className="py-16 lg:py-20 border-b divider">
           <SectionHeading>Impact</SectionHeading>
 
-          {study.highlightMetrics && study.highlightMetrics.length > 0 && (
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {study.highlightMetrics.map((m, i) => (
-                <MetricCallout key={m.label} value={m.value} label={m.label} delay={i * 0.08} />
+          {study.impactCategories && study.impactCategories.length > 0 ? (
+            <div className="space-y-10">
+              {study.impactCategories.map((cat, ci) => (
+                <FadeIn key={cat.category} delay={ci * 0.1}>
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+                    {cat.category}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {cat.metrics.map((m, mi) => (
+                      <MetricCallout key={m.label} value={m.value} label={m.label} delay={(ci * 2 + mi) * 0.08} />
+                    ))}
+                  </div>
+                </FadeIn>
               ))}
             </div>
-          )}
+          ) : (
+            <>
+              {study.highlightMetrics && study.highlightMetrics.length > 0 && (
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {study.highlightMetrics.map((m, i) => (
+                    <MetricCallout key={m.label} value={m.value} label={m.label} delay={i * 0.08} />
+                  ))}
+                </div>
+              )}
 
-          <ul className="space-y-3">
-            {study.impact.map((item, i) => (
-              <FadeIn key={i} delay={i * 0.04}>
-                <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base leading-relaxed">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                  {item}
-                </li>
-              </FadeIn>
-            ))}
-          </ul>
+              <ul className="space-y-3">
+                {study.impact.map((item, i) => (
+                  <FadeIn key={i} delay={i * 0.04}>
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base leading-relaxed">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {item}
+                    </li>
+                  </FadeIn>
+                ))}
+              </ul>
+            </>
+          )}
         </section>
 
         {/* Learnings */}

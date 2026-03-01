@@ -14,6 +14,7 @@ export interface CaseStudyData {
   impact: string[];
   learnings: string[];
   highlightMetrics?: { value: string; label: string }[];
+  impactCategories?: { category: string; metrics: { value: string; label: string }[] }[];
 }
 
 export const caseStudies: CaseStudyData[] = [
@@ -233,10 +234,21 @@ export const caseStudies: CaseStudyData[] = [
     year: "2017–2021",
     heroTagline:
       "Co-founded a startup that turned sports betting into an alternative asset class — advancing toward a fund through sequential product approximations, each with its own metric architecture, legal constraints, and validation objective.",
-    highlightMetrics: [
-      { value: "€1.2M+", label: "Capital deployed by users" },
-      { value: "3,000+", label: "Accounts on Advisor" },
-      { value: "~€5M", label: "Total traded volumes" },
+    impactCategories: [
+      {
+        category: "Advisor",
+        metrics: [
+          { value: "3,000+", label: "Accounts on Advisor" },
+          { value: "15,000+", label: "Unique signals used" },
+        ],
+      },
+      {
+        category: "Tradr",
+        metrics: [
+          { value: "€1.2M+", label: "Capital deployed by users" },
+          { value: "~€5M", label: "Total traded volumes" },
+        ],
+      },
     ],
     context: [
       "Mercurius was a startup I co-founded in 2017 with the ambition of turning sports betting into an alternative asset class. The thesis was quantitative: systematic, data-driven strategies could generate uncorrelated returns, and the right technology could make this accessible to individuals who thought like investors rather than gamblers.",
@@ -287,16 +299,7 @@ export const caseStudies: CaseStudyData[] = [
       "Integrated Hubspot across all touchpoints for cross-product tracking and targeted re-engagement campaigns",
       "Operated engagement program calibrated to AUM retention behavior during drawdown periods",
     ],
-    impact: [
-      "3,000+ accounts and 15,000+ signals used — validated market demand and model credibility at scale",
-      "Signal engagement metric surfaced retention risk and the behavioral case for automation",
-      "Organic search drove 30% of qualified traffic; Advisor functioned as geographic top-of-funnel for Tradr",
-      "Betfair partnership established after six months of BD work — the structural enabler for the entire product",
-      "Legal analysis scoped operating footprint to five European markets; UK represented approximately 65% of AUM",
-      "200+ users deployed over €1.2M in capital across two years; total traded volumes approaching €5M",
-      "Activation funnel optimized through continuous A/B testing without reducing step complexity",
-      "Activation funnel optimized through continuous A/B testing without reducing step complexity",
-    ],
+    impact: [],
     learnings: [
       "Constraints are not obstacles to the strategy — they are inputs to it. The Betfair partnership, the legal scoping, the geographic phasing were each a direct consequence of understanding the constraint map before committing to the roadmap.",
       "The investment strategies were the real product — not the interface. A high-drawdown period was not a UX problem that better copy or a cleaner dashboard could solve. Designing strategies according to the business model, and managing user trust during stressful periods, were product problems that had nothing to do with the front end.",
