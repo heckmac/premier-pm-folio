@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
@@ -35,6 +36,9 @@ const timeline = [
     role: "Senior UX Designer",
     company: "Designit",
     period: "Jan 2017 → Nov 2017",
+    description: "Led digital design for global clients including a telepresence system for China's largest telecom company.",
+    projectLink: "/work/fusion-telepresence",
+    projectLabel: "View Fusion Telepresence project →",
   },
   {
     role: "Interaction Designer",
@@ -222,6 +226,14 @@ const About = () => (
                   <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed">
                     {item.description}
                   </p>
+                )}
+                {item.projectLink && (
+                  <Link
+                    to={item.projectLink}
+                    className="inline-block text-sm text-primary hover:underline mt-2 font-medium"
+                  >
+                    {item.projectLabel}
+                  </Link>
                 )}
               </div>
             </FadeIn>
