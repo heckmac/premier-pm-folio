@@ -237,7 +237,6 @@ export const caseStudies: CaseStudyData[] = [
       { value: "€1.2M+", label: "Capital deployed by users" },
       { value: "3,000+", label: "Accounts on Advisor" },
       { value: "~€5M", label: "Total traded volumes" },
-      { value: ">$1M", label: "Fundraising round" },
     ],
     context: [
       "Mercurius was a startup I co-founded in 2017 with the ambition of turning sports betting into an alternative asset class. The thesis was quantitative: systematic, data-driven strategies could generate uncorrelated returns, and the right technology could make this accessible to individuals who thought like investors rather than gamblers.",
@@ -296,7 +295,7 @@ export const caseStudies: CaseStudyData[] = [
       "Legal analysis scoped operating footprint to five European markets; UK represented approximately 65% of AUM",
       "200+ users deployed over €1.2M in capital across two years; total traded volumes approaching €5M",
       "Activation funnel optimized through continuous A/B testing without reducing step complexity",
-      "Commercial narrative validated sufficiently for a successful fundraising round (>$1M) and subsequent acquisition by Wall Street Football",
+      "Activation funnel optimized through continuous A/B testing without reducing step complexity",
     ],
     learnings: [
       "Constraints are not obstacles to the strategy — they are inputs to it. The Betfair partnership, the legal scoping, the geographic phasing were each a direct consequence of understanding the constraint map before committing to the roadmap.",
