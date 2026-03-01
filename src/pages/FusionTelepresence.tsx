@@ -104,11 +104,11 @@ const FusionTelepresence = () => {
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
             <Link
-              to="/about"
+              to="/design"
               className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
             >
               <ArrowLeft size={14} />
-              About
+              Design
             </Link>
           </FadeIn>
 
