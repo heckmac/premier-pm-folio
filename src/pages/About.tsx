@@ -165,21 +165,35 @@ const About = () => (
                 product coherence holds across user experience, technology, and
                 business constraints.
               </p>
-              <p>
-                My roots are in communication design — I hold a Master's from
-                Politecnico di Milano — and that foundation shapes how I think about
-                products: intentional, craft-driven, and never just functional. I've
-                co-founded a company, led a $1M fundraising round, and scaled a
-                platform to acquisition. I believe great products come from tight
-                collaboration, intellectual honesty, and a genuine obsession with the
-                problem space.{" "}
-                <Link to="/work#design" className="text-primary hover:underline">
-                  See my design work →
-                </Link>
-              </p>
             </div>
           </FadeIn>
         </div>
+
+        {/* Design Bridge Block */}
+        <FadeIn delay={0.2}>
+          <div className="mt-12 border border-border rounded-xl bg-muted/30 px-6 py-8 md:px-8 md:py-10">
+            <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
+              From Design to Product
+            </p>
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">
+              The method hasn't changed. The output has.
+            </h3>
+            <div className="space-y-4 text-foreground/80 text-base md:text-lg leading-relaxed">
+              <p>
+                Before moving into product management, I spent years at Designit doing strategic design — working at the intersection of business strategy and experience, where every project started from a business problem and positioning came before a single screen.
+              </p>
+              <p>
+                That foundation never left. I still work closely on UX — challenging directions, co-creating with designers, making sure the experience holds together from first principle to final interaction. What has changed is the perimeter: today I operate across the full product, from vision to roadmap to execution. The method is the same. The scope is wider.
+              </p>
+            </div>
+            <Link
+              to="/design"
+              className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-5 text-sm"
+            >
+              See my design work →
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
 
