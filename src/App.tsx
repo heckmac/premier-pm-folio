@@ -14,6 +14,7 @@ import SharafDG from "./pages/design/SharafDG";
 import InsuranceDataCollection from "./pages/design/InsuranceDataCollection";
 import Design from "./pages/Design";
 import MollieLanding from "./pages/MollieLanding";
+import ChatPortfolio from "./pages/ChatPortfolio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
