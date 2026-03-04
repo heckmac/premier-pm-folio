@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, Suspense, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, ChevronDown, ChevronUp } from "lucide-react";
+import { Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PARTIALS_REGISTRY } from "@/components/partials/registry";
 import FadeIn from "@/components/FadeIn";
@@ -78,7 +78,6 @@ async function streamChat({
     }
   }
 
-  // Final flush
   if (textBuffer.trim()) {
     for (let raw of textBuffer.split("\n")) {
       if (!raw) continue;
@@ -98,32 +97,35 @@ async function streamChat({
   onDone();
 }
 
+// A stream item is either an assistant message or a rendered partial
+type StreamItem =
+  | { type: "assistant-message"; content: string; id: number }
+  | { type: "partial"; partialId: string; id: number };
+
+let nextItemId = 0;
+
 const ChatPortfolio = () => {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [renderedPartials, setRenderedPartials] = useState<string[]>([]);
-  const [chatExpanded, setChatExpanded] = useState(false);
-  const chatMessagesRef = useRef<HTMLDivElement>(null);
+  const [streamItems, setStreamItems] = useState<StreamItem[]>([]);
+  const [renderedPartials, setRenderedPartials] = useState<Set<string>>(new Set());
+  const [streamingContent, setStreamingContent] = useState<string | null>(null);
   const contentStreamRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const chatPanelRef = useRef<HTMLDivElement>(null);
+  const streamingRef = useRef<string>("");
 
-  const scrollChatToBottom = useCallback(() => {
-    if (chatMessagesRef.current) {
-      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
-    }
+  const scrollToBottom = useCallback(() => {
+    setTimeout(() => {
+      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, 100);
   }, []);
-
-  useEffect(() => {
-    scrollChatToBottom();
-  }, [messages, scrollChatToBottom]);
 
   const handlePartialFromResponse = useCallback((fullText: string) => {
     const { partialId } = parseRenderTag(fullText);
-    if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.includes(partialId)) {
-      setRenderedPartials(prev => [...prev, partialId]);
-      // Scroll to content stream after a short delay
+    if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.has(partialId)) {
+      setRenderedPartials(prev => new Set(prev).add(partialId));
+      setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
       setTimeout(() => {
         contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 300);
@@ -136,25 +138,28 @@ const ChatPortfolio = () => {
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
+    streamingRef.current = "";
+    setStreamingContent("");
 
     let assistantSoFar = "";
-    const upsertAssistant = (nextChunk: string) => {
-      assistantSoFar += nextChunk;
-      const { cleanText } = parseRenderTag(assistantSoFar);
-      setMessages(prev => {
-        const last = prev[prev.length - 1];
-        if (last?.role === "assistant") {
-          return prev.map((m, i) => (i === prev.length - 1 ? { ...m, content: cleanText } : m));
-        }
-        return [...prev, { role: "assistant", content: cleanText }];
-      });
-    };
 
     try {
       await streamChat({
         messages: [...messages, userMsg],
-        onDelta: (chunk) => upsertAssistant(chunk),
+        onDelta: (chunk) => {
+          assistantSoFar += chunk;
+          const { cleanText } = parseRenderTag(assistantSoFar);
+          streamingRef.current = cleanText;
+          setStreamingContent(cleanText);
+          scrollToBottom();
+        },
         onDone: () => {
+          const { cleanText } = parseRenderTag(assistantSoFar);
+          // Add the final message to stream items
+          setStreamItems(prev => [...prev, { type: "assistant-message", content: cleanText, id: nextItemId++ }]);
+          setStreamingContent(null);
+          // Add to messages for context
+          setMessages(prev => [...prev, { role: "assistant", content: cleanText }]);
           setIsLoading(false);
           handlePartialFromResponse(assistantSoFar);
         },
@@ -162,7 +167,10 @@ const ChatPortfolio = () => {
     } catch (e) {
       console.error(e);
       setIsLoading(false);
-      setMessages(prev => [...prev, { role: "assistant", content: "Mi dispiace, c'è stato un errore. Riprova." }]);
+      setStreamingContent(null);
+      const errorMsg = "Mi dispiace, c'è stato un errore. Riprova.";
+      setStreamItems(prev => [...prev, { type: "assistant-message", content: errorMsg, id: nextItemId++ }]);
+      setMessages(prev => [...prev, { role: "assistant", content: errorMsg }]);
     }
   };
 
@@ -173,8 +181,7 @@ const ChatPortfolio = () => {
     }
   };
 
-  const hasStarted = messages.length > 0;
-  const chatHeight = chatExpanded ? "h-[60vh]" : "h-[240px]";
+  const hasStarted = streamItems.length > 0 || streamingContent !== null;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -196,64 +203,17 @@ const ChatPortfolio = () => {
               Product leader at the intersection of strategy, design, and engineering.
             </p>
           </FadeIn>
-          <FadeIn delay={0.15}>
-            <button
-              onClick={() => chatPanelRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="mt-6 text-sm text-primary hover:underline font-medium"
-            >
-              Chat with me to explore my work →
-            </button>
-          </FadeIn>
         </div>
       </section>
 
       {/* Content Stream */}
-      <div ref={contentStreamRef} className="flex-1">
-        <AnimatePresence>
-          {renderedPartials.map((id) => {
-            const Component = PARTIALS_REGISTRY[id];
-            if (!Component) return null;
-            return (
-              <motion.div
-                key={id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="border-t divider"
-              >
-                <Suspense fallback={
-                  <div className="py-20 flex items-center justify-center">
-                    <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-                  </div>
-                }>
-                  <Component />
-                </Suspense>
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </div>
-
-      {/* Chat Panel */}
-      <div
-        ref={chatPanelRef}
-        className={`sticky bottom-0 z-50 bg-background border-t border-border transition-all ${chatHeight}`}
-        style={{ boxShadow: "0 -4px 24px -8px rgba(0,0,0,0.08)" }}
-      >
-        {/* Expand toggle */}
-        <button
-          onClick={() => setChatExpanded(!chatExpanded)}
-          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-background border border-border rounded-t-lg px-3 py-1 text-muted-foreground hover:text-foreground transition-colors"
-        >
-          {chatExpanded ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-        </button>
-
-        <div className="h-full flex flex-col max-w-3xl mx-auto px-4 lg:px-6">
-          {/* Messages */}
-          <div ref={chatMessagesRef} className="flex-1 overflow-y-auto py-4 space-y-4 min-h-0">
-            {!hasStarted && (
-              <div className="space-y-4">
-                <div className="bg-muted rounded-lg px-4 py-3 max-w-[85%]">
+      <div ref={contentStreamRef} className="flex-1 pb-32">
+        {/* Onboarding / Welcome */}
+        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+          {!hasStarted && (
+            <FadeIn>
+              <div className="py-8 space-y-6">
+                <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
                   <p className="text-foreground text-sm leading-relaxed">
                     Ciao. Sono Mario. Da dove partiamo?
                   </p>
@@ -270,62 +230,106 @@ const ChatPortfolio = () => {
                   ))}
                 </div>
               </div>
-            )}
+            </FadeIn>
+          )}
+        </div>
 
-            {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`max-w-[85%] rounded-lg px-4 py-3 text-sm leading-relaxed ${
-                    msg.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-foreground"
-                  }`}
+        {/* Stream items: messages and partials */}
+        <AnimatePresence>
+          {streamItems.map((item) => {
+            if (item.type === "assistant-message") {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-4"
                 >
-                  {msg.role === "assistant" ? (
+                  <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
                     <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0">
-                      <ReactMarkdown>{msg.content}</ReactMarkdown>
+                      <ReactMarkdown>{item.content}</ReactMarkdown>
                     </div>
-                  ) : (
-                    msg.content
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {isLoading && messages[messages.length - 1]?.role === "user" && (
-              <div className="flex justify-start">
-                <div className="bg-muted rounded-lg px-4 py-3">
-                  <div className="flex gap-1">
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
-                </div>
-              </div>
-            )}
-          </div>
+                </motion.div>
+              );
+            }
 
-          {/* Input */}
-          <div className="flex-shrink-0 pb-4 pt-2 border-t border-border/50">
-            <div className="flex gap-2 items-center">
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder="Scrivi un messaggio..."
-                className="flex-1 bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
-                disabled={isLoading}
-              />
-              <button
-                onClick={() => send(input)}
-                disabled={!input.trim() || isLoading}
-                className="shrink-0 w-9 h-9 rounded-lg bg-primary text-primary-foreground flex items-center justify-center disabled:opacity-40 hover:bg-primary/90 transition-colors"
-              >
-                <Send size={16} />
-              </button>
+            if (item.type === "partial") {
+              const Component = PARTIALS_REGISTRY[item.partialId];
+              if (!Component) return null;
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="border-t border-border"
+                >
+                  <Suspense fallback={
+                    <div className="py-20 flex items-center justify-center">
+                      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+                    </div>
+                  }>
+                    <Component />
+                  </Suspense>
+                </motion.div>
+              );
+            }
+
+            return null;
+          })}
+        </AnimatePresence>
+
+        {/* Streaming content (while AI is typing) */}
+        {streamingContent !== null && (
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-4">
+            <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
+              <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0">
+                <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
+              </div>
             </div>
+          </div>
+        )}
+
+        {/* Loading dots */}
+        {isLoading && streamingContent === "" && (
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-4">
+            <div className="bg-muted rounded-lg px-4 py-3 inline-flex">
+              <div className="flex gap-1">
+                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "300ms" }} />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Input Panel (fixed bottom) */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border"
+        style={{ boxShadow: "0 -4px 24px -8px rgba(0,0,0,0.08)" }}
+      >
+        <div className="max-w-3xl mx-auto px-4 lg:px-6 py-3">
+          <div className="flex gap-2 items-center">
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Scrivi un messaggio..."
+              className="flex-1 bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+              disabled={isLoading}
+            />
+            <button
+              onClick={() => send(input)}
+              disabled={!input.trim() || isLoading}
+              className="shrink-0 w-9 h-9 rounded-lg bg-primary text-primary-foreground flex items-center justify-center disabled:opacity-40 hover:bg-primary/90 transition-colors"
+            >
+              <Send size={16} />
+            </button>
           </div>
         </div>
       </div>
