@@ -133,33 +133,41 @@ const CaseStudy = () => {
         </div>
       </section>
 
-      {/* Content */}
-      <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
-        {/* Context */}
-        <section className="py-16 lg:py-20 border-b divider">
-          <SectionHeading>Context</SectionHeading>
-          <Prose paragraphs={study.context} />
-        </section>
+      {/* Narrative block: Context → Problem → Positioning */}
+      {(study.context.length > 0 || study.problem.length > 0 || study.positioning.length > 0) && (
+        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+          <div className="py-16 lg:py-20 border-b divider space-y-10">
+            {study.context.length > 0 && (
+              <div>
+                <SectionHeading>Context</SectionHeading>
+                <Prose paragraphs={study.context} />
+              </div>
+            )}
+            {study.problem.length > 0 && (
+              <div>
+                <SectionHeading>Problem</SectionHeading>
+                <Prose paragraphs={study.problem} />
+              </div>
+            )}
+            {study.positioning.length > 0 && (
+              <div>
+                <SectionHeading>Positioning</SectionHeading>
+                <Prose paragraphs={study.positioning} />
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
-        {/* Problem */}
-        <section className="py-16 lg:py-20 border-b divider">
-          <SectionHeading>Problem</SectionHeading>
-          <Prose paragraphs={study.problem} />
-        </section>
-
-        {/* Positioning */}
-        <section className="py-16 lg:py-20 border-b divider">
-          <SectionHeading>Positioning</SectionHeading>
-          <Prose paragraphs={study.positioning} />
-        </section>
-
-        {/* My Role */}
-        <section className="py-16 lg:py-20 border-b divider">
-          <SectionHeading>My Role</SectionHeading>
-          <Prose paragraphs={study.myRole} />
-        </section>
-
-      </div>
+      {/* My Role */}
+      {study.myRole.length > 0 && (
+        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+          <section className="py-16 lg:py-20 border-b divider">
+            <SectionHeading>My Role</SectionHeading>
+            <Prose paragraphs={study.myRole} />
+          </section>
+        </div>
+      )}
 
       {/* Gallery — full width */}
       {caseStudyGalleries[slug || ""] && (
