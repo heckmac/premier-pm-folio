@@ -172,6 +172,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "Productizing Narrative Explanation for Investment Decisions",
     role: "CPO",
     year: "2024–2025",
+    cardSubtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
+    featured: true,
     heroTagline:
       "Introduced an AI-driven narrative layer that transformed portfolio logic into reliable, decision-consistent explanations — cutting mass reporting time from ~2 hours to ~2 minutes per portfolio.",
     highlightMetrics: [
