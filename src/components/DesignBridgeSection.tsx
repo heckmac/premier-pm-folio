@@ -64,24 +64,25 @@ const DesignBridgeSection = () => (
           <FadeIn key={i} delay={i * 0.08}>
             <Link
               to={project.link}
-              className="group block surface-elevated rounded-lg border divider p-6 transition-all hover:shadow-lg hover:shadow-foreground/5"
+              className="group block border-2 border-foreground bg-background overflow-hidden transition-colors duration-200"
             >
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1.5">
-                    {project.client}
-                  </p>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    {project.project}
-                  </h3>
+              <div className="p-5">
+                <div className="flex items-start justify-between mb-2">
+                  <div>
+                    <h3 className="text-lg font-bold uppercase tracking-tight leading-snug group-hover:text-primary transition-colors">
+                      {project.project}
+                    </h3>
+                    <p className="text-xs font-medium tracking-[0.1em] uppercase mt-1 opacity-60">
+                      {project.client} · {project.context}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    size={18}
+                    className="opacity-40 group-hover:opacity-100 group-hover:text-primary transition-all mt-1 shrink-0 ml-3"
+                  />
                 </div>
-                <ArrowUpRight
-                  size={18}
-                  className="text-subtle group-hover:text-primary transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 mt-1 shrink-0 ml-3"
-                />
+                <p className="text-sm leading-relaxed mt-3 opacity-70">{project.outcome}</p>
               </div>
-              <p className="text-sm text-subtle mb-2">{project.context}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{project.outcome}</p>
             </Link>
           </FadeIn>
         ))}
