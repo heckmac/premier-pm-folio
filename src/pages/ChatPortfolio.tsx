@@ -4,6 +4,7 @@ import { Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PARTIALS_REGISTRY } from "@/components/partials/registry";
 import ExpandablePartial from "@/components/partials/ExpandablePartial";
+import { ChatStreamContext } from "@/components/partials/ChatStreamContext";
 import FadeIn from "@/components/FadeIn";
 
 type Msg = { role: "user" | "assistant"; content: string };
