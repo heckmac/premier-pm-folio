@@ -32,7 +32,7 @@ export const caseStudies: CaseStudyData[] = [
     featured: true,
     heroTagline: "Clients loved the vision. They couldn't use the product.",
     context: [
-      "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+      "[MDOTM](https://www.mdotm.ai/) is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "The original version was technically sophisticated — it could ingest a portfolio, apply a market view, and generate an optimized allocation.",
     ],
     problem: [
@@ -104,7 +104,7 @@ export const caseStudies: CaseStudyData[] = [
     featured: true,
     heroTagline: "From a tool people visit to infrastructure they operate inside.",
     context: [
-      "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+      "[MDOTM](https://www.mdotm.ai/) is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "After a major architectural redesign, Sphere had become structurally usable. Clients could express real mandates and connect existing portfolios via PMS integration.",
     ],
     problem: [
@@ -178,7 +178,7 @@ export const caseStudies: CaseStudyData[] = [
     featured: true,
     heroTagline: "From 2 hours to 2 minutes per portfolio.",
     context: [
-      "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+      "[MDOTM](https://www.mdotm.ai/) is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "Sphere's analytical engine had become increasingly sophisticated. Non-linear optimization generated advanced portfolio proposals. The quality was strong, but communication lagged behind.",
     ],
     problem: [
