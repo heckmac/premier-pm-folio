@@ -28,7 +28,7 @@ const Index = () => {
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-10 mb-10 h-[3px] w-20 bg-foreground" />
+            <div className="mt-10 mb-10 h-[3px] w-20 bg-primary" />
           </FadeIn>
           <FadeIn delay={0.3}>
             <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-md">
