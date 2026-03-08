@@ -145,8 +145,8 @@ const CaseStudy = () => {
             <div className="space-y-8 mt-2">
               {study.strategy.map((step, i) => (
                 <FadeIn key={step.title} delay={i * 0.08}>
-                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-primary/20 before:border-2 before:border-primary">
-                    <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-[3px] before:bg-primary">
+                    <h3 className="text-base font-semibold text-foreground uppercase tracking-tight mb-2">{step.title}</h3>
                     <Prose paragraphs={[step.description]} variant="sm" />
                   </div>
                 </FadeIn>
