@@ -11,6 +11,14 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/portfolio-chat`;
 
+/** Chips that shortcut directly to a partial (no AI call) */
+const DIRECT_PARTIAL_CHIPS: Record<string, string> = {
+  "Tell me about yourself": "bio",
+  "Walk me through your career": "career",
+  "What are your main skills?": "skills",
+  "Download CV": "cv-download",
+};
+
 const CHIPS = [
   "Tell me about yourself",
   "Walk me through your career",
@@ -151,9 +159,21 @@ const ChatPortfolio = () => {
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
-    const userMsg: Msg = { role: "user", content: text.trim() };
+    const trimmed = text.trim();
+
+    // Direct partial shortcut — no AI call
+    const directPartial = DIRECT_PARTIAL_CHIPS[trimmed];
+    if (directPartial) {
+      setStreamItems(prev => [...prev, { type: "user-message", content: trimmed, id: nextItemId++ }]);
+      setInput("");
+      setMessages(prev => [...prev, { role: "user", content: trimmed }, { role: "assistant", content: `[RENDER:${directPartial}]` }]);
+      injectPartial(directPartial);
+      return;
+    }
+
+    const userMsg: Msg = { role: "user", content: trimmed };
     setMessages(prev => [...prev, userMsg]);
-    setStreamItems(prev => [...prev, { type: "user-message", content: text.trim(), id: nextItemId++ }]);
+    setStreamItems(prev => [...prev, { type: "user-message", content: trimmed, id: nextItemId++ }]);
     setInput("");
     setIsLoading(true);
     streamingRef.current = "";
