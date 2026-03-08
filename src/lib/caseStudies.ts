@@ -4,6 +4,10 @@ export interface CaseStudyData {
   project: string;
   role: string;
   year: string;
+  /** One-line subtitle shown on cards, e.g. "Sphere · VP of Product · MDOTM · 2021–2023" */
+  cardSubtitle: string;
+  /** Whether this case study appears in the homepage featured section */
+  featured: boolean;
   heroTagline: string;
   context: string[];
   problem: string[];
