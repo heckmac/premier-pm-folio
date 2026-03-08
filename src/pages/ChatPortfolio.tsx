@@ -10,12 +10,12 @@ type Msg = { role: "user" | "assistant"; content: string };
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/portfolio-chat`;
 
 const CHIPS = [
-  "Raccontami di te",
-  "Sto valutando un profilo per un ruolo",
-  "Come lavori e prendi decisioni?",
-  "Mostrami i tuoi progetti",
-  "Ho una domanda specifica",
-  "Scarica il CV",
+  "Tell me about yourself",
+  "I'm hiring for a product role",
+  "Show me your design work",
+  "How do you approach product strategy?",
+  "Walk me through a case study",
+  "Download CV",
 ];
 
 const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
