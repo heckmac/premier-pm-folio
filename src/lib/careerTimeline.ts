@@ -13,15 +13,14 @@ export const timeline: TimelineEntry[] = [
     url: "https://mdotm.ai",
     period: "Jan 2024 → Present",
     description:
-      "Fintech platform providing decision-intelligence for portfolio managers. Scale, modularization & product–market fit phase.",
+      "Fintech platform providing decision-intelligence for portfolio managers.\n- Led product strategy and roadmap\n- Scaled team from 5 to 20\n- Drove modularization initiative",
   },
   {
     role: "VP of Product",
     company: "MDOTM",
     url: "https://mdotm.eu",
     period: "Nov 2021 → Dec 2023",
-    description:
-      "Zero-to-one phase: MVP design, product vision, early foundations.",
+    description: "Zero-to-one phase: MVP design, product vision, early foundations.",
   },
   {
     role: "Co-Founder, Head of Product & CMO",
@@ -36,7 +35,7 @@ export const timeline: TimelineEntry[] = [
     company: "Designit",
     period: "Jan 2017 → Nov 2017",
     description:
-      "- Led strategic design and product discovery initiatives for complex, international client projects\n- Worked at the intersection of business strategy, user research, and experience design\n- Framed complex problem spaces and translated them into actionable product and service concepts\n- Collaborated with strategists, researchers, service designers, and technologists in multidisciplinary teams",
+      "💡 Global strategic design and innovation consultancy operating at the intersection of design, technology and business, supporting large organizations in complex transformation and product innovation initiatives. \n- Led strategic design and product discovery initiatives for complex, international client projects\n- Worked at the intersection of business strategy, user research, and experience design\n- Framed complex problem spaces and translated them into actionable product and service concepts\n- Collaborated with strategists, researchers, service designers, and technologists in multidisciplinary teams",
   },
   {
     role: "Interaction Designer",
