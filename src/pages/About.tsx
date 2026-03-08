@@ -222,13 +222,13 @@ const About = () =>
                     {item.description}
                   </p>
             }
-                {item.projectLink &&
-            <Link
-              to={item.projectLink}
-              className="inline-block text-sm text-primary hover:underline mt-2 font-medium">
-              
-                    {item.projectLabel}
-                  </Link>
+                {item.projectLink
+
+
+
+
+
+
             }
               </div>
             </FadeIn>
