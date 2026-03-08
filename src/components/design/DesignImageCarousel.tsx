@@ -94,7 +94,7 @@ const DesignImageCarousel = ({ images }: Props) => {
             {/* Expand icon */}
             <button
               onClick={() => setLightboxOpen(true)}
-              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
+              className="absolute top-3 right-3 w-8 h-8 bg-background/70 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
               aria-label="Expand image"
             >
               <Expand size={14} />
