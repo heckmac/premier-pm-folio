@@ -30,7 +30,7 @@ const CaseStudyGallery = ({ slides }: Props) => {
   return (
     <div className="space-y-4">
       {/* Image area */}
-      <div className="relative rounded-xl overflow-hidden bg-secondary/30 border divider">
+      <div className="relative rounded-xl overflow-hidden bg-secondary/30">
         <div className="relative aspect-[16/10] overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.img
