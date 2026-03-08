@@ -14,9 +14,9 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/portfolio-ch
 const CHIPS = [
   "Tell me about yourself",
   "I'm hiring for a product role",
-  "Show me your design work",
-  "How do you approach product strategy?",
-  "Walk me through a case study",
+  "Show me your product strategy work",
+  "Show me your product UX work",
+  "How do you approach complex products?",
   "Download CV",
 ];
 
