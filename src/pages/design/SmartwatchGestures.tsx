@@ -6,6 +6,37 @@ import FadeIn from "@/components/FadeIn";
 import DesignImage from "@/components/design/DesignImage";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
+import imgResearch1 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.002.jpg";
+import imgResearch2 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.003.jpg";
+import imgResearch3 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.006.jpg";
+import imgStrategy1 from "@/assets/smartwatch-gestures/strategy.002.jpg";
+import imgStrategy2 from "@/assets/smartwatch-gestures/strategy.003.jpg";
+import imgStrategy3 from "@/assets/smartwatch-gestures/strategy.005.jpg";
+import imgIdeationPhoto from "@/assets/smartwatch-gestures/Photo+10-08-2016%2C+15+55+49.jpg";
+import imgIdeation1 from "@/assets/smartwatch-gestures/ideation (1).jpg";
+import imgIdeation2 from "@/assets/smartwatch-gestures/ideation.002.jpg";
+import imgIdeation3 from "@/assets/smartwatch-gestures/ideation.007.jpg";
+import imgInterview1 from "@/assets/smartwatch-gestures/ideation.010.jpg";
+import imgInterview2 from "@/assets/smartwatch-gestures/ideation.011.jpg";
+import imgInterview3 from "@/assets/smartwatch-gestures/ideation.012.jpg";
+import imgTestPhoto from "@/assets/smartwatch-gestures/_MG_9443.jpg";
+import imgUsertest from "@/assets/smartwatch-gestures/usertest.jpg";
+import imgUseCase1 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.003.jpg";
+import imgUseCase2 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.004.jpg";
+import imgUseCase3 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.005.jpg";
+import imgUseCase4 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.006.jpg";
+import imgUseCase5 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.007.jpg";
+import imgUseCase6 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.008.jpg";
+import imgUseCase7 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.009.jpg";
+import imgUseCase8 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.010.jpg";
+import imgUseCase9 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.011.jpg";
+import imgUseCase10 from "@/assets/smartwatch-gestures/2016_09_29_Selected_use_cases.012.jpg";
+import imgVisualInspiration from "@/assets/smartwatch-gestures/visual_inspiration.jpg";
+import imgDirections from "@/assets/smartwatch-gestures/directions.png";
+import imgGrid from "@/assets/smartwatch-gestures/grid.png";
+import imgScreenSketch from "@/assets/smartwatch-gestures/screen_sketch.jpg";
+import imgDevelopment from "@/assets/smartwatch-gestures/development.jpg";
+
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
     <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -95,9 +126,9 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875273589-479VPU72WC50XQRBYTYY/Presentation_LEAT_Latest.002.jpeg", alt: "Research slide 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875273709-ZM1S1XI9DTTMEZPGGLLV/Presentation_LEAT_Latest.003.jpeg", alt: "Research slide 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875275765-7VB8RP8SHIALKTH962LC/Presentation_LEAT_Latest.006.jpeg", alt: "Research slide 3" },
+            { src: imgResearch1, alt: "Research slide 1" },
+            { src: imgResearch2, alt: "Research slide 2" },
+            { src: imgResearch3, alt: "Research slide 3" },
           ]} />
 
           <SubHeading>Strategy and UX Principles</SubHeading>
@@ -107,9 +138,9 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296412150-197WNJN3MCXMRFRDXUG5/strategy.002.jpeg", alt: "Strategy 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296416877-3IBZ73F0ELNQ0NGYVQUK/strategy.003.jpeg", alt: "Strategy 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296424726-G04I854JUUZPDJ3LJJ3M/strategy.005.jpeg", alt: "Strategy 3" },
+            { src: imgStrategy1, alt: "Strategy 1" },
+            { src: imgStrategy2, alt: "Strategy 2" },
+            { src: imgStrategy3, alt: "Strategy 3" },
           ]} />
 
           <SubHeading>Ideation</SubHeading>
@@ -119,10 +150,10 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526728998067-5YI8YC7IZ12EF5I1J8PY/Photo+10-08-2016%2C+15+55+49.jpg", alt: "Ideation photo" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729376630-C44EVD0OU5TY8336IP33/ideation.jpg", alt: "Ideation process" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729702603-VBK4W2R1KB1USRCRQOSE/ideation.002.jpeg", alt: "Ideation concepts" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729704890-N444VKQUO9GU355IK169/ideation.007.jpeg", alt: "Ideation refinement" },
+            { src: imgIdeationPhoto, alt: "Ideation photo" },
+            { src: imgIdeation1, alt: "Ideation process" },
+            { src: imgIdeation2, alt: "Ideation concepts" },
+            { src: imgIdeation3, alt: "Ideation refinement" },
           ]} />
 
           <SubHeading>User Interviews</SubHeading>
@@ -132,11 +163,11 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729810314-1V4L7CQF3ZIQM1O4E7OV/ideation.010.jpeg", alt: "User interview 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729818277-QH8ZZQX7VMPWN7FM29CG/ideation.011.jpeg", alt: "User interview 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526729843479-E7BG9JW9625IQT2I4TFI/ideation.012.jpeg", alt: "User interview 3" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526730421308-PCAFIZTQ2CEQLNZO766C/_MG_9443.JPG", alt: "User test photo" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526730235510-7Q9PP17TI4G8J94RHW1Z/usertest.jpg", alt: "User testing session" },
+            { src: imgInterview1, alt: "User interview 1" },
+            { src: imgInterview2, alt: "User interview 2" },
+            { src: imgInterview3, alt: "User interview 3" },
+            { src: imgTestPhoto, alt: "User test photo" },
+            { src: imgUsertest, alt: "User testing session" },
           ]} />
 
           <SubHeading>Use Cases Iteration</SubHeading>
@@ -146,16 +177,16 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731404959-DVX0MH9YYKUST4I0QEBK/2016_09_29_Selected_use_cases.003.jpeg", alt: "Use case 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731401671-DANGD234D59XLSWCD2S0/2016_09_29_Selected_use_cases.004.jpeg", alt: "Use case 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731407423-VBK4W2R1KB1USRCRQOSE/2016_09_29_Selected_use_cases.005.jpeg", alt: "Use case 3" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731416912-OM816XX31UQJEZY35L26/2016_09_29_Selected_use_cases.006.jpeg", alt: "Use case 4" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731419513-N444VKQUO9GU355IK169/2016_09_29_Selected_use_cases.007.jpeg", alt: "Use case 5" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731423759-VEI8YN7Z0U66PW2/2016_09_29_Selected_use_cases.008.jpeg", alt: "Use case 6" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731427475-H03JJOGVDOGBIJ1CXIQT/2016_09_29_Selected_use_cases.009.jpeg", alt: "Use case 7" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731434324-3Z0W9BYVLDIWUYRXMJVG/2016_09_29_Selected_use_cases.010.jpeg", alt: "Use case 8" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731434888-R9SHM2UTJGTSR9B62MNE/2016_09_29_Selected_use_cases.011.jpeg", alt: "Use case 9" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526731439529-3O1TCJPTTIC08GXXZ1P3/2016_09_29_Selected_use_cases.012.jpeg", alt: "Use case 10" },
+            { src: imgUseCase1, alt: "Use case 1" },
+            { src: imgUseCase2, alt: "Use case 2" },
+            { src: imgUseCase3, alt: "Use case 3" },
+            { src: imgUseCase4, alt: "Use case 4" },
+            { src: imgUseCase5, alt: "Use case 5" },
+            { src: imgUseCase6, alt: "Use case 6" },
+            { src: imgUseCase7, alt: "Use case 7" },
+            { src: imgUseCase8, alt: "Use case 8" },
+            { src: imgUseCase9, alt: "Use case 9" },
+            { src: imgUseCase10, alt: "Use case 10" },
           ]} />
 
           <SubHeading>Screen Design</SubHeading>
@@ -165,10 +196,10 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526899174421-P3H542DI6XPO463BC801/visual_inspiration.jpg", alt: "Visual style moodboard", caption: "Visual style moodboard — We explored several visual styles creating a set of moodboards and asking the client to challenge them." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526899042601-V0UWEVFPAMBDKBVTKJ3G/directions.png", alt: "Visual style directions", caption: "Visual style directions — We used one application to explore several visual styles and define a general direction." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526899072909-MBZDF1303DAN8Y09IIRY/grid.png", alt: "Radial grid", caption: "Radial grid — As we wanted to create a system of circular UIs we designed a radial grid as base." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526899170156-8IAGINSW4VU2JGRBF4CT/screen_sketch.jpg", alt: "Sketch and Principles", caption: "Sketch and Principles — Sketch was used to create the mockups and Principles for mac to validate their usability on the fly." },
+            { src: imgVisualInspiration, alt: "Visual style moodboard", caption: "Visual style moodboard — We explored several visual styles creating a set of moodboards and asking the client to challenge them." },
+            { src: imgDirections, alt: "Visual style directions", caption: "Visual style directions — We used one application to explore several visual styles and define a general direction." },
+            { src: imgGrid, alt: "Radial grid", caption: "Radial grid — As we wanted to create a system of circular UIs we designed a radial grid as base." },
+            { src: imgScreenSketch, alt: "Sketch and Principles", caption: "Sketch and Principles — Sketch was used to create the mockups and Principles for mac to validate their usability on the fly." },
           ]} />
 
           <SubHeading>Animations</SubHeading>
@@ -185,7 +216,7 @@ const SmartwatchGestures = () => {
             </p>
           </FadeIn>
           <DesignImage
-            src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526935147912-TD7QH8ML0YKULQCLTB3S/development.jpg"
+            src={imgDevelopment}
             alt="Technical demonstrator"
           />
         </section>

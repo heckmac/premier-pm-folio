@@ -1,6 +1,12 @@
 import FadeIn from "@/components/FadeIn";
-import DesignImage from "@/components/design/DesignImage";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
+
+import imgResearch1 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.002.jpg";
+import imgResearch2 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.003.jpg";
+import imgResearch3 from "@/assets/smartwatch-gestures/Presentation_LEAT_Latest.006.jpg";
+import imgStrategy1 from "@/assets/smartwatch-gestures/strategy.002.jpg";
+import imgStrategy2 from "@/assets/smartwatch-gestures/strategy.003.jpg";
+import imgStrategy3 from "@/assets/smartwatch-gestures/strategy.005.jpg";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
@@ -73,9 +79,9 @@ const SmartwatchGesturesPartial = () => (
           </p>
         </FadeIn>
         <DesignImageCarousel images={[
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875273589-479VPU72WC50XQRBYTYY/Presentation_LEAT_Latest.002.jpeg", alt: "Research slide 1" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875273709-ZM1S1XI9DTTMEZPGGLLV/Presentation_LEAT_Latest.003.jpeg", alt: "Research slide 2" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1525875275765-7VB8RP8SHIALKTH962LC/Presentation_LEAT_Latest.006.jpeg", alt: "Research slide 3" },
+          { src: imgResearch1, alt: "Research slide 1" },
+          { src: imgResearch2, alt: "Research slide 2" },
+          { src: imgResearch3, alt: "Research slide 3" },
         ]} />
 
         <SubHeading>Strategy and UX Principles</SubHeading>
@@ -85,9 +91,9 @@ const SmartwatchGesturesPartial = () => (
           </p>
         </FadeIn>
         <DesignImageCarousel images={[
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296412150-197WNJN3MCXMRFRDXUG5/strategy.002.jpeg", alt: "Strategy 1" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296416877-3IBZ73F0ELNQ0NGYVQUK/strategy.003.jpeg", alt: "Strategy 2" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526296424726-G04I854JUUZPDJ3LJJ3M/strategy.005.jpeg", alt: "Strategy 3" },
+          { src: imgStrategy1, alt: "Strategy 1" },
+          { src: imgStrategy2, alt: "Strategy 2" },
+          { src: imgStrategy3, alt: "Strategy 3" },
         ]} />
 
         <SubHeading>What Happened Next</SubHeading>

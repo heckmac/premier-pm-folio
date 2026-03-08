@@ -6,6 +6,25 @@ import FadeIn from "@/components/FadeIn";
 import DesignImage from "@/components/design/DesignImage";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
+import img01 from "@/assets/sharaf-dg/01_nug-0d5dd0b3bfb69e024b64888c7b517649b.png";
+import img02 from "@/assets/sharaf-dg/02_nug-1d515c4f8932d0d3a5911b47660d88b5d.jpg";
+import img03 from "@/assets/sharaf-dg/03_nug-183886c25529f732e373c850db956a17c.jpg";
+import img04 from "@/assets/fusion/04_nug-165550a10351de611f0eae9346c96fbc3.jpg";
+import img05 from "@/assets/sharaf-dg/05_nug-14c3384ec2ba57a9ffa5ba9df89727e61.jpg";
+import img06 from "@/assets/sharaf-dg/06_nug-18747f8e967e0a656b9c5fe1d665ca85b.jpg";
+import img07 from "@/assets/sharaf-dg/07_nug-10eddbaed3f7f935786a73adfc3f9d43b.jpg";
+import img08 from "@/assets/sharaf-dg/08_nug-198ea609b0d6953ee82320c16ec72928d.jpg";
+import imgNote1 from "@/assets/sharaf-dg/note-bedc3839c7834004a479fe671a3a7b24-file.jpg";
+import imgPhotowall from "@/assets/sharaf-dg/photowall_sketch.jpg";
+import imgNote2 from "@/assets/sharaf-dg/note-7b1999ad50f1497daf0860646753d283-file.jpg";
+import imgConcept3 from "@/assets/sharaf-dg/2014-10-09_SharafDG_Photography_wall_Concept_3.jpg";
+import imgConcept2 from "@/assets/sharaf-dg/2014-10-09_SharafDG_Photography_wall_Concept_2.jpg";
+import imgImpl from "@/assets/sharaf-dg/IMG_9241.jpg";
+import imgRuntest from "@/assets/sharaf-dg/IMG_8530.jpg";
+import imgStore1 from "@/assets/sharaf-dg/%26MaxW%3D960%26imageVersion%3Ddefault%26AR-150619059.jpg";
+import imgStore2 from "@/assets/sharaf-dg/EP-150619059-1.jpg";
+import imgStore3 from "@/assets/sharaf-dg/EP-150619059.jpg";
+
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
     <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -110,14 +129,14 @@ const SharafDG = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938370014-I91YRLYSHHFCV5W7QWI8/01_nug-0d5dd0b3bfb69e024b64888c7b517649b.png", alt: "Sharaf DG result 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938382246-C0GBRS7J5R52GBEH60H2/02_nug-1d515c4f8932d0d3a5911b47660d88b5d.jpeg", alt: "Sharaf DG result 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938381886-WC5GS96W089WOIFV5L12/03_nug-183886c25529f732e373c850db956a17c.jpeg", alt: "Sharaf DG result 3" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938384396-4C5BIMLWFK5BP1RC4CGU/04_nug-165550a10351de611f0eae9346c96fbc3.jpeg", alt: "Sharaf DG result 4" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938385096-51YFZQX9NCH2YHVUDR9E/05_nug-14c3384ec2ba57a9ffa5ba9df89727e61.jpeg", alt: "Sharaf DG result 5" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938389181-2HXZ0HMVO4JVYAUOV9BS/06_nug-18747f8e967e0a656b9c5fe1d665ca85b.jpeg", alt: "Sharaf DG result 6" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938388902-2ZOQWHQGQEJW6YA0CZAT/07_nug-10eddbaed3f7f935786a73adfc3f9d43b.jpeg", alt: "Sharaf DG result 7" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938391947-EUHV5UBD9CS374OA7AZT/08_nug-198ea609b0d6953ee82320c16ec72928d.jpeg", alt: "Sharaf DG result 8" },
+            { src: img01, alt: "Sharaf DG result 1" },
+            { src: img02, alt: "Sharaf DG result 2" },
+            { src: img03, alt: "Sharaf DG result 3" },
+            { src: img04, alt: "Sharaf DG result 4" },
+            { src: img05, alt: "Sharaf DG result 5" },
+            { src: img06, alt: "Sharaf DG result 6" },
+            { src: img07, alt: "Sharaf DG result 7" },
+            { src: img08, alt: "Sharaf DG result 8" },
           ]} />
         </div>
       </section>
@@ -147,9 +166,9 @@ const SharafDG = () => {
             </ul>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527268164473-5NSEAA6VBUVCP6N4DA4X/note-bedc3839c7834004a479fe671a3a7b24-file.jpg", alt: "Sales process", caption: "The sales process — We analysed the sales and purchase experience both from the customer and staff member point of view." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527271003909-MSDG4T55P7TA68MPDDRL/photowall_sketch.jpg", alt: "User journey", caption: "The user journey — We ideated a new user journey to enhance both the customer and the staff members experience." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270994346-UWFT38LK7XFAVZE82AML/note-7b1999ad50f1497daf0860646753d283-file.jpg", alt: "UX Concept", caption: "UX Concept — We described the UX concept of all the touch points to align stakeholders' expectations." },
+            { src: imgNote1, alt: "Sales process", caption: "The sales process — We analysed the sales and purchase experience both from the customer and staff member point of view." },
+            { src: imgPhotowall, alt: "User journey", caption: "The user journey — We ideated a new user journey to enhance both the customer and the staff members experience." },
+            { src: imgNote2, alt: "UX Concept", caption: "UX Concept — We described the UX concept of all the touch points to align stakeholders' expectations." },
           ]} />
 
           <SubHeading>Team Coordination and Processes Setup</SubHeading>
@@ -194,10 +213,10 @@ const SharafDG = () => {
             </ul>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269262439-Y1QNCCGTW01F3W43J23I/2014-10-09_SharafDG_Photography_wall_Concept_3.jpg", alt: "Visual concept", caption: "Visual concept — We created a visual concept for all the touch-points to create a consistent design language." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269211913-YUBBIV6MKPOEWTMX5C5U/2014-10-09_SharafDG_Photography_wall_Concept_2.jpg", alt: "Design specifications", caption: "Design specifications — All the concepts were refined and described in design specifications documents." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527269558925-KMZ597KPXX5N8PVHPNE9/IMG_9241.JPG", alt: "Prototype implementation", caption: "Prototype Implementation — Developers implemented all the touch-points while the design team was testing them and ensuring usability." },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270254052-500X7KA33UG3VT0TTAVT/IMG_8530.JPG", alt: "Run test", caption: "Runtest — The final setup and debug in a warehouse in Dubai." },
+            { src: imgConcept3, alt: "Visual concept", caption: "Visual concept — We created a visual concept for all the touch-points to create a consistent design language." },
+            { src: imgConcept2, alt: "Design specifications", caption: "Design specifications — All the concepts were refined and described in design specifications documents." },
+            { src: imgImpl, alt: "Prototype implementation", caption: "Prototype Implementation — Developers implemented all the touch-points while the design team was testing them and ensuring usability." },
+            { src: imgRuntest, alt: "Run test", caption: "Runtest — The final setup and debug in a warehouse in Dubai." },
           ]} />
         </section>
 
@@ -210,9 +229,9 @@ const SharafDG = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270690780-R6GI8O0ESZR86EGVK85N/%26MaxW%3D960%26imageVersion%3Ddefault%26AR-150619059.jpg", alt: "Sharaf DG store 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270687424-1HK2XV2A44OMH6Z4DAVZ/EP-150619059-1.jpg", alt: "Sharaf DG store 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270687428-UQJJ12UJHA764OBRQVYR/EP-150619059.jpg", alt: "Sharaf DG store 3" },
+            { src: imgStore1, alt: "Sharaf DG store 1" },
+            { src: imgStore2, alt: "Sharaf DG store 2" },
+            { src: imgStore3, alt: "Sharaf DG store 3" },
           ]} />
         </section>
       </div>
