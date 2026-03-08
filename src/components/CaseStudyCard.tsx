@@ -42,7 +42,7 @@ const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: Cas
             </div>
             <ArrowUpRight
               size={18}
-              className="opacity-40 group-hover:opacity-100 transition-all mt-1 shrink-0 ml-3"
+              className="opacity-40 group-hover:opacity-100 group-hover:text-primary transition-all mt-1 shrink-0 ml-3"
             />
           </div>
           <p className="text-sm leading-relaxed mt-3 opacity-70">{outcome}</p>
