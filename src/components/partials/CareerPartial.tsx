@@ -28,7 +28,7 @@ const CareerPartial = () => (
               <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
                 {item.period}
               </p>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-lg font-semibold text-foreground mx-0 mt-0 px-0">
                 {item.role}
               </h3>
               <p className="text-sm text-muted-foreground">
