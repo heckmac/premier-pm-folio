@@ -257,6 +257,7 @@
 .prose-career li {
   position: relative;
   padding-left: 0.75rem;
+  padding-bottom: 0.5rem
   font-size: 0.8125rem;
   line-height: 1.5;
   color: hsl(var(--muted-foreground) / 0.7);
