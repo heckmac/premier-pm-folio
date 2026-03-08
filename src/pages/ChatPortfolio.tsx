@@ -132,7 +132,7 @@ const ChatPortfolio = () => {
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
-    if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.has(partialId)) {
+    if (partialId && PARTIALS_REGISTRY[partialId]?.component && !renderedPartials.has(partialId)) {
       setRenderedPartials(prev => new Set(prev).add(partialId));
       setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
     }
