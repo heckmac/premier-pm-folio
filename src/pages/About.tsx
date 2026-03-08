@@ -8,105 +8,105 @@ import { Download } from "lucide-react";
 import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 
 const timeline = [
-  {
-    role: "Chief Product Officer",
-    company: "MDOTM",
-    url: "https://mdotm.ai",
-    period: "Jan 2024 → Present",
-    description:
-      "Fintech platform providing decision-intelligence for portfolio managers. Scale, modularization & product–market fit phase.",
-  },
-  {
-    role: "VP of Product",
-    company: "MDOTM",
-    url: "https://mdotm.eu",
-    period: "Nov 2021 → Dec 2023",
-    description:
-      "Zero-to-one phase: MVP design, product vision, early foundations.",
-  },
-  {
-    role: "Co-Founder, Head of Product & CMO",
-    company: "Mercurius",
-    url: "https://mercurius.io",
-    period: "Sep 2016 → Oct 2021",
-    description:
-      "AI-driven betting intelligence platform. Scaled to 4,000+ users, >$1M raised, acquired by Wall Street Football.",
-  },
-  {
-    role: "Senior UX Designer",
-    company: "Designit",
-    period: "Jan 2017 → Nov 2017",
-    description: "Led digital design for global clients including a telepresence system for China's largest telecom company.",
-    projectLink: "/work/fusion-telepresence",
-    projectLabel: "View Fusion Telepresence project →",
-  },
-  {
-    role: "Interaction Designer",
-    company: "Designit",
-    period: "Jan 2014 → Dec 2016",
-  },
-  {
-    role: "Interaction Designer",
-    company: "ToDo",
-    period: "Apr 2010 → Dec 2013",
-  },
-];
+{
+  role: "Chief Product Officer",
+  company: "MDOTM",
+  url: "https://mdotm.ai",
+  period: "Jan 2024 → Present",
+  description:
+  "Fintech platform providing decision-intelligence for portfolio managers. Scale, modularization & product–market fit phase."
+},
+{
+  role: "VP of Product",
+  company: "MDOTM",
+  url: "https://mdotm.eu",
+  period: "Nov 2021 → Dec 2023",
+  description:
+  "Zero-to-one phase: MVP design, product vision, early foundations."
+},
+{
+  role: "Co-Founder, Head of Product & CMO",
+  company: "Mercurius",
+  url: "https://mercurius.io",
+  period: "Sep 2016 → Oct 2021",
+  description:
+  "AI-driven betting intelligence platform. Scaled to 4,000+ users, >$1M raised, acquired by Wall Street Football."
+},
+{
+  role: "Senior UX Designer",
+  company: "Designit",
+  period: "Jan 2017 → Nov 2017",
+  description: "Led digital design for global clients including a telepresence system for China's largest telecom company.",
+  projectLink: "/work/fusion-telepresence",
+  projectLabel: "View Fusion Telepresence project →"
+},
+{
+  role: "Interaction Designer",
+  company: "Designit",
+  period: "Jan 2014 → Dec 2016"
+},
+{
+  role: "Interaction Designer",
+  company: "ToDo",
+  period: "Apr 2010 → Dec 2013"
+}];
+
 
 const skillGroups = [
-  {
-    label: "Product Leadership",
-    skills: [
-      "Product Strategy",
-      "Product Vision",
-      "Roadmapping",
-      "OKRs",
-      "Prioritization Frameworks",
-      "Go-to-Market",
-    ],
-  },
-  {
-    label: "Discovery & Research",
-    skills: [
-      "Product Discovery",
-      "UX Research",
-      "Jobs-to-Be-Done",
-      "Hypothesis-Driven Development",
-      "User Testing",
-    ],
-  },
-  {
-    label: "Design & Systems",
-    skills: [
-      "UX/UI Design",
-      "Service Design",
-      "Design Thinking",
-      "Information Architecture",
-      "Design Systems",
-    ],
-  },
-  {
-    label: "Collaboration & Delivery",
-    skills: [
-      "Stakeholder Management",
-      "Engineering Collaboration",
-      "Cross-functional Leadership",
-      "Agile / Lean",
-    ],
-  },
-  {
-    label: "Domain",
-    skills: [
-      "Fintech",
-      "B2B SaaS",
-      "Decision Intelligence",
-      "0→1 & Scaling",
-      "Platform Products",
-    ],
-  },
-];
+{
+  label: "Product Leadership",
+  skills: [
+  "Product Strategy",
+  "Product Vision",
+  "Roadmapping",
+  "OKRs",
+  "Prioritization Frameworks",
+  "Go-to-Market"]
 
-const About = () => (
-  <div className="min-h-screen bg-background">
+},
+{
+  label: "Discovery & Research",
+  skills: [
+  "Product Discovery",
+  "UX Research",
+  "Jobs-to-Be-Done",
+  "Hypothesis-Driven Development",
+  "User Testing"]
+
+},
+{
+  label: "Design & Systems",
+  skills: [
+  "UX/UI Design",
+  "Service Design",
+  "Design Thinking",
+  "Information Architecture",
+  "Design Systems"]
+
+},
+{
+  label: "Collaboration & Delivery",
+  skills: [
+  "Stakeholder Management",
+  "Engineering Collaboration",
+  "Cross-functional Leadership",
+  "Agile / Lean"]
+
+},
+{
+  label: "Domain",
+  skills: [
+  "Fintech",
+  "B2B SaaS",
+  "Decision Intelligence",
+  "0→1 & Scaling",
+  "Platform Products"]
+
+}];
+
+
+const About = () =>
+<div className="min-h-screen bg-background">
     <Navbar />
 
     {/* Hero */}
@@ -138,10 +138,10 @@ const About = () => (
           <FadeIn className="lg:col-span-1">
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
               <img
-                src={profilePhoto}
-                alt="Mario Ciardulli"
-                className="w-full h-full object-cover object-top"
-              />
+              src={profilePhoto}
+              alt="Mario Ciardulli"
+              className="w-full h-full object-cover object-top" />
+            
             </div>
           </FadeIn>
 
@@ -193,8 +193,8 @@ const About = () => (
         </FadeIn>
 
         <div className="space-y-0">
-          {timeline.map((item, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
+          {timeline.map((item, i) =>
+        <FadeIn key={i} delay={i * 0.05}>
               <div className="relative pl-8 pb-10 last:pb-0 border-l-2 border-primary/20">
                 <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
                 <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
@@ -204,35 +204,35 @@ const About = () => (
                   {item.role}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {item.url ? (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors underline underline-offset-2"
-                    >
+                  {item.url ?
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors underline underline-offset-2">
+                
                       {item.company}
-                    </a>
-                  ) : (
-                    item.company
-                  )}
+                    </a> :
+
+              item.company
+              }
                 </p>
-                {item.description && (
-                  <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed">
+                {item.description &&
+            <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed pb-[8px]">
                     {item.description}
                   </p>
-                )}
-                {item.projectLink && (
-                  <Link
-                    to={item.projectLink}
-                    className="inline-block text-sm text-primary hover:underline mt-2 font-medium"
-                  >
+            }
+                {item.projectLink &&
+            <Link
+              to={item.projectLink}
+              className="inline-block text-sm text-primary hover:underline mt-2 font-medium">
+              
                     {item.projectLabel}
                   </Link>
-                )}
+            }
               </div>
             </FadeIn>
-          ))}
+        )}
         </div>
 
         {/* Education */}
@@ -285,41 +285,41 @@ const About = () => (
               </p>
             </div>
             <Link
-              to="/design"
-              className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-6 text-sm"
-            >
+            to="/design"
+            className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-6 text-sm">
+            
               See my design work →
             </Link>
           </div>
         </FadeIn>
 
         <div className="space-y-8">
-          {skillGroups.map((group, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
+          {skillGroups.map((group, i) =>
+        <FadeIn key={i} delay={i * 0.05}>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                   {group.label}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-primary/10 text-primary border-transparent font-medium px-3 py-1 text-sm"
-                    >
+                  {group.skills.map((skill) =>
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="bg-primary/10 text-primary border-transparent font-medium px-3 py-1 text-sm">
+                
                       {skill}
                     </Badge>
-                  ))}
+              )}
                 </div>
               </div>
             </FadeIn>
-          ))}
+        )}
         </div>
       </div>
     </section>
 
     <Footer />
-  </div>
-);
+  </div>;
+
 
 export default About;
