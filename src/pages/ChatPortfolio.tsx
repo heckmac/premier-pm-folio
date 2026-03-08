@@ -416,7 +416,7 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-3"
+                  className="container mx-auto px-6 lg:px-8 max-w-5xl py-3"
                 >
                   <div className="flex flex-wrap gap-2 pl-5">
                     {item.suggestions.map((s) => (
