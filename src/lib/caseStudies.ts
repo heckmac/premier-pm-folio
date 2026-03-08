@@ -34,11 +34,16 @@ export const caseStudies: CaseStudyData[] = [
     "Clients loved the vision. They couldn't use the product.",
   context: [
     "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
-    "The original version was technically sophisticated — it could ingest a portfolio, apply a market view, and generate an optimized allocation. Early clients were impressed by the vision. But when they tried to use it, they couldn't. The product reflected internal model logic, not how portfolio managers actually define and manage mandates.",
+    "The original version was technically sophisticated — it could ingest a portfolio, apply a market view, and generate an optimized allocation.",
+  ],
+  problem: [
+    "Early clients were impressed by the vision. But when they tried to use it, they couldn't. The product reflected internal model logic, not how portfolio managers actually define and manage mandates.",
     "Beta clients didn't renew autonomously. The product required active retention effort. Analytical depth wasn't translating into operational dependency. Incremental improvements would have preserved the incoherence. The product required an architectural reset.",
   ],
-  problem: [],
-  positioning: [],
+  positioning: [
+  "The product needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
+  "The objective was not to add capabilities but to restructure the product around how professionals actually define mandates — and to create the technical and commercial foundations that would allow it to evolve from there.",
+],
   myRole: [
     "Owned product direction for the architectural redesign. Diagnosed structural misalignment, abstracted the investment process into a product blueprint, and made the call to pursue a full reset rather than incremental fixes.",
     "Led discovery with the Chief Investment Officer and Customer Success to map how portfolio managers actually work. Coordinated across Engineering and R&D during implementation to ensure execution aligned with the blueprint.",
@@ -101,11 +106,15 @@ export const caseStudies: CaseStudyData[] = [
     "From a tool people visit to infrastructure they operate inside.",
   context: [
     "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
-    "After a major architectural redesign, Sphere had become structurally usable. Clients could express real mandates and connect existing portfolios via PMS integration. The foundations for iteration were in place.",
-    "But usability wasn't enough. Clients used Sphere when they chose to — not because their operations depended on it. The product didn't scale to how investment teams actually work: portfolios and market views are managed collaboratively, across many mandates. It couldn't represent how institutional portfolios are really structured — sleeves, hybrid instruments, bespoke taxonomies. And it remained disconnected from the systems clients already operated inside.",
+    "After a major architectural redesign, Sphere had become structurally usable. Clients could express real mandates and connect existing portfolios via PMS integration.",
   ],
-  problem: [],
-  positioning: [],
+  problem: [
+    "The foundations for iteration were in place. But usability wasn't enough.",
+    "Clients used Sphere when they chose to — not because their operations depended on it. The product didn't scale to how investment teams actually work: portfolios and market views are managed collaboratively, across many mandates. It couldn't represent how institutional portfolios are really structured — sleeves, hybrid instruments, bespoke taxonomies. And it remained disconnected from the systems clients already operated inside.",],
+  positioning: [
+  "The product needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
+  "The objective was not to add capabilities but to restructure the product around how professionals actually define mandates — and to create the technical and commercial foundations that would allow it to evolve from there.",
+],
   myRole: [
     "Owned product direction for the embedability strategy. Identified structural gaps, sequenced interventions, and managed the trade-off between feature expansion and integration depth at each phase.",
     "Worked with Engineering, Customer Success, and the Chief Investment Officer to align product evolution around client operational reality.",
@@ -170,11 +179,15 @@ export const caseStudies: CaseStudyData[] = [
     "From 2 hours to 2 minutes per portfolio.",
   context: [
     "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
-    "Sphere's analytical engine had become increasingly sophisticated. Non-linear optimization generated advanced portfolio proposals. The quality was strong, but communication lagged behind.",
+    "Sphere's analytical engine had become increasingly sophisticated. Non-linear optimization generated advanced portfolio proposals. The quality was strong, but communication lagged behind.", 
+  ],
+  problem: [
     "Wealth managers weren't struggling to generate reports — competitors already offered flexible reporting tools. The real challenge was producing coherent, decision-aligned narratives that explained why the portfolio looked the way it did. Existing solutions automated layout and formatting. They did not generate content. The burden of interpretation remained entirely on the user.",
   ],
-  problem: [],
-  positioning: [],
+  positioning: [
+  "Storyfolio was positioned not as a reporting tool, but as an intelligence layer. While competitors focused on layout flexibility and design customization, we focused on generating content — narratives coherent with portfolio decisions and optimization logic.",
+  "The ambition was to move from automated documents to structured investment intelligence.",
+],
   myRole: [
     "Owned product direction for the narrative explanation domain. Responsible for problem framing, validation approach, and productization strategy.",
     "Worked with a focused cross-functional team: Head of Mission Control (content logic owner), one Product Manager, one Backend Engineer, one Frontend Engineer, and a Designer.",
