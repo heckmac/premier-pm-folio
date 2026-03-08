@@ -213,13 +213,13 @@ const CaseStudy = () => {
           >
             <div className="container mx-auto px-6 lg:px-8 max-w-3xl flex items-center justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-subtle mb-2">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-2">
                   Next Case Study
                 </p>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground uppercase tracking-tight group-hover:text-primary transition-colors">
                   {next.project}
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1">{next.company} · {next.year}</p>
+                <p className="text-xs font-medium text-muted-foreground mt-2 uppercase tracking-[0.1em]">{next.company} · {next.year}</p>
               </div>
               <ArrowRight
                 size={24}
