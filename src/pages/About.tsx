@@ -53,11 +53,11 @@ const skillGroups = [
 {
   label: "Domain",
   skills: [
-  "Fintech",
-  "B2B SaaS",
-  "Decision Intelligence",
-  "0→1 & Scaling",
-  "Platform Products"]
+   "Fintech",
+   "B2B SaaS",
+   "AI products",
+   "Telecommunication",
+   "Smart devices"]
 
 }];
 
