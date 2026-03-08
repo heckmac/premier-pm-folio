@@ -89,9 +89,10 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
 
             return (
               <FadeIn key={card.slug} delay={i * 0.06}>
-                {canInjectInChat ? (
+                {chatStream ? (
                   <button
                     onClick={() => {
+                      if (!partialId) return;
                       const domId = chatStream.injectPartial(partialId);
                       if (domId) {
                         requestAnimationFrame(() => {
@@ -101,7 +102,8 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
                         });
                       }
                     }}
-                    className="group block w-full text-left border-2 border-foreground bg-background overflow-hidden transition-colors duration-200 cursor-pointer"
+                    disabled={!partialId}
+                    className="group block w-full text-left border-2 border-foreground bg-background overflow-hidden transition-colors duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {cardContent}
                   </button>
