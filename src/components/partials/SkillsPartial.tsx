@@ -1,29 +1,7 @@
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import { Badge } from "@/components/ui/badge";
-
-const skillGroups = [
-  {
-    label: "Product Leadership",
-    skills: ["Product Strategy", "Product Vision", "Roadmapping", "OKRs", "Prioritization Frameworks", "Go-to-Market"],
-  },
-  {
-    label: "Discovery & Research",
-    skills: ["Product Discovery", "UX Research", "Jobs-to-Be-Done", "Hypothesis-Driven Development", "User Testing"],
-  },
-  {
-    label: "Design & Systems",
-    skills: ["UX/UI Design", "Service Design", "Design Thinking", "Information Architecture", "Design Systems"],
-  },
-  {
-    label: "Collaboration & Delivery",
-    skills: ["Stakeholder Management", "Engineering Collaboration", "Cross-functional Leadership", "Agile / Lean"],
-  },
-  {
-    label: "Domain",
-    skills: ["Fintech", "B2B SaaS", "AI products", "Telecommunication", "Smart devices"],
-  },
-];
+import { skillGroups } from "@/lib/skillGroups";
 
 const SkillsPartial = () => (
   <section className="py-16 lg:py-20">
