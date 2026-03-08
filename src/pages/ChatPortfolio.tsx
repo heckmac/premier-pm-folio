@@ -451,7 +451,7 @@ const ChatPortfolio = () => {
 
         {/* Loading dots */}
         {isLoading && streamingContent === "" && (
-          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-5">
+          <div className="container mx-auto px-6 lg:px-8 max-w-5xl py-5">
             <div className="border-l-3 border-primary pl-5 inline-flex">
               <div className="flex gap-1.5">
                 <span className="w-2 h-2 bg-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
