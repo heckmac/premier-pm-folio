@@ -91,7 +91,16 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
               <FadeIn key={card.slug} delay={i * 0.06}>
                 {canInjectInChat ? (
                   <button
-                    onClick={() => chatStream.injectPartial(partialId)}
+                    onClick={() => {
+                      const domId = chatStream.injectPartial(partialId);
+                      if (domId) {
+                        requestAnimationFrame(() => {
+                          setTimeout(() => {
+                            document.getElementById(domId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }, 100);
+                        });
+                      }
+                    }}
                     className="group block w-full text-left border-2 border-foreground bg-background overflow-hidden transition-colors duration-200 cursor-pointer"
                   >
                     {cardContent}

@@ -305,6 +305,7 @@ const ChatPortfolio = () => {
               const PartialComponent = entry.component;
               return (
                 <motion.div
+                  id={`stream-item-${item.id}`}
                   key={item.id}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
