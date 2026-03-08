@@ -12,7 +12,7 @@ const Work = () => (
     <section className="pt-28 pb-20 lg:pt-40 lg:pb-28">
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <FadeIn>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary uppercase tracking-tighter">
             Work
           </h1>
           <div className="mt-6 mb-10 h-[3px] w-16 bg-primary" />
