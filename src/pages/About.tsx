@@ -55,9 +55,12 @@ const skillGroups = [
   skills: [
    "Fintech",
    "B2B SaaS",
-   "AI products",
+    "Generative AI products"
    "Telecommunication",
-   "Smart devices"]
+   "Smart devices",
+   "Deep-tech AI products",
+    "Omnichannel retail"
+  ]
 
 }];
 
