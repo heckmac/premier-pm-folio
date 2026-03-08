@@ -19,6 +19,14 @@ const DIRECT_PARTIAL_CHIPS: Record<string, string> = {
   "Download CV": "cv-download",
 };
 
+/** Contextual follow-ups shown after each direct partial */
+const DIRECT_PARTIAL_SUGGESTIONS: Record<string, string[]> = {
+  "bio": ["How do you approach complex products?", "Tell me about the Sphere reset"],
+  "career": ["What was your role at Designit?", "Tell me about the Mercurius exit"],
+  "skills": ["Show me a project that demonstrates these", "How do you approach product discovery?"],
+  "cv-download": ["Tell me about yourself", "Show me your product strategy work"],
+};
+
 const CHIPS = [
   "Tell me about yourself",
   "Walk me through your career",
@@ -28,6 +36,35 @@ const CHIPS = [
   "Show me your product UX work",
   "Download CV",
 ];
+
+const TARGET_SUGGESTIONS = { min: 4, max: 6 };
+
+/** Build a suggestion list of 4-6 items: contextual first, then unused initial chips */
+function buildSuggestions(contextual: string[], usedChips: Set<string>): string[] {
+  const pool: string[] = [];
+  const seen = new Set<string>();
+
+  // Add contextual suggestions first
+  for (const s of contextual) {
+    const key = s.toLowerCase();
+    if (!seen.has(key) && !usedChips.has(s)) {
+      pool.push(s);
+      seen.add(key);
+    }
+  }
+
+  // Fill with unused initial chips
+  for (const chip of CHIPS) {
+    if (pool.length >= TARGET_SUGGESTIONS.max) break;
+    const key = chip.toLowerCase();
+    if (!seen.has(key) && !usedChips.has(chip)) {
+      pool.push(chip);
+      seen.add(key);
+    }
+  }
+
+  return pool.slice(0, TARGET_SUGGESTIONS.max);
+}
 
 const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
 const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
