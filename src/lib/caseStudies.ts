@@ -103,6 +103,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "From Adoptable Product to Investment Infrastructure",
     role: "CPO",
     year: "2023–2025",
+    cardSubtitle: "Sphere · CPO · MDOTM · 2023–2025",
+    featured: true,
     heroTagline:
       "Closed every layer of distance between Sphere and institutional operational reality — organizational, structural, data and systemic — transforming the platform from a tool professionals visit into infrastructure they operate inside.",
     context: [
