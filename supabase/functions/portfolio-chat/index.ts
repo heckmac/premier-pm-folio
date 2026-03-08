@@ -113,6 +113,10 @@ Dimension: product strategy
 Use when: AI productization, reliability in generative systems, reducing cognitive load for professional users, explanation as a product capability, bridging analytical depth and communication
 Note: this case study is text-based, no visuals.
 
+[RENDER:mercurius-case-study]
+Dimension: product strategy
+Use when: questions about Mercurius, the betting intelligence platform, co-founding experience, AI-driven products, startup scaling, fundraising, exit/acquisition, end-to-end product ownership in a startup context
+
 [RENDER:sharaf-dg]
 Dimension: product UX
 Use when: omnichannel experience design, retail UX, service design, large-scale design projects
