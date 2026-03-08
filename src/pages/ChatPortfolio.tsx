@@ -271,8 +271,9 @@ const ChatPortfolio = () => {
             }
 
             if (item.type === "partial") {
-              const Component = PARTIALS_REGISTRY[item.partialId];
-              if (!Component) return null;
+              const entry = PARTIALS_REGISTRY[item.partialId];
+              if (!entry?.component) return null;
+              const PartialComponent = entry.component;
               return (
                 <motion.div
                   key={item.id}
@@ -281,13 +282,21 @@ const ChatPortfolio = () => {
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   className="border-t-2 border-border"
                 >
-                  <Suspense fallback={
-                    <div className="py-20 flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary animate-spin" />
-                    </div>
-                  }>
-                    <Component />
-                  </Suspense>
+                  {entry.expandable ? (
+                    <ExpandablePartial
+                      Component={PartialComponent}
+                      previewHeight={entry.previewHeight}
+                      label={entry.expandLabel}
+                    />
+                  ) : (
+                    <Suspense fallback={
+                      <div className="py-20 flex items-center justify-center">
+                        <div className="w-6 h-6 border-2 border-primary/30 border-t-primary animate-spin" />
+                      </div>
+                    }>
+                      <PartialComponent />
+                    </Suspense>
+                  )}
                 </motion.div>
               );
             }
