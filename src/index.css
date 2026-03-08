@@ -248,40 +248,40 @@
 /* ───── Chat prose — brutalist typography for AI responses ───── */
 
 .prose-chat {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.875rem;
-  line-height: 1.7;
+  color: hsl(var(--foreground) / 0.8);
+  font-size: 0.9375rem;
+  line-height: 1.75;
 }
 
 @media (min-width: 768px) {
   .prose-chat {
-    font-size: 0.9375rem;
+    font-size: 1rem;
   }
 }
 
 .prose-chat p + p {
-  margin-top: 0.75rem;
+  margin-top: 0.875rem;
 }
 
+/* Bold — brutalist accent: black weight, electric blue */
 .prose-chat strong {
-  font-weight: 800;
+  font-weight: 900;
   color: hsl(var(--foreground));
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 0.9em;
+  letter-spacing: 0.01em;
 }
 
 .prose-chat em {
   font-style: italic;
-  color: hsl(var(--foreground) / 0.85);
+  color: hsl(var(--foreground) / 0.9);
 }
 
+/* Links — thick underline, primary color */
 .prose-chat a {
   color: hsl(var(--primary));
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  font-weight: 600;
+  font-weight: 700;
   transition: opacity 0.15s;
 }
 
@@ -289,20 +289,55 @@
   opacity: 0.75;
 }
 
+/* Code — sharp bordered box */
 .prose-chat code {
   font-size: 0.85em;
   background-color: hsl(var(--muted));
-  border: 1px solid hsl(var(--border));
-  padding: 0.15em 0.4em;
+  border: 2px solid hsl(var(--border));
+  padding: 0.15em 0.5em;
   color: hsl(var(--foreground));
+  font-weight: 600;
 }
 
-/* Lists */
+/* Headings — brutalist uppercase, tight tracking */
+.prose-chat h2 {
+  font-size: 1rem;
+  font-weight: 900;
+  color: hsl(var(--foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.625rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 2px solid hsl(var(--primary));
+}
+
+.prose-chat h3 {
+  font-size: 0.8125rem;
+  font-weight: 900;
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-chat h4 {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: hsl(var(--foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Lists — em-dash markers in electric blue */
 .prose-chat ul,
 .prose-chat ol {
-  padding-left: 1.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
 }
 
 .prose-chat ul {
@@ -314,8 +349,9 @@
 }
 
 .prose-chat li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
   position: relative;
+  line-height: 1.65;
 }
 
 .prose-chat ul > li {
@@ -325,52 +361,37 @@
 .prose-chat ul > li::before {
   content: "—";
   position: absolute;
-  left: -1rem;
+  left: -1.25rem;
   color: hsl(var(--primary));
   font-weight: 900;
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .prose-chat ol > li::marker {
   color: hsl(var(--primary));
-  font-weight: 700;
+  font-weight: 800;
 }
 
-/* Blockquote */
+/* Blockquote — strong left border, slightly larger text */
 .prose-chat blockquote {
   border-left: 3px solid hsl(var(--primary));
-  padding-left: 1rem;
-  font-style: italic;
-  color: hsl(var(--foreground) / 0.8);
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Sub-headings */
-.prose-chat h3 {
-  font-size: 0.8125rem;
-  font-weight: 900;
-  color: hsl(var(--foreground));
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.prose-chat h4 {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: hsl(var(--foreground));
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  padding: 0.75rem 1.25rem;
   margin-top: 1rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 1rem;
+  background-color: hsl(var(--muted) / 0.5);
+  color: hsl(var(--foreground) / 0.9);
+  font-weight: 500;
 }
 
-/* Horizontal rule */
+.prose-chat blockquote p {
+  margin: 0;
+}
+
+/* Horizontal rule — thick primary accent */
 .prose-chat hr {
-  border-color: hsl(var(--border));
-  border-width: 2px;
+  border: none;
+  height: 2px;
+  background-color: hsl(var(--border));
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
