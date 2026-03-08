@@ -123,7 +123,7 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImage
-            src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752748200-XLDBS16XDZLQKSRJEVRK/image-asset.png"
+            src={imgHopesFears}
             alt="Week 1 workshop"
           />
 
