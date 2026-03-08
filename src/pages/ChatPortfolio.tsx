@@ -295,6 +295,31 @@ const ChatPortfolio = () => {
               );
             }
 
+            if (item.type === "suggestions") {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-3"
+                >
+                  <div className="flex flex-wrap gap-2 pl-5">
+                    {item.suggestions.map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => send(s)}
+                        disabled={isLoading}
+                        className="text-[11px] font-bold uppercase tracking-wide px-3 py-2 border-2 border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground transition-colors disabled:opacity-40"
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            }
+
             return null;
           })}
         </AnimatePresence>
