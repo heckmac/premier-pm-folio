@@ -74,7 +74,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {featuredCases.map((cs, i) => (
-              <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.title} subtitle={cs.subtitle} outcome={cs.outcome} image={caseStudyImages[cs.slug]} index={i} />
+              <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.project} subtitle={cs.cardSubtitle} outcome={cs.heroTagline} image={caseStudyImages[cs.slug]} index={i} />
             ))}
           </div>
 
