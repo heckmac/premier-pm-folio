@@ -21,7 +21,7 @@ const SkillsPartial = () => (
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-xs font-semibold text-muted-foreground uppercase tracking-wide hover:text-primary transition-colors cursor-default"
+                    className="border border-foreground/30 px-2.5 py-1 text-xs font-semibold text-foreground uppercase tracking-wide hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
                   >
                     {skill}
                   </span>
