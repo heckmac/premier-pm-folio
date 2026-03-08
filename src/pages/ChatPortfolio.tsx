@@ -18,14 +18,26 @@ const CHIPS = [
   "Scarica il CV",
 ];
 
-const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]\s*$/;
+const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
+const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
 
-function parseRenderTag(text: string): { cleanText: string; partialId: string | null } {
-  const match = text.match(RENDER_REGEX);
-  if (match) {
-    return { cleanText: text.replace(RENDER_REGEX, "").trim(), partialId: match[1] };
+function parseTags(text: string): { cleanText: string; partialId: string | null; suggestions: string[] } {
+  let partialId: string | null = null;
+  let suggestions: string[] = [];
+
+  const renderMatch = text.match(RENDER_REGEX);
+  if (renderMatch) {
+    partialId = renderMatch[1];
+    text = text.replace(RENDER_REGEX, "");
   }
-  return { cleanText: text, partialId: null };
+
+  const suggestionsMatch = text.match(SUGGESTIONS_REGEX);
+  if (suggestionsMatch) {
+    suggestions = suggestionsMatch[1].split("|").map(s => s.trim()).filter(Boolean);
+    text = text.replace(SUGGESTIONS_REGEX, "");
+  }
+
+  return { cleanText: text.trim(), partialId, suggestions };
 }
 
 async function streamChat({
