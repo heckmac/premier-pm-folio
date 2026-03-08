@@ -8,7 +8,7 @@ const CareerPartial = () =>
     <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
       <FadeIn>
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tighter">
             Career
           </h2>
           <a href="/cv_ciardulli.pdf" download>
