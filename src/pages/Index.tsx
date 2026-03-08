@@ -23,7 +23,7 @@ const Index = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground leading-[0.85] tracking-tighter uppercase">
+            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-[0.85] tracking-tighter uppercase">
               Mario<br />Ciardulli
             </h1>
           </FadeIn>
