@@ -124,18 +124,19 @@ const DesignProject = ({ overrideSlug }: Props = {}) => {
           <FadeIn>
             <Link
               to="/design"
-              className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors mb-8"
             >
-              <ArrowLeft size={14} /> Design
+              <ArrowLeft size={14} />
+              Design
             </Link>
           </FadeIn>
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {project.discipline} · {project.duration} · {project.location}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] tracking-tighter uppercase">
               {project.title}
             </h1>
           </FadeIn>

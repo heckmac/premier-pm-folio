@@ -73,7 +73,7 @@ const DesignImageCarousel = ({ images }: Props) => {
     <FadeIn>
       <div className="space-y-3">
         {/* Main image */}
-        <div className="relative rounded-xl overflow-hidden bg-secondary/20 border border-border">
+        <div className="relative overflow-hidden bg-secondary/20">
           <div className="relative aspect-[16/10] overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
               <motion.img
