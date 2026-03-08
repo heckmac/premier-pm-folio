@@ -320,11 +320,19 @@ export const caseStudies: CaseStudyData[] = [
   },
 ];
 
+export function getFeaturedCaseStudies(): CaseStudyData[] {
+  return caseStudies.filter((cs) => cs.featured);
+}
+
 export function getCaseStudy(slug: string): CaseStudyData | undefined {
   return caseStudies.find((cs) => cs.slug === slug);
 }
 
 export function getNextCaseStudy(slug: string): CaseStudyData | undefined {
+  const idx = caseStudies.findIndex((cs) => cs.slug === slug);
+  if (idx === -1) return undefined;
+  return caseStudies[(idx + 1) % caseStudies.length];
+}
   const idx = caseStudies.findIndex((cs) => cs.slug === slug);
   if (idx === -1) return undefined;
   return caseStudies[(idx + 1) % caseStudies.length];
