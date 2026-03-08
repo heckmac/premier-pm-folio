@@ -159,7 +159,7 @@ const CaseStudy = () => {
         {study.execution.length > 0 && (
           <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Execution</SectionHeading>
-            <Prose paragraphs={study.execution} variant="sm" />
+            <Prose paragraphs={study.execution} variant="sm" asList />
           </section>
         )}
 
