@@ -3,7 +3,7 @@ export const SLUG_TO_PARTIAL: Record<string, string> = {
   "sphere-architectural-reset": "sphere-case-study-1",
   "sphere-infrastructure-scaling": "sphere-case-study-2",
   "storyfolio": "storyfolio-case-study",
-  // mercurius has no partial yet
+  "mercurius": "mercurius-case-study",
   "fusion-telepresence": "fusion-telepresence",
   "smartwatch-gestures": "smartwatch-gestures",
   "sharaf-dg-omnichannel": "sharaf-dg",

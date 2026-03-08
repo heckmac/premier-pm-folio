@@ -9,6 +9,7 @@ const SkillsPartial = lazy(() => import("./SkillsPartial"));
 const SphereCaseStudy1Partial = lazy(() => import("./SphereCaseStudy1Partial"));
 const SphereCaseStudy2Partial = lazy(() => import("./SphereCaseStudy2Partial"));
 const StoryfolioCaseStudyPartial = lazy(() => import("./StoryfolioCaseStudyPartial"));
+const MercuriusCaseStudyPartial = lazy(() => import("./MercuriusCaseStudyPartial"));
 const CVDownloadPartial = lazy(() => import("./CVDownloadPartial"));
 
 export interface PartialEntry {
