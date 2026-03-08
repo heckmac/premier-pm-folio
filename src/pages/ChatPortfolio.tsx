@@ -109,10 +109,11 @@ async function streamChat({
   onDone();
 }
 
-// A stream item is either an assistant message or a rendered partial
+// A stream item is either an assistant message, a rendered partial, or suggestions
 type StreamItem =
   | { type: "assistant-message"; content: string; id: number }
-  | { type: "partial"; partialId: string; id: number };
+  | { type: "partial"; partialId: string; id: number }
+  | { type: "suggestions"; suggestions: string[]; id: number };
 
 let nextItemId = 0;
 
@@ -133,15 +134,18 @@ const ChatPortfolio = () => {
     }, 100);
   }, []);
 
-  const handlePartialFromResponse = useCallback((fullText: string) => {
-    const { partialId } = parseRenderTag(fullText);
+  const handleTagsFromResponse = useCallback((fullText: string) => {
+    const { partialId, suggestions } = parseTags(fullText);
     if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.has(partialId)) {
       setRenderedPartials(prev => new Set(prev).add(partialId));
       setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
-      setTimeout(() => {
-        contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 300);
     }
+    if (suggestions.length > 0) {
+      setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
+    }
+    setTimeout(() => {
+      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
   }, [renderedPartials]);
 
   const send = async (text: string) => {
@@ -160,20 +164,18 @@ const ChatPortfolio = () => {
         messages: [...messages, userMsg],
         onDelta: (chunk) => {
           assistantSoFar += chunk;
-          const { cleanText } = parseRenderTag(assistantSoFar);
+          const { cleanText } = parseTags(assistantSoFar);
           streamingRef.current = cleanText;
           setStreamingContent(cleanText);
           scrollToBottom();
         },
         onDone: () => {
-          const { cleanText } = parseRenderTag(assistantSoFar);
-          // Add the final message to stream items
+          const { cleanText } = parseTags(assistantSoFar);
           setStreamItems(prev => [...prev, { type: "assistant-message", content: cleanText, id: nextItemId++ }]);
           setStreamingContent(null);
-          // Add to messages for context
           setMessages(prev => [...prev, { role: "assistant", content: cleanText }]);
           setIsLoading(false);
-          handlePartialFromResponse(assistantSoFar);
+          handleTagsFromResponse(assistantSoFar);
         },
       });
     } catch (e) {
