@@ -222,6 +222,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "Building Toward a Fund You Cannot Yet Build",
     role: "Co-Founder",
     year: "2017–2021",
+    cardSubtitle: "Mercurius · Co-Founder · 2017–2021",
+    featured: true,
     heroTagline:
       "Co-founded a startup that turned sports betting into an alternative asset class — advancing toward a fund through sequential product approximations, each with its own metric architecture, legal constraints, and validation objective.",
     impactCategories: [
