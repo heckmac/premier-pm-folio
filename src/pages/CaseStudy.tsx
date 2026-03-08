@@ -77,7 +77,7 @@ const CaseStudy = () => {
 
           {caseStudyImages[slug || ""] && (
             <FadeIn delay={0.2}>
-              <div className="mt-10 overflow-hidden border-2 border-foreground">
+              <div className="mt-10 overflow-hidden">
                 <img
                   src={caseStudyImages[slug || ""]}
                   alt={study.project}
