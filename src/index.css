@@ -245,3 +245,28 @@
   max-width: 100%;
   height: auto;
 }
+
+/* ───── Career compact list variant ───── */
+.prose-career ul {
+  padding-left: 0;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.prose-career li {
+  position: relative;
+  padding-left: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: hsl(var(--muted-foreground) / 0.7);
+  margin-bottom: 0.1rem;
+}
+
+.prose-career li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--primary) / 0.4);
+  font-weight: 700;
+}

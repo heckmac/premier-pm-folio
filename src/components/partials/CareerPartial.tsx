@@ -90,7 +90,7 @@ const CareerPartial = () => (
                 )}
               </p>
               {item.description && (
-                <div className="text-sm text-foreground/70 mt-1 max-w-xl leading-relaxed prose-case-study prose-case-study--sm">
+                <div className="prose-case-study prose-career mt-1 max-w-xl">
                   <ReactMarkdown>{item.description}</ReactMarkdown>
                 </div>
               )}
