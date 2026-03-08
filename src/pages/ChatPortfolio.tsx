@@ -66,6 +66,13 @@ function buildSuggestions(contextual: string[], usedChips: Set<string>): string[
   return pool.slice(0, TARGET_SUGGESTIONS.max);
 }
 
+/** Partials that are unique project case studies — only show once */
+const DEDUPE_PARTIALS = new Set([
+  "sphere-case-study-1", "sphere-case-study-2", "storyfolio-case-study",
+  "mercurius-case-study", "sharaf-dg", "smartwatch-gestures",
+  "insurance-data-collection", "fusion-telepresence",
+]);
+
 const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
 const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
 
