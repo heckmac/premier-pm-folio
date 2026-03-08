@@ -13,7 +13,7 @@ export const timeline: TimelineEntry[] = [
     url: "https://mdotm.ai",
     period: "Jan 2024 → Present",
     description:
-      "Fintech platform providing decision-intelligence for portfolio managers.\n- Led product strategy and roadmap\n- Scaled team from 5 to 20\n- Drove modularization initiative",
+      "🚀 Fintech platform providing decision-intelligence for portfolio managers.\n- Led product strategy and roadmap\n- Scaled team from 5 to 20\n- Drove modularization initiative",
   },
   {
     role: "VP of Product",
@@ -28,7 +28,7 @@ export const timeline: TimelineEntry[] = [
     url: "https://mercurius.io",
     period: "Sep 2016 → Oct 2021",
     description:
-      "AI-driven betting intelligence platform. Scaled to 4,000+ users, >$1M raised, acquired by Wall Street Football.",
+      "🚀 AI-driven betting intelligence platform. Scaled to 4,000+ users, >$1M raised, acquired by Wall Street Football. \n- Co‑founded Mercurius and owned end‑to‑end product and go‑to‑market strategy \n- Led product discovery, UX research, validation, and monetization across multiple product lines \n- Designed and shipped the initial MVP, then evolved it into two distinct products targeting casual and professional bettors",
   },
   {
     role: "Senior UX Designer",
@@ -48,5 +48,7 @@ export const timeline: TimelineEntry[] = [
     role: "Interaction Designer",
     company: "ToDo",
     period: "Apr 2010 → Dec 2013",
+    description:
+      "💡 Independent Italian design studio focused on interaction design, UI and experimental digital products, with a strong emphasis on exploration, rapid iteration and cross‑disciplinary collaboration.",
   },
 ];
