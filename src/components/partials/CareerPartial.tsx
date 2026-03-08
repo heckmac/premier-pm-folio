@@ -23,7 +23,7 @@ const CareerPartial = () => (
       <div className="space-y-0">
         {timeline.map((item, i) => (
           <FadeIn key={i} delay={i * 0.05}>
-            <div className="relative pl-8 pb-10 last:pb-0 border-l-2 border-primary/20">
+            <div className="relative pl-8 pb-[16px] last:pb-0 border-l-2 border-primary/20">
               <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
               <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
                 {item.period}
