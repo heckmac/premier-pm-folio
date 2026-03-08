@@ -4,6 +4,8 @@ import FadeIn from "@/components/FadeIn";
 import { caseStudies } from "@/lib/caseStudies";
 import { designProjects } from "@/lib/designProjects";
 import { caseStudyImages } from "@/lib/caseStudyImages";
+import { SLUG_TO_PARTIAL } from "@/lib/slugToPartial";
+import { useChatStream } from "./ChatStreamContext";
 
 interface ProjectCardsPartialProps {
   filter?: "pm" | "design" | "all";
@@ -28,6 +30,8 @@ const designCards = designProjects.map((dp) => ({
 }));
 
 const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
+  const chatStream = useChatStream();
+
   const cards =
     filter === "pm" ? pmCards :
     filter === "design" ? designCards :
@@ -42,12 +46,12 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {cards.map((card, i) => (
-            <FadeIn key={card.slug} delay={i * 0.06}>
-              <Link
-                to={card.to}
-                className="group block border-2 border-foreground bg-background overflow-hidden transition-colors duration-200"
-              >
+          {cards.map((card, i) => {
+            const partialId = SLUG_TO_PARTIAL[card.slug];
+            const canInjectInChat = chatStream && partialId;
+
+            const cardContent = (
+              <>
                 <div className="aspect-[16/10] bg-secondary overflow-hidden border-b-2 border-foreground">
                   {card.image ? (
                     <img
@@ -80,9 +84,29 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
                   </div>
                   <p className="text-sm leading-relaxed mt-3 opacity-70">{card.outcome}</p>
                 </div>
-              </Link>
-            </FadeIn>
-          ))}
+              </>
+            );
+
+            return (
+              <FadeIn key={card.slug} delay={i * 0.06}>
+                {canInjectInChat ? (
+                  <button
+                    onClick={() => chatStream.injectPartial(partialId)}
+                    className="group block w-full text-left border-2 border-foreground bg-background overflow-hidden transition-colors duration-200 cursor-pointer"
+                  >
+                    {cardContent}
+                  </button>
+                ) : (
+                  <Link
+                    to={card.to}
+                    className="group block border-2 border-foreground bg-background overflow-hidden transition-colors duration-200"
+                  >
+                    {cardContent}
+                  </Link>
+                )}
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

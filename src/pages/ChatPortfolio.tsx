@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect, Suspense, useCallback } from "react";
+import { useState, useRef, useEffect, Suspense, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PARTIALS_REGISTRY } from "@/components/partials/registry";
 import ExpandablePartial from "@/components/partials/ExpandablePartial";
+import { ChatStreamContext } from "@/components/partials/ChatStreamContext";
 import FadeIn from "@/components/FadeIn";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -129,17 +130,19 @@ const ChatPortfolio = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
 
+  const injectPartial = useCallback((partialId: string) => {
+    if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return;
+    setRenderedPartials(prev => new Set(prev).add(partialId));
+    setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
+  }, [renderedPartials]);
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
-    if (partialId && PARTIALS_REGISTRY[partialId]?.component && !renderedPartials.has(partialId)) {
-      setRenderedPartials(prev => new Set(prev).add(partialId));
-      setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
-    }
+    if (partialId) injectPartial(partialId);
     if (suggestions.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
     }
-  }, [renderedPartials]);
+  }, [injectPartial]);
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -194,7 +197,10 @@ const ChatPortfolio = () => {
 
   const hasStarted = streamItems.length > 0 || streamingContent !== null;
 
+  const chatStreamActions = useMemo(() => ({ injectPartial }), [injectPartial]);
+
   return (
+    <ChatStreamContext.Provider value={chatStreamActions}>
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero — same as Home/About */}
       <section className="pt-28 pb-8 lg:pt-40 lg:pb-10 flex-shrink-0">
@@ -380,6 +386,7 @@ const ChatPortfolio = () => {
         </div>
       </div>
     </div>
+    </ChatStreamContext.Provider>
   );
 };
 
