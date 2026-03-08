@@ -12,6 +12,7 @@ import DesignProject from "./pages/DesignProject";
 import Design from "./pages/Design";
 import MollieLanding from "./pages/MollieLanding";
 import ChatPortfolio from "./pages/ChatPortfolio";
+import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
