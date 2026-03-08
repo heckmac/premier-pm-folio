@@ -23,10 +23,10 @@ const DesignImage = ({ src, alt, caption, className = "" }: Props) => {
           <img
             src={src}
             alt={alt}
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
             <Expand size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
         </div>

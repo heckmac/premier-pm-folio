@@ -14,7 +14,7 @@ import {
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
-    <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+    <h2 className="text-sm font-black uppercase -tracking-[0.02em] text-primary mb-5">
       {children}
     </h2>
   </FadeIn>
@@ -22,7 +22,7 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
 
 const SubHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
-    <h3 className="text-lg font-semibold text-foreground mb-3 mt-10">
+    <h3 className="text-base font-semibold text-foreground uppercase tracking-tight mb-2 mt-10">
       {children}
     </h3>
   </FadeIn>
@@ -124,18 +124,19 @@ const DesignProject = ({ overrideSlug }: Props = {}) => {
           <FadeIn>
             <Link
               to="/design"
-              className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors mb-8"
             >
-              <ArrowLeft size={14} /> Design
+              <ArrowLeft size={14} />
+              Design
             </Link>
           </FadeIn>
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {project.discipline} · {project.duration} · {project.location}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] tracking-tighter uppercase">
               {project.title}
             </h1>
           </FadeIn>

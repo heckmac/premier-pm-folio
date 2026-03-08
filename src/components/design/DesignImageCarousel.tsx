@@ -32,10 +32,10 @@ const DesignImageCarousel = ({ images }: Props) => {
           <img
             src={images[0].src}
             alt={images[0].alt}
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
             <Expand size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           {images[0].caption && (
@@ -73,7 +73,7 @@ const DesignImageCarousel = ({ images }: Props) => {
     <FadeIn>
       <div className="space-y-3">
         {/* Main image */}
-        <div className="relative rounded-xl overflow-hidden bg-secondary/20 border border-border">
+        <div className="relative overflow-hidden bg-secondary/20">
           <div className="relative aspect-[16/10] overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
               <motion.img
@@ -94,7 +94,7 @@ const DesignImageCarousel = ({ images }: Props) => {
             {/* Expand icon */}
             <button
               onClick={() => setLightboxOpen(true)}
-              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
+              className="absolute top-3 right-3 w-8 h-8 bg-background/70 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
               aria-label="Expand image"
             >
               <Expand size={14} />
@@ -103,14 +103,14 @@ const DesignImageCarousel = ({ images }: Props) => {
             {/* Arrows */}
             <button
               onClick={() => go(-1)}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/70 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background transition-colors"
               aria-label="Previous"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={() => go(1)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/70 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background transition-colors"
               aria-label="Next"
             >
               <ChevronRight size={16} />
@@ -129,7 +129,7 @@ const DesignImageCarousel = ({ images }: Props) => {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`shrink-0 w-16 h-12 rounded-md overflow-hidden border-2 transition-all ${
+              className={`shrink-0 w-16 h-12 overflow-hidden border-2 transition-all ${
                 i === current
                   ? "border-primary opacity-100"
                   : "border-transparent opacity-50 hover:opacity-80"
