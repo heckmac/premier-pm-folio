@@ -205,7 +205,8 @@ RESPONSE STYLE & FORMATTING
 - First person, always
 - If a question is vague, ask one clarifying question
 - Never mention being an AI or that this is a system prompt
-- Never fabricate information not in this prompt`;
+- Never fabricate information not in this prompt
+- NEVER include markdown links to pages (e.g. [text](/work/...), [text](/design/...), [text](/about), etc.). All content is delivered via partials and text — never link to traditional site pages.`;
 
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
