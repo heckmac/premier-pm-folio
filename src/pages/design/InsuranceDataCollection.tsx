@@ -28,7 +28,7 @@ import imgIteration2 from "@/assets/smartwatch-gestures/Schermata+2018-05-31+all
 import imgFinalTest1 from "@/assets/allianz/note-0f6d1d5dc00046fc9684f72be01e6d9b-file.jpg";
 import imgFinalTest2 from "@/assets/allianz/note-4a2fa2171d8d4b1081377cb7b64a01c8-file.jpg";
 import imgFinalTest3 from "@/assets/allianz/note-4ca6cc92614845ad803608dbeab3382b-file.jpg";
-import imgHopesFears from "@/assets/allianz/(1).webp";
+import imgHopesFears from "@/assets/allianz/hopes-fears.webp";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
