@@ -28,6 +28,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "From Quantitative Engine to Adoptable Product",
     role: "VP of Product",
     year: "2021–2023",
+    cardSubtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
+    featured: true,
     heroTagline:
       "Diagnosed structural misalignment in a fintech platform and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
     context: [
