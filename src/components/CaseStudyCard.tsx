@@ -35,7 +35,7 @@ const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: Cas
         <div className="p-5">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="text-lg font-bold uppercase tracking-tight leading-snug">
+              <h3 className="text-lg font-bold uppercase tracking-tight leading-snug group-hover:text-primary transition-colors">
                 {title}
               </h3>
               <p className="text-xs font-medium tracking-[0.1em] uppercase mt-1 opacity-60">{subtitle}</p>
