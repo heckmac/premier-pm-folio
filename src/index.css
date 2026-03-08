@@ -114,3 +114,92 @@
     border-color: hsl(var(--divider));
   }
 }
+
+/* Markdown prose for case studies */
+.prose-case-study {
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .prose-case-study {
+    font-size: 1.125rem;
+  }
+}
+
+.prose-case-study p {
+  margin-bottom: 0;
+}
+
+.prose-case-study strong {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.prose-case-study em {
+  font-style: italic;
+}
+
+.prose-case-study a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-case-study a:hover {
+  opacity: 0.8;
+}
+
+.prose-case-study code {
+  font-size: 0.875em;
+  background-color: hsl(var(--muted));
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  color: hsl(var(--foreground));
+}
+
+.prose-case-study ul,
+.prose-case-study ol {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-case-study ul {
+  list-style: disc;
+}
+
+.prose-case-study ol {
+  list-style: decimal;
+}
+
+.prose-case-study li {
+  margin-bottom: 0.35rem;
+}
+
+.prose-case-study li::marker {
+  color: hsl(var(--primary));
+}
+
+.prose-case-study blockquote {
+  border-left: 2px solid hsl(var(--primary) / 0.3);
+  padding-left: 1.25rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-case-study h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-case-study hr {
+  border-color: hsl(var(--divider));
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
