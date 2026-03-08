@@ -6,6 +6,27 @@ import FadeIn from "@/components/FadeIn";
 import DesignImage from "@/components/design/DesignImage";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
+import imgProcess from "@/assets/allianz/note-bd92d86976a34b0da1ed973689f3e7ae-file.jpg";
+import imgResearch1 from "@/assets/allianz/Schermata+2018-05-25+alle+21.03.23.png";
+import imgResearch2 from "@/assets/allianz/Schermata+2018-05-25+alle+21.03.52.png";
+import imgResearch3 from "@/assets/allianz/Schermata+2018-05-25+alle+21.04.23.png";
+import imgSynthesis1 from "@/assets/allianz/Schermata+2018-05-31+alle+12.31.41.png";
+import imgSynthesis2 from "@/assets/allianz/Schermata+2018-05-31+alle+12.44.58.png";
+import imgIdeation1 from "@/assets/allianz/Schermata+2018-05-31+alle+12.34.33.png";
+import imgIdeation2 from "@/assets/allianz/Schermata+2018-05-31+alle+12.33.33.png";
+import imgIdeation3 from "@/assets/allianz/Schermata+2018-05-31+alle+12.34.53.png";
+import imgPrototype1 from "@/assets/allianz/Schermata+2018-05-31+alle+12.47.23.png";
+import imgPrototype2 from "@/assets/allianz/Schermata+2018-05-31+alle+12.36.17.png";
+import imgPrototype3 from "@/assets/allianz/Schermata+2018-05-31+alle+12.35.26.png";
+import imgUAT1 from "@/assets/allianz/Schermata+2018-05-31+alle+12.40.48.png";
+import imgUAT2 from "@/assets/allianz/Schermata+2018-05-31+alle+12.41.38.png";
+import imgUAT3 from "@/assets/allianz/Schermata+2018-05-31+alle+12.40.08.png";
+import imgUAT4 from "@/assets/allianz/Schermata+2018-05-31+alle+12.41.52.png";
+import imgUAT5 from "@/assets/allianz/Schermata+2018-05-31+alle+12.43.21.png";
+import imgIteration1 from "@/assets/smartwatch-gestures/Schermata+2018-05-31+alle+12.59.00.png";
+import imgIteration2 from "@/assets/smartwatch-gestures/Schermata+2018-05-31+alle+13.01.35.png";
+import imgFinalTest1 from "@/assets/allianz/note-0f6d1d5dc00046fc9684f72be01e6d9b-file.jpg";
+
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
     <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -88,7 +109,7 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImage
-            src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752435891-Z2KH13UB931TCQA945H4/note-bd92d86976a34b0da1ed973689f3e7ae-file.jpeg"
+            src={imgProcess}
             alt="Process overview"
           />
 
@@ -110,11 +131,11 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752881547-Y8SCWEEL1L21FFJ28PYG/Schermata+2018-05-25+alle+21.03.23.png", alt: "Research 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752847913-MQWJO57YK3JHOEC0VHZL/Schermata+2018-05-25+alle+21.03.52.png", alt: "Research 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752881204-RFUT5ZUCGTJ20GJ4Z2BG/Schermata+2018-05-25+alle+21.04.23.png", alt: "Research 3" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764848103-4FLGB49S6YJ16D7S02X6/Schermata+2018-05-31+alle+12.31.41.png", alt: "Synthesis 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764822933-DRR916DRME3L573YT0X4/Schermata+2018-05-31+alle+12.44.58.png", alt: "Synthesis 2" },
+            { src: imgResearch1, alt: "Research 1" },
+            { src: imgResearch2, alt: "Research 2" },
+            { src: imgResearch3, alt: "Research 3" },
+            { src: imgSynthesis1, alt: "Synthesis 1" },
+            { src: imgSynthesis2, alt: "Synthesis 2" },
           ]} />
 
           <SubHeading>Week 4: Ideation // Co-Creation</SubHeading>
@@ -124,9 +145,9 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763852963-XQWQVAC4LA0GHBANUTMN/Schermata+2018-05-31+alle+12.34.33.png", alt: "Ideation 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763841807-UFH0CM2UBV2LDY8MBVTU/Schermata+2018-05-31+alle+12.33.33.png", alt: "Ideation 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763847820-CZVO1FU3RXM3VQ2PD9XG/Schermata+2018-05-31+alle+12.34.53.png", alt: "Ideation 3" },
+            { src: imgIdeation1, alt: "Ideation 1" },
+            { src: imgIdeation2, alt: "Ideation 2" },
+            { src: imgIdeation3, alt: "Ideation 3" },
           ]} />
 
           <SubHeading>Week 5: Prototype Creation</SubHeading>
@@ -136,9 +157,9 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764069363-INGL2G8BKS531ZPXOU1E/Schermata+2018-05-31+alle+12.47.23.png", alt: "Prototype 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764701188-X3JD37LC8RJW68KGITM5/Schermata+2018-05-31+alle+12.36.17.png", alt: "Prototype 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764697660-XX4QF56HUB2PFWVX9PYF/Schermata+2018-05-31+alle+12.35.26.png", alt: "Prototype 3" },
+            { src: imgPrototype1, alt: "Prototype 1" },
+            { src: imgPrototype2, alt: "Prototype 2" },
+            { src: imgPrototype3, alt: "Prototype 3" },
           ]} />
 
           <SubHeading>Week 6: User Acceptance Testing</SubHeading>
@@ -148,11 +169,11 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764117193-91DOZN854H0FJORI9JXP/Schermata+2018-05-31+alle+12.40.48.png", alt: "UAT 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764142915-3QEJM0V52WU181XBWY3H/Schermata+2018-05-31+alle+12.41.38.png", alt: "UAT 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764154115-ZX7P7GDOX934KADT0SE8/Schermata+2018-05-31+alle+12.40.08.png", alt: "UAT 3" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764149988-697V06UWSI2XRJQN5V4R/Schermata+2018-05-31+alle+12.41.52.png", alt: "UAT 4" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527764172200-G21QRJK13Y3XOGYZCAJ/Schermata+2018-05-31+alle+12.43.21.png", alt: "UAT 5" },
+            { src: imgUAT1, alt: "UAT 1" },
+            { src: imgUAT2, alt: "UAT 2" },
+            { src: imgUAT3, alt: "UAT 3" },
+            { src: imgUAT4, alt: "UAT 4" },
+            { src: imgUAT5, alt: "UAT 5" },
           ]} />
 
           <SubHeading>Week 7: Design Iteration</SubHeading>
@@ -162,9 +183,8 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615700114-P5PTXS2WGAYNMKHC1L25/image-asset.jpeg", alt: "Design iteration overview" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615967375-KU91QYHRHYAAQP4PO0PH/Schermata+2018-05-31+alle+12.59.00.png", alt: "Iteration screen 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615967710-S8A4KKJDI2L3VV49G0S3/Schermata+2018-05-31+alle+13.01.35.png", alt: "Iteration screen 2" },
+            { src: imgIteration1, alt: "Iteration screen 1" },
+            { src: imgIteration2, alt: "Iteration screen 2" },
           ]} />
 
           <SubHeading>Week 8: User Acceptance Testing</SubHeading>
@@ -174,7 +194,7 @@ const InsuranceDataCollection = () => {
             </p>
           </FadeIn>
           <DesignImageCarousel images={[
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615485274-YSS3VK37EESQ2BH5R0JU/note-0f6d1d5dc00046fc9684f72be01e6d9b-file.jpeg", alt: "Final test 1" },
+            { src: imgFinalTest1, alt: "Final test 1" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615484839-EUO3BYK6MBLIV801B0CU/note-4a2fa2171d8d4b1081377cb7b64a01c8-file.jpeg", alt: "Final test 2" },
             { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615485645-05566NHE5BJ2RO7GDD9I/note-4ca6cc92614845ad803608dbeab3382b-file.jpeg", alt: "Final test 3" },
           ]} />

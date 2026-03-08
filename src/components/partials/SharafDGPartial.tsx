@@ -1,6 +1,18 @@
 import FadeIn from "@/components/FadeIn";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
+import img01 from "@/assets/sharaf-dg/01_nug-0d5dd0b3bfb69e024b64888c7b517649b.png";
+import img02 from "@/assets/sharaf-dg/02_nug-1d515c4f8932d0d3a5911b47660d88b5d.jpg";
+import img03 from "@/assets/sharaf-dg/03_nug-183886c25529f732e373c850db956a17c.jpg";
+import img04 from "@/assets/fusion/04_nug-165550a10351de611f0eae9346c96fbc3.jpg";
+import img05 from "@/assets/sharaf-dg/05_nug-14c3384ec2ba57a9ffa5ba9df89727e61.jpg";
+import img06 from "@/assets/sharaf-dg/06_nug-18747f8e967e0a656b9c5fe1d665ca85b.jpg";
+import img07 from "@/assets/sharaf-dg/07_nug-10eddbaed3f7f935786a73adfc3f9d43b.jpg";
+import img08 from "@/assets/sharaf-dg/08_nug-198ea609b0d6953ee82320c16ec72928d.jpg";
+import imgNote1 from "@/assets/sharaf-dg/note-bedc3839c7834004a479fe671a3a7b24-file.jpg";
+import imgPhotowall from "@/assets/sharaf-dg/photowall_sketch.jpg";
+import imgNote2 from "@/assets/sharaf-dg/note-7b1999ad50f1497daf0860646753d283-file.jpg";
+
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
     <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{children}</h2>
@@ -78,14 +90,14 @@ const SharafDGPartial = () => (
           </p>
         </FadeIn>
         <DesignImageCarousel images={[
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938370014-I91YRLYSHHFCV5W7QWI8/01_nug-0d5dd0b3bfb69e024b64888c7b517649b.png", alt: "Sharaf DG result 1" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938382246-C0GBRS7J5R52GBEH60H2/02_nug-1d515c4f8932d0d3a5911b47660d88b5d.jpeg", alt: "Sharaf DG result 2" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938381886-WC5GS96W089WOIFV5L12/03_nug-183886c25529f732e373c850db956a17c.jpeg", alt: "Sharaf DG result 3" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938384396-4C5BIMLWFK5BP1RC4CGU/04_nug-165550a10351de611f0eae9346c96fbc3.jpeg", alt: "Sharaf DG result 4" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938385096-51YFZQX9NCH2YHVUDR9E/05_nug-14c3384ec2ba57a9ffa5ba9df89727e61.jpeg", alt: "Sharaf DG result 5" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938389181-2HXZ0HMVO4JVYAUOV9BS/06_nug-18747f8e967e0a656b9c5fe1d665ca85b.jpeg", alt: "Sharaf DG result 6" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938388902-2ZOQWHQGQEJW6YA0CZAT/07_nug-10eddbaed3f7f935786a73adfc3f9d43b.jpeg", alt: "Sharaf DG result 7" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1526938391947-EUHV5UBD9CS374OA7AZT/08_nug-198ea609b0d6953ee82320c16ec72928d.jpeg", alt: "Sharaf DG result 8" },
+          { src: img01, alt: "Sharaf DG result 1" },
+          { src: img02, alt: "Sharaf DG result 2" },
+          { src: img03, alt: "Sharaf DG result 3" },
+          { src: img04, alt: "Sharaf DG result 4" },
+          { src: img05, alt: "Sharaf DG result 5" },
+          { src: img06, alt: "Sharaf DG result 6" },
+          { src: img07, alt: "Sharaf DG result 7" },
+          { src: img08, alt: "Sharaf DG result 8" },
         ]} />
       </div>
     </section>
@@ -105,9 +117,9 @@ const SharafDGPartial = () => (
           </ul>
         </FadeIn>
         <DesignImageCarousel images={[
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527268164473-5NSEAA6VBUVCP6N4DA4X/note-bedc3839c7834004a479fe671a3a7b24-file.jpg", alt: "Sales process", caption: "The sales process" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527271003909-MSDG4T55P7TA68MPDDRL/photowall_sketch.jpg", alt: "User journey", caption: "The user journey" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527270994346-UWFT38LK7XFAVZE82AML/note-7b1999ad50f1497daf0860646753d283-file.jpg", alt: "UX Concept", caption: "UX Concept" },
+          { src: imgNote1, alt: "Sales process", caption: "The sales process" },
+          { src: imgPhotowall, alt: "User journey", caption: "The user journey" },
+          { src: imgNote2, alt: "UX Concept", caption: "UX Concept" },
         ]} />
       </section>
 
