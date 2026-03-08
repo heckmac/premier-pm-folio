@@ -133,7 +133,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
               <div className="space-y-10">
                 {study.impactCategories.map((cat, ci) => (
                   <FadeIn key={cat.category} delay={ci * 0.1}>
-                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">{cat.category}</h3>
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-[0.15em] mb-4">{cat.category}</h3>
                     <div className="grid grid-cols-2 gap-4">
                       {cat.metrics.map((m, mi) => (
                         <MetricCallout key={m.label} value={m.value} label={m.label} delay={(ci * 2 + mi) * 0.08} />
