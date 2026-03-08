@@ -23,7 +23,7 @@ const ExpandablePartial = ({
     <div className="relative">
       {/* Hero image */}
       {heroImage && (
-        <div className="aspect-[21/9] overflow-hidden bg-secondary">
+        <div className="aspect-[21/9] overflow-hidden bg-secondary -mb-1">
           <img
             src={heroImage}
             alt=""
