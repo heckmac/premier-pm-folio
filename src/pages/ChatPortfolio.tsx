@@ -186,20 +186,20 @@ const ChatPortfolio = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero */}
-      <section className="pt-20 pb-12 lg:pt-32 lg:pb-16 flex-shrink-0">
+      <section className="pt-20 pb-10 lg:pt-32 lg:pb-14 flex-shrink-0 border-b-2 border-border">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
-            <p className="text-sm font-medium tracking-widest uppercase text-primary mb-4">
+            <p className="text-[11px] font-black tracking-[0.3em] uppercase text-primary mb-3">
               Product Strategist
             </p>
           </FadeIn>
           <FadeIn delay={0.05}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] uppercase tracking-tight">
               Mario Ciardulli
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-lg md:text-xl text-muted-foreground mt-3 max-w-2xl leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl leading-relaxed font-medium">
               Product leader at the intersection of strategy, design, and engineering.
             </p>
           </FadeIn>
@@ -212,9 +212,9 @@ const ChatPortfolio = () => {
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           {!hasStarted && (
             <FadeIn>
-              <div className="py-8 space-y-6">
-                <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
-                  <p className="text-foreground text-sm leading-relaxed">
+              <div className="py-10 space-y-8">
+                <div className="border-l-3 border-primary pl-5 max-w-[85%]">
+                  <p className="text-foreground text-sm font-semibold leading-relaxed">
                     Ciao. Sono Mario. Da dove partiamo?
                   </p>
                 </div>
@@ -223,7 +223,7 @@ const ChatPortfolio = () => {
                     <button
                       key={chip}
                       onClick={() => send(chip)}
-                      className="text-xs px-3 py-1.5 rounded-full border border-border bg-background hover:bg-muted text-foreground transition-colors"
+                      className="text-[11px] font-bold uppercase tracking-wide px-3 py-2 border-2 border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground transition-colors"
                     >
                       {chip}
                     </button>
@@ -244,10 +244,10 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-4"
+                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-5"
                 >
-                  <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
-                    <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0">
+                  <div className="border-l-3 border-primary pl-5 max-w-[85%]">
+                    <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-black [&_strong]:text-foreground">
                       <ReactMarkdown>{item.content}</ReactMarkdown>
                     </div>
                   </div>
@@ -264,11 +264,11 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="border-t border-border"
+                  className="border-t-2 border-border"
                 >
                   <Suspense fallback={
                     <div className="py-20 flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+                      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary animate-spin" />
                     </div>
                   }>
                     <Component />
@@ -283,8 +283,8 @@ const ChatPortfolio = () => {
 
         {/* Streaming content (while AI is typing) */}
         {streamingContent !== null && (
-          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-4">
-            <div className="bg-muted rounded-lg px-5 py-4 max-w-[85%]">
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-5">
+            <div className="border-l-3 border-primary pl-5 max-w-[85%]">
               <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0">
                 <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
               </div>
@@ -294,12 +294,12 @@ const ChatPortfolio = () => {
 
         {/* Loading dots */}
         {isLoading && streamingContent === "" && (
-          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-4">
-            <div className="bg-muted rounded-lg px-4 py-3 inline-flex">
-              <div className="flex gap-1">
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "300ms" }} />
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-5">
+            <div className="border-l-3 border-primary pl-5 inline-flex">
+              <div className="flex gap-1.5">
+                <span className="w-2 h-2 bg-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-2 h-2 bg-foreground/40 animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-2 h-2 bg-foreground/40 animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           </div>
@@ -307,10 +307,7 @@ const ChatPortfolio = () => {
       </div>
 
       {/* Input Panel (fixed bottom) */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border"
-        style={{ boxShadow: "0 -4px 24px -8px rgba(0,0,0,0.08)" }}
-      >
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t-2 border-border">
         <div className="max-w-3xl mx-auto px-4 lg:px-6 py-3">
           <div className="flex gap-2 items-center">
             <input
@@ -320,13 +317,13 @@ const ChatPortfolio = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Scrivi un messaggio..."
-              className="flex-1 bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="flex-1 border-2 border-border bg-background px-4 py-2.5 text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
               disabled={isLoading}
             />
             <button
               onClick={() => send(input)}
               disabled={!input.trim() || isLoading}
-              className="shrink-0 w-9 h-9 rounded-lg bg-primary text-primary-foreground flex items-center justify-center disabled:opacity-40 hover:bg-primary/90 transition-colors"
+              className="shrink-0 w-10 h-10 border-2 border-border bg-primary text-primary-foreground flex items-center justify-center disabled:opacity-40 hover:bg-foreground hover:text-background hover:border-foreground transition-colors"
             >
               <Send size={16} />
             </button>
