@@ -5,8 +5,8 @@ import { createContext, useContext } from "react";
  * can inject new partials into the chat stream instead of navigating.
  */
 export interface ChatStreamActions {
-  /** Inject a partial by its registry ID into the chat stream */
-  injectPartial: (partialId: string) => void;
+  /** Inject a partial by its registry ID into the chat stream. Returns the DOM id of the injected element, or null if already rendered. */
+  injectPartial: (partialId: string) => string | null;
 }
 
 export const ChatStreamContext = createContext<ChatStreamActions | null>(null);
