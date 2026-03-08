@@ -15,7 +15,7 @@ const Work = () => (
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground uppercase tracking-tighter">
             Work
           </h1>
-          <div className="mt-6 mb-10 h-[3px] w-16 bg-foreground" />
+          <div className="mt-6 mb-10 h-[3px] w-16 bg-primary" />
           <p className="text-muted-foreground text-base max-w-lg">
             Case studies in product strategy, architectural decisions, and scaling enterprise platforms.
           </p>

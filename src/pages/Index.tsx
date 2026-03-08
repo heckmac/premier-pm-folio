@@ -39,7 +39,7 @@ const Index = () => {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase hover:bg-muted-foreground transition-colors border-2 border-foreground"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase hover:opacity-80 transition-opacity border-2 border-primary"
               >
                 View Work
                 <ArrowRight size={14} />

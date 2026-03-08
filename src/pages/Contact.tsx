@@ -119,7 +119,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="rounded-none border-2 border-foreground bg-foreground text-background font-bold text-xs tracking-[0.15em] uppercase hover:bg-muted-foreground px-8 py-3 h-auto"
+                  className="rounded-none border-2 border-primary bg-primary text-primary-foreground font-bold text-xs tracking-[0.15em] uppercase hover:opacity-80 px-8 py-3 h-auto"
                 >
                   {loading ? (
                     <>
