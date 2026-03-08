@@ -247,7 +247,7 @@ const ChatPortfolio = () => {
                   className="container mx-auto px-6 lg:px-8 max-w-3xl py-5"
                 >
                   <div className="border-l-3 border-primary pl-5 max-w-[85%]">
-                    <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-black [&_strong]:text-foreground">
+                    <div className="prose-chat max-w-none">
                       <ReactMarkdown>{item.content}</ReactMarkdown>
                     </div>
                   </div>
@@ -285,7 +285,7 @@ const ChatPortfolio = () => {
         {streamingContent !== null && (
           <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-5">
             <div className="border-l-3 border-primary pl-5 max-w-[85%]">
-              <div className="prose prose-sm max-w-none dark:prose-invert [&_p]:mb-2 [&_p:last-child]:mb-0">
+              <div className="prose-chat max-w-none">
                 <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
               </div>
             </div>
