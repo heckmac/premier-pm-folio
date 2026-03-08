@@ -211,8 +211,16 @@ const ChatPortfolio = () => {
     if (partialId) injectPartial(partialId);
     // Merge AI suggestions with unused chips to reach 4-6
     const merged = buildSuggestions(suggestions, usedChipsRef.current);
+    console.log('Debug suggestions:', { 
+      aiSuggestions: suggestions, 
+      usedChips: Array.from(usedChipsRef.current), 
+      merged, 
+      mergedLength: merged.length 
+    });
     if (merged.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions: merged, id: nextItemId++ }]);
+    } else {
+      console.log('No suggestions emitted - all chips used or no AI suggestions');
     }
   }, [injectPartial]);
 
