@@ -53,6 +53,10 @@ export const PARTIALS_REGISTRY: Record<string, PartialEntry> = {
     previewHeight: 800, expandLabel: "Read full case study",
     heroImage: caseStudyImages["storyfolio"],
   }),
+  "mercurius-case-study": expandable(MercuriusCaseStudyPartial, {
+    previewHeight: 800, expandLabel: "Read full case study",
+    heroImage: caseStudyImages["mercurius"],
+  }),
   "sharaf-dg": expandable(createDesignProjectPartial("sharaf-dg-omnichannel"), {
     previewHeight: 800, expandLabel: "See full project",
     heroImage: caseStudyImages["sharaf-dg-omnichannel"],
