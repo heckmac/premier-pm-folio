@@ -130,17 +130,19 @@ const ChatPortfolio = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
 
+  const injectPartial = useCallback((partialId: string) => {
+    if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return;
+    setRenderedPartials(prev => new Set(prev).add(partialId));
+    setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
+  }, [renderedPartials]);
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
-    if (partialId && PARTIALS_REGISTRY[partialId]?.component && !renderedPartials.has(partialId)) {
-      setRenderedPartials(prev => new Set(prev).add(partialId));
-      setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
-    }
+    if (partialId) injectPartial(partialId);
     if (suggestions.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
     }
-  }, [renderedPartials]);
+  }, [injectPartial]);
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
