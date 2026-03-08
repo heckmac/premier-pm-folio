@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 import { timeline } from "@/lib/careerTimeline";
 
 const skillGroups = [
