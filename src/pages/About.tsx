@@ -195,12 +195,12 @@ const About = () =>
         <div className="space-y-0">
           {timeline.map((item, i) =>
         <FadeIn key={i} delay={i * 0.05}>
-              <div className="relative pl-8 pb-10 last:pb-0 border-l-2 border-primary/20">
+              <div className="relative pl-8 border-l-2 border-primary/20 pb-[8px]">
                 <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
                 <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
                   {item.period}
                 </p>
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-foreground mx-0 mt-0 px-0">
                   {item.role}
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -218,7 +218,7 @@ const About = () =>
               }
                 </p>
                 {item.description &&
-            <p className="text-sm text-foreground/70 max-w-xl leading-relaxed pb-[8px] my-0 py-0 pt-0 mt-[4px]">
+            <p className="text-sm text-foreground/70 max-w-xl leading-relaxed my-0 py-0 pt-0 mt-[4px] pb-0">
                     {item.description}
                   </p>
             }
