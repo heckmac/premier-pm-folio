@@ -189,7 +189,7 @@ const CaseStudy = () => {
                     ))}
                   </div>
                 )}
-                <Prose paragraphs={study.impact} variant="sm" />
+                <Prose paragraphs={study.impact} variant="sm" asList />
               </>
             )}
           </section>
