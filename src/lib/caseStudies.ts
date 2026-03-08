@@ -71,7 +71,7 @@ export const caseStudies: CaseStudyData[] = [
       },
     ],
     execution: [
-      "Investment process abstracted into a phased product blueprint",
+      "* Investment process abstracted into a phased product blueprint",
       "Blueprint validated through high-fidelity design before implementation",
       "Portfolio configurator redesigned around mandate phases with modular extensibility",
       "Risk model extended to support coherent asset class hierarchy",
