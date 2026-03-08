@@ -23,7 +23,7 @@ const About = () => (
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-display italic">
+          <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl italic">
             "I turn complex systems into products people actually want to use —
             at the intersection of strategy, design, and engineering."
           </p>
