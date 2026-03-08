@@ -57,7 +57,7 @@ const CareerPartial = () =>
 
       <FadeIn>
         <div className="mt-16 pt-10 border-t divider">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-6">
             Education
           </h2>
           <div className="pl-8 border-l-2 border-primary/20 relative">
