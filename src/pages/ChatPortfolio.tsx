@@ -159,9 +159,21 @@ const ChatPortfolio = () => {
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
-    const userMsg: Msg = { role: "user", content: text.trim() };
+    const trimmed = text.trim();
+
+    // Direct partial shortcut — no AI call
+    const directPartial = DIRECT_PARTIAL_CHIPS[trimmed];
+    if (directPartial) {
+      setStreamItems(prev => [...prev, { type: "user-message", content: trimmed, id: nextItemId++ }]);
+      setInput("");
+      setMessages(prev => [...prev, { role: "user", content: trimmed }, { role: "assistant", content: `[RENDER:${directPartial}]` }]);
+      injectPartial(directPartial);
+      return;
+    }
+
+    const userMsg: Msg = { role: "user", content: trimmed };
     setMessages(prev => [...prev, userMsg]);
-    setStreamItems(prev => [...prev, { type: "user-message", content: text.trim(), id: nextItemId++ }]);
+    setStreamItems(prev => [...prev, { type: "user-message", content: trimmed, id: nextItemId++ }]);
     setInput("");
     setIsLoading(true);
     streamingRef.current = "";
