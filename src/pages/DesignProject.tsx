@@ -82,10 +82,15 @@ const SubSectionRenderer = ({ sub }: { sub: DesignSubSection }) => (
   </>
 );
 
-const DesignProject = () => {
-  const { slug } = useParams();
-  const project = getDesignProject(slug || "");
-  const next = getNextDesignProject(slug || "");
+interface Props {
+  overrideSlug?: string;
+}
+
+const DesignProject = ({ overrideSlug }: Props = {}) => {
+  const { slug: paramSlug } = useParams();
+  const slug = overrideSlug || paramSlug || "";
+  const project = getDesignProject(slug);
+  const next = getNextDesignProject(slug);
 
   if (!project) {
     return (
