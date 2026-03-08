@@ -163,9 +163,13 @@ const ChatPortfolio = () => {
         },
         onDone: () => {
           const { cleanText } = parseTags(assistantSoFar);
-          setStreamItems(prev => [...prev, { type: "assistant-message", content: cleanText, id: nextItemId++ }]);
+          // Only add text message if there's actual content (not just tags)
+          if (cleanText) {
+            setStreamItems(prev => [...prev, { type: "assistant-message", content: cleanText, id: nextItemId++ }]);
+          }
           setStreamingContent(null);
-          setMessages(prev => [...prev, { role: "assistant", content: cleanText }]);
+          // Always store in conversation history for context (use original text so AI knows what it said)
+          setMessages(prev => [...prev, { role: "assistant", content: assistantSoFar }]);
           setIsLoading(false);
           handleTagsFromResponse(assistantSoFar);
         },
