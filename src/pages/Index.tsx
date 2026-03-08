@@ -4,34 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import { getFeaturedCaseStudies } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
 
-const featuredCases = [
-  {
-    slug: "sphere-architectural-reset",
-    title: "From Quantitative Engine to Adoptable Product",
-    subtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
-    outcome: "Diagnosed structural misalignment and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
-  },
-  {
-    slug: "sphere-investment-infrastructure",
-    title: "From Adoptable Product to Investment Infrastructure",
-    subtitle: "Sphere · CPO · MDOTM · 2023–2025",
-    outcome: "Closed every layer of distance between the platform and institutional operational reality — making Sphere infrastructure teams operate inside, not just visit.",
-  },
-  {
-    slug: "storyfolio",
-    title: "Productizing Narrative Explanation for Investment Decisions",
-    subtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
-    outcome: "Introduced an AI-driven narrative layer that cut mass reporting time from ~2 hours to ~2 minutes per portfolio with ~50% increase in adoption.",
-  },
-  {
-    slug: "mercurius",
-    title: "Building Toward a Fund You Cannot Yet Build",
-    subtitle: "Mercurius · Co-Founder · 2017–2021",
-    outcome: "Co-founded a startup turning sports betting into an alternative asset class — €1.2M+ deployed, 3,000+ accounts, successful fundraising and acquisition.",
-  },
-];
+const featuredCases = getFeaturedCaseStudies();
 
 const Index = () => {
   return (
