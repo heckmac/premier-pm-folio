@@ -218,7 +218,7 @@ const About = () =>
               }
                 </p>
                 {item.description &&
-            <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed pb-[8px]">
+            <p className="text-sm text-foreground/70 max-w-xl leading-relaxed pb-[8px] my-0 py-0 pt-0 mt-[4px]">
                     {item.description}
                   </p>
             }
