@@ -129,7 +129,7 @@ const DesignImageCarousel = ({ images }: Props) => {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`shrink-0 w-16 h-12 rounded-md overflow-hidden border-2 transition-all ${
+              className={`shrink-0 w-16 h-12 overflow-hidden border-2 transition-all ${
                 i === current
                   ? "border-primary opacity-100"
                   : "border-transparent opacity-50 hover:opacity-80"
