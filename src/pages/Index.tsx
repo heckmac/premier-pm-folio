@@ -63,7 +63,7 @@ const Index = () => {
           <FadeIn>
             <div className="flex items-end justify-between mb-10 border-b-2 border-foreground pb-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-black text-primary uppercase tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight">
                   Selected Work
                 </h2>
               </div>
