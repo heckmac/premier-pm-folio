@@ -30,8 +30,7 @@ export const caseStudies: CaseStudyData[] = [
     year: "2021–2023",
     cardSubtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
     featured: true,
-    heroTagline:
-      "Clients loved the vision. They couldn't use the product.",
+    heroTagline: "Clients loved the vision. They couldn't use the product.",
     context: [
       "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "The original version was technically sophisticated — it could ingest a portfolio, apply a market view, and generate an optimized allocation.",
@@ -103,8 +102,7 @@ export const caseStudies: CaseStudyData[] = [
     year: "2023–2025",
     cardSubtitle: "Sphere · CPO · MDOTM · 2023–2025",
     featured: true,
-    heroTagline:
-      "From a tool people visit to infrastructure they operate inside.",
+    heroTagline: "From a tool people visit to infrastructure they operate inside.",
     context: [
       "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "After a major architectural redesign, Sphere had become structurally usable. Clients could express real mandates and connect existing portfolios via PMS integration.",
@@ -157,7 +155,7 @@ export const caseStudies: CaseStudyData[] = [
       "Internal APIs progressively refactored and exposed as public APIs",
     ],
     impact: [
-      "**Team-based workflows** replaced individual usage, enabling institutional-scale adoption",
+      "Team-based workflows replaced individual usage, enabling institutional-scale adoption",
       "Fleet-level visibility enabled pattern identification across hundreds of portfolios",
       "Nested and hybrid structures let clients reflect real mandate architecture for the first time",
       "Client data — instruments, indices, taxonomies — became native to the platform",
@@ -178,8 +176,7 @@ export const caseStudies: CaseStudyData[] = [
     year: "2024–2025",
     cardSubtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
     featured: true,
-    heroTagline:
-      "From 2 hours to 2 minutes per portfolio.",
+    heroTagline: "From 2 hours to 2 minutes per portfolio.",
     context: [
       "MDOTM is a fintech company that builds **decision-intelligence tools for asset managers**. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
       "Sphere's analytical engine had become increasingly sophisticated. Non-linear optimization generated advanced portfolio proposals. The quality was strong, but communication lagged behind.",
@@ -240,8 +237,7 @@ export const caseStudies: CaseStudyData[] = [
     year: "2017–2021",
     cardSubtitle: "Mercurius · Co-Founder · 2017–2021",
     featured: true,
-    heroTagline:
-      "Turned sports betting into an investment-like activity — for 4,000+ users managing $1.4M in capital.",
+    heroTagline: "Turned sports betting into an investment-like activity — for 4,000+ users managing $1.4M in capital.",
     impactCategories: [
       {
         category: "Advisor",
