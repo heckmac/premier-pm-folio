@@ -64,7 +64,7 @@ const CaseStudy = () => {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[0.95] tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] tracking-tighter uppercase">
               {study.project}
             </h1>
           </FadeIn>
