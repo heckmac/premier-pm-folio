@@ -228,7 +228,7 @@ const ChatPortfolio = () => {
             <FadeIn>
               <div className="py-10 space-y-8">
                 <div className="border-l-3 border-primary pl-5 max-w-[85%]">
-                  <p className="text-foreground text-xs font-black uppercase tracking-[0.15em] leading-relaxed">
+                  <p className="text-foreground text-lg md:text-xl font-black uppercase tracking-[0.15em] leading-relaxed">
                     Ask me anything.
                   </p>
                 </div>
