@@ -14,10 +14,10 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b divider">
-      <div className="container mx-auto flex items-center justify-between h-16 px-6 lg:px-8">
-        <Link to="/" className="text-lg font-semibold tracking-tight text-foreground">
-          MARIO CIARDULLI
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b-2 border-foreground">
+      <div className="container mx-auto flex items-center justify-between h-14 px-6 lg:px-8">
+        <Link to="/" className="text-sm font-bold tracking-[0.15em] uppercase text-foreground">
+          Mario Ciardulli
         </Link>
 
         {/* Desktop */}
@@ -26,13 +26,13 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-foreground ${
+              className={`text-xs font-bold tracking-[0.15em] uppercase transition-colors hover:text-foreground ${
                 location.pathname.startsWith(link.path)
-                  ? "text-foreground"
-                  : "text-subtle"
+                  ? "text-foreground underline underline-offset-4 decoration-2"
+                  : "text-muted-foreground"
               }`}
             >
-              {link.label.toUpperCase()}
+              {link.label}
             </Link>
           ))}
         </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b divider overflow-hidden"
+            className="md:hidden bg-background border-b-2 border-foreground overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -62,13 +62,13 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-xs font-bold tracking-[0.15em] uppercase ${
                     location.pathname.startsWith(link.path)
-                      ? "text-foreground"
-                      : "text-subtle"
+                      ? "text-foreground underline underline-offset-4 decoration-2"
+                      : "text-muted-foreground"
                   }`}
                 >
-                  {link.label.toUpperCase()}
+                  {link.label}
                 </Link>
               ))}
             </div>

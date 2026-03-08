@@ -10,23 +10,23 @@ const About = () => (
     <Navbar />
 
     {/* Hero */}
-    <section className="pt-32 pb-8 lg:pt-44 lg:pb-10">
-      <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+    <section className="pt-28 pb-8 lg:pt-40 lg:pb-10">
+      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <FadeIn>
-          <p className="text-xs font-medium text-muted-foreground tracking-[0.25em] uppercase mb-6">
+          <p className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-8">
             Product Strategist
           </p>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tighter uppercase">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground leading-[0.85] tracking-tighter uppercase">
             Mario<br />Ciardulli
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <div className="mt-8 mb-8 h-px w-16 bg-border" />
+          <div className="mt-10 mb-10 h-[3px] w-20 bg-foreground" />
         </FadeIn>
         <FadeIn delay={0.3}>
-          <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-lg">
+          <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-md">
             I turn complex systems into products people actually want to use —
             at the intersection of strategy, design, and engineering.
           </p>

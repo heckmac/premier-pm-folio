@@ -15,41 +15,41 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
-        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+      <section className="pt-28 pb-20 lg:pt-40 lg:pb-28">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           <FadeIn>
-            <p className="text-xs font-medium text-muted-foreground tracking-[0.25em] uppercase mb-6">
+            <p className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-8">
               Product Strategist
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tighter uppercase">
+            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground leading-[0.85] tracking-tighter uppercase">
               Mario<br />Ciardulli
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-8 mb-8 h-px w-16 bg-border" />
+            <div className="mt-10 mb-10 h-[3px] w-20 bg-foreground" />
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-md">
               I turn complex systems into products people actually want to use — at the intersection of strategy, design, and engineering.
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase hover:bg-muted-foreground transition-colors border-2 border-foreground"
               >
                 View Work
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </Link>
               <a
                 href="/cv_ciardulli.pdf"
                 download
-                className="inline-flex items-center gap-2 border divider bg-background text-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-secondary transition-colors"
+                className="inline-flex items-center gap-2 bg-background text-foreground px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase hover:bg-foreground hover:text-background transition-colors border-2 border-foreground"
               >
-                <Download size={16} />
+                <Download size={14} />
                 Download CV
               </a>
             </div>
@@ -59,23 +59,24 @@ const Index = () => {
 
       {/* Featured Case Studies */}
       <section className="pb-20 lg:pb-28">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           <FadeIn>
-            <div className="flex items-end justify-between mb-12">
+            <div className="flex items-end justify-between mb-10 border-b-2 border-foreground pb-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Selected Work</h2>
-                <p className="text-muted-foreground mt-2">Impact-driven product leadership across industries.</p>
+                <h2 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight">
+                  Selected Work
+                </h2>
               </div>
               <Link
                 to="/work"
-                className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                className="hidden md:inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-foreground hover:text-muted-foreground transition-colors"
               >
-                View all <ArrowRight size={14} />
+                View all <ArrowRight size={12} />
               </Link>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             {featuredCases.map((cs, i) => (
               <CaseStudyCard key={cs.slug} slug={cs.slug} title={cs.project} subtitle={cs.cardSubtitle} outcome={cs.heroTagline} image={caseStudyImages[cs.slug]} index={i} />
             ))}
@@ -84,33 +85,33 @@ const Index = () => {
           <div className="mt-8 md:hidden">
             <Link
               to="/work"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-foreground hover:text-muted-foreground"
             >
-              View all work <ArrowRight size={14} />
+              View all work <ArrowRight size={12} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* About Teaser */}
-      <section className="py-20 lg:py-28 border-t divider">
-        <div className="container mx-auto px-6 lg:px-8 max-w-3xl text-center">
+      <section className="py-20 lg:py-28 border-t-2 border-foreground">
+        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Strategy Meets Craft
+            <h2 className="text-3xl md:text-4xl font-black text-foreground uppercase tracking-tight mb-6">
+              Strategy<br />Meets Craft
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-muted-foreground leading-relaxed text-lg">
+            <p className="text-muted-foreground leading-relaxed text-base max-w-lg">
               I'm a product strategist with a hands-on background in UX design and strategic design. Over the past 12+ years, I've worked on products ranging from zero-to-one MVPs to enterprise platforms — always at the same level: what should this product be, for whom, and why.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link
               to="/about"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline mt-8"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-foreground hover:text-muted-foreground mt-8"
             >
-              More about me <ArrowRight size={14} />
+              More about me <ArrowRight size={12} />
             </Link>
           </FadeIn>
         </div>

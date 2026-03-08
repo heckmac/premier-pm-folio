@@ -13,35 +13,39 @@ interface CaseStudyCardProps {
 
 const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: CaseStudyCardProps) => {
   return (
-    <FadeIn delay={index * 0.1}>
+    <FadeIn delay={index * 0.08}>
       <Link
         to={`/work/${slug}`}
-        className="group block surface-elevated rounded-lg border divider overflow-hidden transition-all hover:shadow-lg hover:shadow-foreground/5"
+        className="group block border-2 border-foreground bg-background overflow-hidden hover:bg-foreground hover:text-background transition-colors duration-200"
       >
-        <div className="aspect-[16/10] bg-secondary overflow-hidden">
+        <div className="aspect-[16/10] bg-secondary overflow-hidden border-b-2 border-foreground">
           {image ? (
-            <img src={image} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-subtle text-sm">Project Visual</span>
+              <span className="text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground">No image</span>
             </div>
           )}
         </div>
 
-        <div className="p-6">
-          <div className="flex items-start justify-between mb-3">
+        <div className="p-5">
+          <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
+              <h3 className="text-lg font-bold uppercase tracking-tight leading-snug">
                 {title}
               </h3>
-              <p className="text-sm text-subtle mt-1.5">{subtitle}</p>
+              <p className="text-xs font-medium tracking-[0.1em] uppercase mt-1 opacity-60">{subtitle}</p>
             </div>
             <ArrowUpRight
               size={18}
-              className="text-subtle group-hover:text-primary transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 mt-1 shrink-0 ml-3"
+              className="opacity-40 group-hover:opacity-100 transition-all mt-1 shrink-0 ml-3"
             />
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">{outcome}</p>
+          <p className="text-sm leading-relaxed mt-3 opacity-70">{outcome}</p>
         </div>
       </Link>
     </FadeIn>

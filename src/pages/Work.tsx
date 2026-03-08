@@ -9,16 +9,19 @@ import { caseStudyImages } from "@/lib/caseStudyImages";
 const Work = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
-    <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
-      <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+    <section className="pt-28 pb-20 lg:pt-40 lg:pb-28">
+      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <FadeIn>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">Work</h1>
-          <p className="text-muted-foreground mt-3 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground uppercase tracking-tighter">
+            Work
+          </h1>
+          <div className="mt-6 mb-10 h-[3px] w-16 bg-foreground" />
+          <p className="text-muted-foreground text-base max-w-lg">
             Case studies in product strategy, architectural decisions, and scaling enterprise platforms.
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
           {caseStudies.map((cs, i) => (
             <CaseStudyCard
               key={cs.slug}
