@@ -11,18 +11,19 @@ const About = () => (
 
     {/* Hero */}
     <section className="pt-32 pb-8 lg:pt-44 lg:pb-10">
-      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+      <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
         <FadeIn>
-          <p className="text-sm font-medium tracking-widest uppercase text-primary mb-4">
-            About
-          </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Mario Ciardulli
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mt-2">
+          <p className="text-xs font-medium text-muted-foreground tracking-[0.25em] uppercase mb-6">
             Product Strategist
           </p>
-          <p className="text-lg md:text-xl text-foreground/80 mt-6 max-w-3xl leading-relaxed italic">
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+            Mario Ciardulli
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-display italic">
             "I turn complex systems into products people actually want to use —
             at the intersection of strategy, design, and engineering."
           </p>

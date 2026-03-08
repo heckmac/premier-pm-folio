@@ -18,22 +18,22 @@ const Index = () => {
       <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-4">
+            <p className="text-xs font-medium text-muted-foreground tracking-[0.25em] uppercase mb-6">
               Product Strategist
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
               Mario Ciardulli
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              I turn complex systems into products people actually want to use — at the intersection of strategy, design, and engineering.
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-display italic">
+              "I turn complex systems into products people actually want to use — at the intersection of strategy, design, and engineering."
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
