@@ -25,7 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/work" element={<Work />} />
-          <Route path="/work/fusion-telepresence" element={<DesignProject />} />
+          <Route path="/work/fusion-telepresence" element={<DesignProject overrideSlug="fusion-telepresence" />} />
           <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="/design" element={<Design />} />
           <Route path="/design/:slug" element={<DesignProject />} />
