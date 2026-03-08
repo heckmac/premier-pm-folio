@@ -6,17 +6,42 @@ interface ExpandablePartialProps {
   Component: ComponentType;
   previewHeight?: number;
   label?: string;
+  heroImage?: string;
+  heroTitle?: string;
 }
 
-/**
- * Wraps any partial in a collapsed preview with a "Show more" CTA.
- * Shows the first `previewHeight` px with a gradient fade, then expands to full.
- */
-const ExpandablePartial = ({ Component, previewHeight = 400, label = "Show full content" }: ExpandablePartialProps) => {
+const ExpandablePartial = ({
+  Component,
+  previewHeight = 400,
+  label = "Show full content",
+  heroImage,
+  heroTitle,
+}: ExpandablePartialProps) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="relative">
+      {/* Hero image */}
+      {heroImage && (
+        <div className="relative aspect-[21/9] overflow-hidden bg-secondary">
+          <img
+            src={heroImage}
+            alt={heroTitle || ""}
+            className="w-full h-full object-cover"
+          />
+          {heroTitle && (
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent flex items-end">
+              <div className="container mx-auto px-6 lg:px-8 max-w-5xl pb-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tighter drop-shadow-lg">
+                  {heroTitle}
+                </h2>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Collapsible content */}
       <motion.div
         animate={{ height: expanded ? "auto" : previewHeight }}
         initial={{ height: previewHeight }}
@@ -40,7 +65,6 @@ const ExpandablePartial = ({ Component, previewHeight = 400, label = "Show full 
             transition={{ duration: 0.3 }}
             className="absolute bottom-0 left-0 right-0"
           >
-            {/* Gradient fade overlay */}
             <div className="h-32 bg-gradient-to-t from-background to-transparent" />
             <div className="bg-background pb-4 pt-2 flex justify-center">
               <button
