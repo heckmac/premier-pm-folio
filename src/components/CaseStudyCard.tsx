@@ -23,7 +23,7 @@ const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: Cas
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              className="w-full h-full object-cover contrast-[1.1] saturate-[0.85] group-hover:saturate-100 group-hover:contrast-100 transition-all duration-500"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
