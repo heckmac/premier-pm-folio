@@ -23,7 +23,7 @@ const Index = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-[0.85] tracking-tighter uppercase">
+            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground leading-[0.85] tracking-tighter uppercase">
               Mario<br />Ciardulli
             </h1>
           </FadeIn>
@@ -63,7 +63,7 @@ const Index = () => {
           <FadeIn>
             <div className="flex items-end justify-between mb-10 border-b-2 border-foreground pb-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-black text-primary uppercase tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight">
                   Selected Work
                 </h2>
               </div>
@@ -97,7 +97,7 @@ const Index = () => {
       <section className="py-20 lg:py-28 border-t-2 border-foreground">
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-foreground uppercase tracking-tight mb-6">
               Strategy<br />Meets Craft
             </h2>
           </FadeIn>
