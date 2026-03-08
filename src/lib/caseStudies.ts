@@ -21,9 +21,6 @@ export interface CaseStudyData {
   impactCategories?: { category: string; metrics: { value: string; label: string }[] }[];
 }
 
-Ecco i quattro case study aggiornati con bold parsimoniosi sui termini chiave:
-
-
 export const caseStudies: CaseStudyData[] = [
   {
     slug: "sphere-architectural-reset",
