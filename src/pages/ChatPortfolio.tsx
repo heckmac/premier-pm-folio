@@ -149,6 +149,7 @@ const ChatPortfolio = () => {
     if (!text.trim() || isLoading) return;
     const userMsg: Msg = { role: "user", content: text.trim() };
     setMessages(prev => [...prev, userMsg]);
+    setStreamItems(prev => [...prev, { type: "user-message", content: text.trim(), id: nextItemId++ }]);
     setInput("");
     setIsLoading(true);
     streamingRef.current = "";
