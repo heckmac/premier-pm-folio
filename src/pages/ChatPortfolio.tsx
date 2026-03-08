@@ -465,7 +465,7 @@ const ChatPortfolio = () => {
 
       {/* Input Panel (fixed bottom) */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t-2 border-border">
-        <div className="max-w-3xl mx-auto px-4 lg:px-6 py-3">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-3">
           <div className="flex gap-2 items-center">
             <input
               ref={inputRef}
