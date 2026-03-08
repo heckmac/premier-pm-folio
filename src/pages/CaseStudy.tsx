@@ -58,7 +58,7 @@ const CaseStudy = () => {
           </FadeIn>
 
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {study.company} · {study.role} · {study.year}
             </p>
           </FadeIn>
