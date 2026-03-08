@@ -28,7 +28,7 @@ const CareerPartial = () => (
               <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
                 {item.period}
               </p>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-lg font-semibold text-foreground mx-0 mt-0 px-0">
                 {item.role}
               </h3>
               <p className="text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ const CareerPartial = () => (
                 )}
               </p>
               {item.description && (
-                <div className="prose-case-study prose-career mt-1 max-w-xl">
+                <div className="prose-case-study prose-career mt-1 max-w-xl text-sm">
                   <ReactMarkdown>{item.description}</ReactMarkdown>
                 </div>
               )}
