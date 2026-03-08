@@ -11,6 +11,14 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/portfolio-chat`;
 
+/** Chips that shortcut directly to a partial (no AI call) */
+const DIRECT_PARTIAL_CHIPS: Record<string, string> = {
+  "Tell me about yourself": "bio",
+  "Walk me through your career": "career",
+  "What are your main skills?": "skills",
+  "Download CV": "cv-download",
+};
+
 const CHIPS = [
   "Tell me about yourself",
   "Walk me through your career",
