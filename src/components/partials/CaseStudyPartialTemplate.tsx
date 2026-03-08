@@ -43,7 +43,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
           </FadeIn>
           {caseStudyImages[slug] && (
             <FadeIn delay={0.2}>
-              <div className="mt-10 rounded-xl overflow-hidden">
+              <div className="mt-10 overflow-hidden border-2 border-foreground">
                 <img src={caseStudyImages[slug]} alt={study.project} className="w-full h-auto" />
               </div>
             </FadeIn>
