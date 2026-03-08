@@ -9,6 +9,7 @@ const SkillsPartial = lazy(() => import("./SkillsPartial"));
 const SphereCaseStudy1Partial = lazy(() => import("./SphereCaseStudy1Partial"));
 const SphereCaseStudy2Partial = lazy(() => import("./SphereCaseStudy2Partial"));
 const StoryfolioCaseStudyPartial = lazy(() => import("./StoryfolioCaseStudyPartial"));
+const MercuriusCaseStudyPartial = lazy(() => import("./MercuriusCaseStudyPartial"));
 const CVDownloadPartial = lazy(() => import("./CVDownloadPartial"));
 
 export interface PartialEntry {
@@ -51,6 +52,10 @@ export const PARTIALS_REGISTRY: Record<string, PartialEntry> = {
   "storyfolio-case-study": expandable(StoryfolioCaseStudyPartial, {
     previewHeight: 800, expandLabel: "Read full case study",
     heroImage: caseStudyImages["storyfolio"],
+  }),
+  "mercurius-case-study": expandable(MercuriusCaseStudyPartial, {
+    previewHeight: 800, expandLabel: "Read full case study",
+    heroImage: caseStudyImages["mercurius"],
   }),
   "sharaf-dg": expandable(createDesignProjectPartial("sharaf-dg-omnichannel"), {
     previewHeight: 800, expandLabel: "See full project",
