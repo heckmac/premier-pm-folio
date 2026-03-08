@@ -128,11 +128,6 @@ const ChatPortfolio = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
 
-  const scrollToBottom = useCallback(() => {
-    setTimeout(() => {
-      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "end" });
-    }, 100);
-  }, []);
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
@@ -143,9 +138,6 @@ const ChatPortfolio = () => {
     if (suggestions.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
     }
-    setTimeout(() => {
-      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 300);
   }, [renderedPartials]);
 
   const send = async (text: string) => {
@@ -167,7 +159,7 @@ const ChatPortfolio = () => {
           const { cleanText } = parseTags(assistantSoFar);
           streamingRef.current = cleanText;
           setStreamingContent(cleanText);
-          scrollToBottom();
+          // no auto-scroll — user controls scrolling
         },
         onDone: () => {
           const { cleanText } = parseTags(assistantSoFar);
