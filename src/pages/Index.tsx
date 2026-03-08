@@ -23,12 +23,12 @@ const Index = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-[1.05] tracking-tight uppercase">
               Mario Ciardulli
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-display italic">
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl italic">
               "I turn complex systems into products people actually want to use — at the intersection of strategy, design, and engineering."
             </p>
           </FadeIn>
