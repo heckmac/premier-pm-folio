@@ -9,13 +9,14 @@ interface CaseStudyCardProps {
   outcome: string;
   image?: string;
   index?: number;
+  to?: string;
 }
 
-const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: CaseStudyCardProps) => {
+const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0, to }: CaseStudyCardProps) => {
   return (
     <FadeIn delay={index * 0.08}>
       <Link
-        to={`/work/${slug}`}
+        to={to ?? `/work/${slug}`}
         className="group block border-2 border-foreground bg-background overflow-hidden transition-colors duration-200"
       >
         <div className="aspect-[16/10] bg-secondary overflow-hidden border-b-2 border-foreground">

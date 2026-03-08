@@ -5,6 +5,16 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 
 import { caseStudies } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
+import { designProjects } from "@/lib/designProjects";
+
+const designCards = designProjects.map((dp) => ({
+  slug: dp.slug,
+  title: dp.title,
+  subtitle: `${dp.discipline} · ${dp.client} · ${dp.duration}`,
+  outcome: dp.tagline ?? "",
+  image: caseStudyImages[dp.slug],
+  to: `/design/${dp.slug}`,
+}));
 
 const Work = () => (
   <div className="min-h-screen bg-background">
@@ -31,6 +41,18 @@ const Work = () => (
               outcome={cs.heroTagline}
               image={caseStudyImages[cs.slug]}
               index={i}
+            />
+          ))}
+          {designCards.map((dc, i) => (
+            <CaseStudyCard
+              key={dc.slug}
+              slug={dc.slug}
+              title={dc.title}
+              subtitle={dc.subtitle}
+              outcome={dc.outcome}
+              image={dc.image}
+              to={dc.to}
+              index={caseStudies.length + i}
             />
           ))}
         </div>
