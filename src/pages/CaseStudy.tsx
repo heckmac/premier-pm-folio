@@ -12,7 +12,7 @@ import { caseStudyGalleries } from "@/lib/caseStudyGallery";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
-    <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+    <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-5">
       {children}
     </h2>
   </FadeIn>
@@ -50,7 +50,7 @@ const CaseStudy = () => {
           <FadeIn>
             <Link
               to="/work"
-              className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors mb-8"
             >
               <ArrowLeft size={14} />
               All Work
@@ -58,13 +58,13 @@ const CaseStudy = () => {
           </FadeIn>
 
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {study.company} · {study.role} · {study.year}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[0.95] tracking-tighter uppercase">
               {study.project}
             </h1>
           </FadeIn>
@@ -77,7 +77,7 @@ const CaseStudy = () => {
 
           {caseStudyImages[slug || ""] && (
             <FadeIn delay={0.2}>
-              <div className="mt-10 rounded-xl overflow-hidden">
+              <div className="mt-10 overflow-hidden border-2 border-foreground">
                 <img
                   src={caseStudyImages[slug || ""]}
                   alt={study.project}
@@ -145,8 +145,8 @@ const CaseStudy = () => {
             <div className="space-y-8 mt-2">
               {study.strategy.map((step, i) => (
                 <FadeIn key={step.title} delay={i * 0.08}>
-                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-primary/20 before:border-2 before:border-primary">
-                    <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-[3px] before:bg-primary">
+                    <h3 className="text-base font-semibold text-foreground uppercase tracking-tight mb-2">{step.title}</h3>
                     <Prose paragraphs={[step.description]} variant="sm" />
                   </div>
                 </FadeIn>
@@ -171,7 +171,7 @@ const CaseStudy = () => {
               <div className="space-y-10">
                 {study.impactCategories.map((cat, ci) => (
                   <FadeIn key={cat.category} delay={ci * 0.1}>
-                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">{cat.category}</h3>
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-[0.15em] mb-4">{cat.category}</h3>
                     <div className="grid grid-cols-2 gap-4">
                       {cat.metrics.map((m, mi) => (
                         <MetricCallout key={m.label} value={m.value} label={m.label} delay={(ci * 2 + mi) * 0.08} />
@@ -213,13 +213,13 @@ const CaseStudy = () => {
           >
             <div className="container mx-auto px-6 lg:px-8 max-w-3xl flex items-center justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-subtle mb-2">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-2">
                   Next Case Study
                 </p>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground uppercase tracking-tight group-hover:text-primary transition-colors">
                   {next.project}
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1">{next.company} · {next.year}</p>
+                <p className="text-xs font-medium text-muted-foreground mt-2 uppercase tracking-[0.1em]">{next.company} · {next.year}</p>
               </div>
               <ArrowRight
                 size={24}

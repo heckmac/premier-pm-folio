@@ -8,7 +8,7 @@ import { caseStudyGalleries } from "@/lib/caseStudyGallery";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
-    <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+    <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-5">
       {children}
     </h2>
   </FadeIn>
@@ -27,12 +27,12 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
       <section className="py-16 lg:py-20 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {study.company} · {study.role} · {study.year}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[0.95] tracking-tighter uppercase">
               {study.project}
             </h2>
           </FadeIn>
@@ -43,7 +43,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
           </FadeIn>
           {caseStudyImages[slug] && (
             <FadeIn delay={0.2}>
-              <div className="mt-10 rounded-xl overflow-hidden">
+              <div className="mt-10 overflow-hidden border-2 border-foreground">
                 <img src={caseStudyImages[slug]} alt={study.project} className="w-full h-auto" />
               </div>
             </FadeIn>
@@ -107,8 +107,8 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
             <div className="space-y-8 mt-2">
               {study.strategy.map((step, i) => (
                 <FadeIn key={step.title} delay={i * 0.08}>
-                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-primary/20 before:border-2 before:border-primary">
-                    <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                  <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-[3px] before:bg-primary">
+                    <h3 className="text-base font-semibold text-foreground uppercase tracking-tight mb-2">{step.title}</h3>
                     <Prose paragraphs={[step.description]} variant="sm" />
                   </div>
                 </FadeIn>
@@ -133,7 +133,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
               <div className="space-y-10">
                 {study.impactCategories.map((cat, ci) => (
                   <FadeIn key={cat.category} delay={ci * 0.1}>
-                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">{cat.category}</h3>
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-[0.15em] mb-4">{cat.category}</h3>
                     <div className="grid grid-cols-2 gap-4">
                       {cat.metrics.map((m, mi) => (
                         <MetricCallout key={m.label} value={m.value} label={m.label} delay={(ci * 2 + mi) * 0.08} />
