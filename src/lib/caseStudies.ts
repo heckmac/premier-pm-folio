@@ -23,84 +23,75 @@ export interface CaseStudyData {
 
 export const caseStudies: CaseStudyData[] = [
   {
-    slug: "sphere-architectural-reset",
-    company: "MDOTM",
-    project: "From Quantitative Engine to Adoptable Product",
-    role: "VP of Product",
-    year: "2021–2023",
-    cardSubtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
-    featured: true,
-    heroTagline:
-      "Diagnosed structural misalignment in a fintech platform and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
-    context: [
-      "Sphere originated as a technically advanced quantitative engine built around MDOTM's internal investment methodology. The platform could ingest a portfolio, apply MDOTM's market view, and produce an optimized result. The analytical depth was genuine.",
-      "Early client reactions were consistent: they were impressed by the vision. They could not use the product.",
-    ],
-    problem: [
-      "The failure was structural. The platform reflected internal model logic rather than how portfolio managers actually construct and manage mandates. Asset classes could not be expressed through a coherent hierarchy. Portfolio construction constraints did not exist as first-class concepts — only risk targets and rebalance thresholds were available, neither of which matched professional mandate definitions. The investment universe existed in the system but was opaque to users.",
-      "UX compensated for engine limitations rather than guiding product logic. The result was a fragmented interface that mirrored internal constraints rather than professional workflows.",
-      "The scale of the problem became clear when early beta clients — who had paid a symbolic subscription — did not renew autonomously. The product required active retention effort. Intellectual excitement was not translating into operational dependency.",
-      "Incremental improvements would have preserved the incoherence. The product required an architectural reset.",
-    ],
-    positioning: [
-      "Sphere needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
-      "The objective was not to add capabilities but to restructure the product around how professionals actually define mandates — and to create the technical and commercial foundations that would allow the product to evolve from there.",
-    ],
-    myRole: [
-      "Product direction and judgment over the architectural redesign. Responsible for diagnosing structural misalignment, abstracting the meta investment process into a product blueprint, and advocating for a full architectural reset.",
-      "During the discovery and blueprint phase, worked closely with the Chief Investment and Research Officer and Customer Success to map client workflows and investment process logic. During implementation, coordinated across Product, Engineering and R&D to align execution with the architectural decisions made in the blueprint.",
-      "Acted as decision maker on redesign scope, structural priorities and phasing throughout.",
-    ],
-    strategy: [
-      {
-        title: "Process Abstraction and Architectural Inversion",
-        description:
-          "A structured analysis of both the product and the underlying technology was conducted alongside the CIRO and Customer Success, mapping how professionals actually define mandates versus how the engine had structured decisions. The output was a product blueprint: a phased investment backbone — define universe, define mandate structure, apply portfolio-level risk constraints, apply allocation constraints, apply operative constraints, express market view — that became the shared reference for the entire rebuild. The blueprint was visualized through high-fidelity design concepts before any implementation began, allowing R&D and business stakeholders to align on architectural direction. UX would define technical requirements, not the other way around.",
-      },
-      {
-        title: "Implementation",
-        description:
-          "With the blueprint validated, the portfolio configurator was redesigned and rebuilt around mandate phases. Optimization pipelines were restructured to reflect the new process logic. The risk model was extended to support a coherent asset class hierarchy. A constraint validation layer was introduced to handle infeasible configurations at the product level — users could express any constraint logic, with guided feedback when combinations were mathematically unworkable. The architecture was designed for extensibility from the start.",
-      },
-      {
-        title: "Incremental Validation and Configuration Levers",
-        description:
-          "As clients began using the rebuilt configurator, recurring gaps emerged — missing asset classes, incomplete constraint types, configuration levers that existed in their daily work but not yet in the product. Each gap was addressed incrementally, progressively reducing the distance between what Sphere could express and what clients actually needed. KANO-based prioritization workshops were introduced to impose discipline — clustering must-haves, deferring non-critical items, surfacing structural risks — under continuous acquisition pressure from the business.",
-      },
-      {
-        title: "Connecting to Client Systems",
-        description:
-          "Integration with external PMS systems allowed portfolios to flow from client environments into Sphere automatically, removing the manual recreation that had been a persistent operational barrier. Portfolio Studio was made available as a standalone module, decoupled from Market Insights — acknowledging that not every client would adopt MDOTM's investment methodology. Sphere stopped assuming it was the origin of all data and all logic. The product became connectable.",
-      },
-    ],
-    execution: [
-      "Investment process abstracted and mapped into a phased product blueprint",
-      "Blueprint validated through high-fidelity design concepts to align R&D and business stakeholders before implementation",
-      "Portfolio configurator redesigned around mandate phases with modular extensibility",
-      "Risk model expanded to support a coherent asset class hierarchy",
-      "Constraint validation layer introduced as a product-level feasibility framework",
-      "KANO-based prioritization workshops used to impose roadmap discipline under continuous acquisition pressure",
-      "PMS integration introduced with import/export aligned to client templates and proprietary codes",
-      "Portfolio Studio made available as a standalone module, decoupled from Market Insights",
-    ],
-    impact: [
-      "Clients could simulate realistic multi-asset mandates for the first time",
-      "Coherent asset class hierarchy replaced opaque, logically inconsistent structure",
-      "Portfolio, allocation and operative constraints separated as distinct concepts",
-      "Commercial conversations shifted from vision pitching to mandate simulation",
-      "Configurator architecture enabled continuous incremental expansion without structural rewrites",
-      "Product became commercially separable from MDOTM's investment methodology",
-    ],
-    learnings: [
-      "Structural incoherence cannot be resolved through feature additions — it requires architectural intervention.",
-      "Reversing the relationship between UX and engine is a product decision, not a technical one. Reframing infeasibility as a design problem rather than an engine problem can unlock both usability and technical progress simultaneously.",
-      "Building for extensibility from the first reset is what makes future iteration possible without rebuilding.",
-    ],
-  },
+  slug: "sphere-architectural-reset",
+  company: "MDOTM",
+  project: "Rebuilding a B2B Portfolio Optimization Platform for Institutional Investors",
+  role: "VP of Product",
+  year: "2021–2023",
+  cardSubtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
+  featured: true,
+  heroTagline:
+    "Clients loved the vision. They couldn't use the product.",
+  context: [
+    "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+    "The original version was technically sophisticated — it could ingest a portfolio, apply a market view, and generate an optimized allocation. Early clients were impressed by the vision. But when they tried to use it, they couldn't. The product reflected internal model logic, not how portfolio managers actually define and manage mandates.",
+    "Beta clients didn't renew autonomously. The product required active retention effort. Analytical depth wasn't translating into operational dependency. Incremental improvements would have preserved the incoherence. The product required an architectural reset.",
+  ],
+  myRole: [
+    "Owned product direction for the architectural redesign. Diagnosed structural misalignment, abstracted the investment process into a product blueprint, and made the call to pursue a full reset rather than incremental fixes.",
+    "Led discovery with the Chief Investment Officer and Customer Success to map how portfolio managers actually work. Coordinated across Engineering and R&D during implementation to ensure execution aligned with the blueprint.",
+    "Acted as final decision-maker on scope, priorities, and phasing throughout.",
+  ],
+  strategy: [
+    {
+      title: "Abstracted the investment process into a product blueprint",
+      description:
+        "Mapped how professionals actually define mandates versus how the engine had structured decisions. The output was a phased investment backbone — define universe, define mandate structure, apply constraints, express market view — that became the shared reference for the rebuild. Visualized through high-fidelity design concepts before implementation, so R&D and business could align on direction before writing code.",
+    },
+    {
+      title: "Rebuilt the configurator around mandate phases",
+      description:
+        "Redesigned the portfolio configurator to follow real workflow logic. Restructured optimization pipelines. Extended the risk model to support a coherent asset class hierarchy. Introduced a constraint validation layer so users could express any logic, with guided feedback when combinations were mathematically infeasible.",
+    },
+    {
+      title: "Iterated based on real usage gaps",
+      description:
+        "As clients used the rebuilt configurator, recurring gaps emerged — missing asset classes, incomplete constraint types. Each gap was addressed incrementally. Used KANO-based prioritization workshops to impose discipline under continuous acquisition pressure from the business.",
+    },
+    {
+      title: "Connected the product to client systems",
+      description:
+        "Integrated with external portfolio management systems so portfolios could flow in automatically. Made Portfolio Studio available as a standalone module, decoupled from MDOTM's investment methodology. The product stopped assuming it was the origin of all data.",
+    },
+  ],
+  execution: [
+    "Investment process abstracted into a phased product blueprint",
+    "Blueprint validated through high-fidelity design before implementation",
+    "Portfolio configurator redesigned around mandate phases with modular extensibility",
+    "Risk model extended to support coherent asset class hierarchy",
+    "Constraint validation layer introduced as product-level feasibility framework",
+    "KANO-based prioritization workshops introduced to manage roadmap under acquisition pressure",
+    "PMS integration built with import/export aligned to client templates",
+    "Portfolio Studio decoupled as standalone module",
+  ],
+  impact: [
+    "Clients could simulate realistic multi-asset mandates for the first time",
+    "Asset class hierarchy became coherent and navigable",
+    "Portfolio, allocation, and operative constraints separated as distinct concepts",
+    "Commercial conversations shifted from pitching vision to simulating real mandates",
+    "Architecture enabled continuous expansion without structural rewrites",
+    "Product became commercially separable from MDOTM's methodology",
+  ],
+  learnings: [
+    "Structural incoherence can't be fixed with features — it requires architectural intervention.",
+    "Reversing the relationship between UX and engine is a product decision, not a technical one.",
+    "Building for extensibility from the first reset is what makes future iteration possible without rebuilding.",
+  ],
+},
   {
     slug: "sphere-investment-infrastructure",
     company: "MDOTM",
-    project: "From Adoptable Product to Investment Infrastructure",
+    project: "Title: Scaling an Enterprise Fintech Platform to Multi-Portfolio Operations",
     role: "CPO",
     year: "2023–2025",
     cardSubtitle: "Sphere · CPO · MDOTM · 2023–2025",
@@ -108,8 +99,10 @@ export const caseStudies: CaseStudyData[] = [
     heroTagline:
       "Closed every layer of distance between Sphere and institutional operational reality — organizational, structural, data and systemic — transforming the platform from a tool professionals visit into infrastructure they operate inside.",
     context: [
-      "After the architectural reset, Sphere had become structurally usable. Clients could express real mandates, connect their existing portfolios via PMS integration, and work within a coherent product logic. The foundations for iteration were in place.",
-      "The question was what to build on them.",
+      "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+"After a major architectural redesign, Sphere had become structurally usable. Clients could express real mandates and connect existing portfolios via PMS integration. The foundations for iteration were in place.",
+"But usability wasn't enough. Clients used Sphere when they chose to — not because their operations depended on it. The product didn't scale to how investment teams actually work: portfolios and market views are managed collaboratively, across many mandates. It couldn't represent how institutional portfolios are really structured — sleeves, hybrid instruments, bespoke taxonomies. And it remained disconnected from the systems clients already operated inside.",
+"Each layer of distance was a reason not to depend on it.",
     ],
     problem: [
       "Usability was a starting point, not a destination. Clients were using Sphere when they chose to — not because their daily operations depended on it.",
@@ -181,9 +174,9 @@ export const caseStudies: CaseStudyData[] = [
       { value: "~2h → ~2min", label: "Mass reporting time per portfolio" },
     ],
     context: [
-      "Storyfolio emerged within Sphere, an enterprise fintech platform used by portfolio managers and wealth managers to design and manage investment portfolios.",
-      "Over time, Sphere's analytical engine — particularly within Portfolio Studio — became increasingly sophisticated. Non-linear optimization rules generated advanced and often non-obvious portfolio proposals. The analytical quality was strong, but communication lagged behind the intelligence of the system.",
-      "As portfolio complexity increased, so did the cognitive effort required to explain decisions to clients.",
+      "MDOTM is a fintech company that builds decision-intelligence tools for asset managers. Sphere, its core platform, helps portfolio managers optimize multi-asset portfolios using quantitative models.",
+"Sphere's analytical engine had become increasingly sophisticated. Non-linear optimization generated advanced portfolio proposals. The quality was strong, but communication lagged behind.",
+"Wealth managers weren't struggling to generate reports — competitors already offered flexible reporting tools. The real challenge was producing coherent, decision-aligned narratives that explained why the portfolio looked the way it did. Existing solutions automated layout and formatting. They did not generate content. The burden of interpretation remained entirely on the user.",
     ],
     problem: [
       "The first signal was internal: Portfolio Studio could generate high-quality investment decisions, but there was no structured explanation layer to make those decisions consistently communicable.",
