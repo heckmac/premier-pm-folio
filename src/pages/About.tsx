@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
@@ -32,24 +33,23 @@ const timeline = [
   description:
   "AI-driven betting intelligence platform. Scaled to 4,000+ users, >$1M raised, acquired by Wall Street Football."
 },
-{
-  role: "Senior UX Designer",
-  company: "Designit",
-  period: "Jan 2017 → Nov 2017",
-  description: "Led digital design for global clients including a telepresence system for China's largest telecom company.",
-  projectLink: "/work/fusion-telepresence",
-  projectLabel: "View Fusion Telepresence project →"
-},
-{
-  role: "Interaction Designer",
-  company: "Designit",
-  period: "Jan 2014 → Dec 2016"
-},
-{
-  role: "Interaction Designer",
-  company: "ToDo",
-  period: "Apr 2010 → Dec 2013"
-}];
+  {
+    role: "Senior UX Designer",
+    company: "Designit",
+    period: "Jan 2017 → Nov 2017",
+    description: "- Led strategic design and product discovery initiatives for complex, international client projects\n- Worked at the intersection of business strategy, user research, and experience design\n- Framed complex problem spaces and translated them into actionable product and service concepts\n- Collaborated with strategists, researchers, service designers, and technologists in multidisciplinary teams",
+  },
+  {
+    role: "Interaction Designer",
+    company: "Designit",
+    period: "Jan 2014 → Dec 2016",
+    description: "- Designed and delivered interaction and UX solutions across multiple client engagements\n- Worked across UX, UI, prototyping, and front‑end collaboration, ensuring high usability and interaction quality\n- Bridged design and technology through strong prototyping and implementation sensibility",
+  },
+  {
+    role: "Interaction Designer",
+    company: "ToDo",
+    period: "Apr 2010 → Dec 2013"
+  }];
 
 
 const skillGroups = [
@@ -217,19 +217,11 @@ const About = () =>
               item.company
               }
                 </p>
-                {item.description &&
-            <p className="text-sm text-foreground/70 max-w-xl leading-relaxed my-0 py-0 pt-0 mt-[4px] pb-0">
-                    {item.description}
-                  </p>
-            }
-                {item.projectLink
-
-
-
-
-
-
-            }
+                {item.description && (
+                  <div className="text-sm text-foreground/70 max-w-xl leading-relaxed mt-1 prose-case-study prose-case-study--sm">
+                    <ReactMarkdown>{item.description}</ReactMarkdown>
+                  </div>
+                )}
               </div>
             </FadeIn>
         )}

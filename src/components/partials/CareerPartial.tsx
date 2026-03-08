@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
@@ -32,14 +32,13 @@ const timeline = [
     role: "Senior UX Designer",
     company: "Designit",
     period: "Jan 2017 → Nov 2017",
-    description: "Led digital design for global clients including a telepresence system for China's largest telecom company.",
-    projectLink: "/work/fusion-telepresence",
-    projectLabel: "View Fusion Telepresence project →",
+    description: "- Led strategic design and product discovery initiatives for complex, international client projects\n- Worked at the intersection of business strategy, user research, and experience design\n- Framed complex problem spaces and translated them into actionable product and service concepts\n- Collaborated with strategists, researchers, service designers, and technologists in multidisciplinary teams",
   },
   {
     role: "Interaction Designer",
     company: "Designit",
     period: "Jan 2014 → Dec 2016",
+    description: "- Designed and delivered interaction and UX solutions across multiple client engagements\n- Worked across UX, UI, prototyping, and front‑end collaboration, ensuring high usability and interaction quality\n- Bridged design and technology through strong prototyping and implementation sensibility",
   },
   {
     role: "Interaction Designer",
@@ -91,17 +90,9 @@ const CareerPartial = () => (
                 )}
               </p>
               {item.description && (
-                <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed">
-                  {item.description}
-                </p>
-              )}
-              {item.projectLink && (
-                <Link
-                  to={item.projectLink}
-                  className="inline-block text-sm text-primary hover:underline mt-2 font-medium"
-                >
-                  {item.projectLabel}
-                </Link>
+                <div className="text-sm text-foreground/70 mt-1 max-w-xl leading-relaxed prose-case-study prose-case-study--sm">
+                  <ReactMarkdown>{item.description}</ReactMarkdown>
+                </div>
               )}
             </div>
           </FadeIn>
