@@ -293,6 +293,8 @@ const ChatPortfolio = () => {
                       Component={PartialComponent}
                       previewHeight={entry.previewHeight}
                       label={entry.expandLabel}
+                      heroImage={entry.heroImage}
+                      heroTitle={entry.heroTitle}
                     />
                   ) : (
                     <Suspense fallback={
