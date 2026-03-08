@@ -8,10 +8,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CaseStudy from "./pages/CaseStudy";
-import FusionTelepresence from "./pages/FusionTelepresence";
-import SmartwatchGestures from "./pages/design/SmartwatchGestures";
-import SharafDG from "./pages/design/SharafDG";
-import InsuranceDataCollection from "./pages/design/InsuranceDataCollection";
+import DesignProject from "./pages/DesignProject";
 import Design from "./pages/Design";
 import MollieLanding from "./pages/MollieLanding";
 import ChatPortfolio from "./pages/ChatPortfolio";
@@ -28,13 +25,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/work" element={<Work />} />
-          <Route path="/work/fusion-telepresence" element={<FusionTelepresence />} />
+          <Route path="/work/fusion-telepresence" element={<DesignProject overrideSlug="fusion-telepresence" />} />
           <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="/design" element={<Design />} />
-          <Route path="/design/fusion-telepresence" element={<FusionTelepresence />} />
-          <Route path="/design/smartwatch-gestures" element={<SmartwatchGestures />} />
-          <Route path="/design/sharaf-dg-omnichannel" element={<SharafDG />} />
-          <Route path="/design/insurance-data-collection" element={<InsuranceDataCollection />} />
+          <Route path="/design/:slug" element={<DesignProject />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mollie" element={<MollieLanding />} />
