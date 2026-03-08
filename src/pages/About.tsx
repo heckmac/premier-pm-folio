@@ -221,10 +221,6 @@ const About = () =>
                     {item.description}
                   </p>
             }
-                {item.projectLink
-
-
-
 
 
 
