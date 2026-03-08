@@ -174,11 +174,11 @@ const About = () =>
               item.company
               }
                 </p>
-                {item.description && (
-                  <div className="prose-case-study prose-career mt-1 max-w-xl">
+                {item.description &&
+            <div className="prose-case-study prose-career mt-1 max-w-xl text-sm">
                     <ReactMarkdown>{item.description}</ReactMarkdown>
                   </div>
-                )}
+            }
               </div>
             </FadeIn>
         )}
