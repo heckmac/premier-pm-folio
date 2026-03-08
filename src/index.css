@@ -115,7 +115,8 @@
   }
 }
 
-/* Markdown prose for case studies */
+/* ───── Markdown prose design system ───── */
+
 .prose-case-study {
   color: hsl(var(--muted-foreground));
   font-size: 1rem;
@@ -128,8 +129,20 @@
   }
 }
 
-.prose-case-study p {
-  margin-bottom: 0;
+/* Small variant for secondary text (strategy descriptions, execution items, etc.) */
+.prose-case-study--sm {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .prose-case-study--sm {
+    font-size: 1rem;
+  }
+}
+
+/* Paragraph spacing within a single markdown block */
+.prose-case-study p + p {
+  margin-top: 0.75rem;
 }
 
 .prose-case-study strong {
@@ -145,6 +158,7 @@
   color: hsl(var(--primary));
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: opacity 0.15s;
 }
 
 .prose-case-study a:hover {
@@ -159,6 +173,7 @@
   color: hsl(var(--foreground));
 }
 
+/* Lists */
 .prose-case-study ul,
 .prose-case-study ol {
   padding-left: 1.25rem;
@@ -182,24 +197,51 @@
   color: hsl(var(--primary));
 }
 
+/* Nested lists */
+.prose-case-study li > ul,
+.prose-case-study li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Blockquote */
 .prose-case-study blockquote {
   border-left: 2px solid hsl(var(--primary) / 0.3);
   padding-left: 1.25rem;
   font-style: italic;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
+/* Sub-headings inside prose */
 .prose-case-study h3 {
   font-size: 1.125rem;
   font-weight: 600;
   color: hsl(var(--foreground));
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
+.prose-case-study h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Horizontal rule */
 .prose-case-study hr {
   border-color: hsl(var(--divider));
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+/* Images inside markdown */
+.prose-case-study img {
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  height: auto;
 }

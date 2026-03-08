@@ -147,7 +147,7 @@ const CaseStudy = () => {
                 <FadeIn key={step.title} delay={i * 0.08}>
                   <div className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-primary/20 before:border-2 before:border-primary">
                     <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{step.description}</p>
+                    <Prose paragraphs={[step.description]} variant="sm" />
                   </div>
                 </FadeIn>
               ))}
@@ -159,16 +159,7 @@ const CaseStudy = () => {
         {study.execution.length > 0 && (
           <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Execution</SectionHeading>
-            <ul className="space-y-3 mt-2">
-              {study.execution.map((item, i) => (
-                <FadeIn key={i} delay={i * 0.04}>
-                  <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base leading-relaxed">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    {item}
-                  </li>
-                </FadeIn>
-              ))}
-            </ul>
+            <Prose paragraphs={study.execution} variant="sm" />
           </section>
         )}
 
@@ -198,16 +189,7 @@ const CaseStudy = () => {
                     ))}
                   </div>
                 )}
-                <ul className="space-y-3">
-                  {study.impact.map((item, i) => (
-                    <FadeIn key={i} delay={i * 0.04}>
-                      <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base leading-relaxed">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                        {item}
-                      </li>
-                    </FadeIn>
-                  ))}
-                </ul>
+                <Prose paragraphs={study.impact} variant="sm" />
               </>
             )}
           </section>
@@ -217,15 +199,7 @@ const CaseStudy = () => {
         {study.learnings.length > 0 && (
           <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Learnings</SectionHeading>
-            <div className="space-y-4">
-              {study.learnings.map((item, i) => (
-                <FadeIn key={i} delay={i * 0.06}>
-                  <blockquote className="border-l-2 border-primary/30 pl-5 text-muted-foreground text-sm md:text-base leading-relaxed italic">
-                    {item}
-                  </blockquote>
-                </FadeIn>
-              ))}
-            </div>
+            <Prose paragraphs={study.learnings} variant="sm" />
           </section>
         )}
       </div>
