@@ -10,7 +10,7 @@ const About = () => (
     <Navbar />
 
     {/* Hero */}
-    <section className="pt-32 pb-16 lg:pt-44 lg:pb-20">
+    <section className="pt-32 pb-8 lg:pt-44 lg:pb-10">
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <FadeIn>
           <p className="text-sm font-medium tracking-widest uppercase text-primary mb-4">
