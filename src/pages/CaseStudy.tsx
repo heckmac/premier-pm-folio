@@ -50,7 +50,7 @@ const CaseStudy = () => {
           <FadeIn>
             <Link
               to="/work"
-              className="inline-flex items-center gap-1.5 text-sm text-subtle hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors mb-8"
             >
               <ArrowLeft size={14} />
               All Work
