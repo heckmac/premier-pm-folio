@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import MetricCallout from "@/components/MetricCallout";
 import CaseStudyGallery from "@/components/CaseStudyGallery";
+import RichText from "@/components/RichText";
 import { getCaseStudy, getNextCaseStudy } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
 import { caseStudyGalleries } from "@/lib/caseStudyGallery";
@@ -17,17 +18,49 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   </FadeIn>
 );
 
-const Prose = ({ paragraphs }: { paragraphs: string[] }) => (
-  <>
-    {paragraphs.map((p, i) => (
-      <FadeIn key={i} delay={i * 0.05}>
-        <p className="text-muted-foreground leading-relaxed text-base md:text-lg mb-4 last:mb-0">
-          {p}
-        </p>
+const Prose = ({ paragraphs }: { paragraphs: string[] }) => {
+  const elements: React.ReactNode[] = [];
+  let bulletBuffer: string[] = [];
+  let fadeIndex = 0;
+
+  const flushBullets = () => {
+    if (bulletBuffer.length === 0) return;
+    const bullets = [...bulletBuffer];
+    const idx = fadeIndex++;
+    elements.push(
+      <FadeIn key={`bullets-${idx}`} delay={idx * 0.05}>
+        <ul className="space-y-2 my-2">
+          {bullets.map((b, bi) => (
+            <li key={bi} className="flex items-start gap-3 text-muted-foreground text-base md:text-lg leading-relaxed">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+              <RichText text={b} />
+            </li>
+          ))}
+        </ul>
       </FadeIn>
-    ))}
-  </>
-);
+    );
+    bulletBuffer = [];
+  };
+
+  paragraphs.forEach((p) => {
+    if (p.startsWith("• ")) {
+      bulletBuffer.push(p.slice(2));
+    } else {
+      flushBullets();
+      const idx = fadeIndex++;
+      elements.push(
+        <FadeIn key={idx} delay={idx * 0.05}>
+          <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+            <RichText text={p} />
+          </p>
+        </FadeIn>
+      );
+    }
+  });
+  flushBullets();
+
+  return <div className="space-y-4">{elements}</div>;
+};
 
 const CaseStudy = () => {
   const { slug } = useParams();
