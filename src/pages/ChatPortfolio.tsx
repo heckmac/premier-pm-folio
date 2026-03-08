@@ -313,7 +313,7 @@ const ChatPortfolio = () => {
       {/* Content Stream */}
       <div ref={contentStreamRef} className="flex-1 pb-32">
         {/* Onboarding / Welcome */}
-        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           {!hasStarted && (
             <FadeIn>
               <div className="py-10 space-y-8">
@@ -348,7 +348,7 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-4"
+                  className="container mx-auto px-6 lg:px-8 max-w-5xl py-4"
                 >
                   <div className="flex justify-end">
                     <div className="bg-primary text-primary-foreground px-4 py-2.5 text-sm font-bold uppercase tracking-wide max-w-[85%]">
@@ -366,7 +366,7 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="max-w-3xl py-5"
+                  className="container mx-auto px-6 lg:px-8 max-w-5xl py-5"
                 >
                   <div className="border-l-3 border-primary pl-5 max-w-[85%]">
                     <div className="prose-chat max-w-none">
@@ -416,7 +416,7 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-3"
+                  className="container mx-auto px-6 lg:px-8 max-w-5xl py-3"
                 >
                   <div className="flex flex-wrap gap-2 pl-5">
                     {item.suggestions.map((s) => (
@@ -440,7 +440,7 @@ const ChatPortfolio = () => {
 
         {/* Streaming content (while AI is typing) */}
         {streamingContent !== null && (
-          <div className="max-w-3xl py-5">
+          <div className="container mx-auto px-6 lg:px-8 max-w-5xl py-5">
             <div className="border-l-3 border-primary pl-5 max-w-[85%]">
               <div className="prose-chat max-w-none">
                 <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
@@ -451,7 +451,7 @@ const ChatPortfolio = () => {
 
         {/* Loading dots */}
         {isLoading && streamingContent === "" && (
-          <div className="container mx-auto px-6 lg:px-8 max-w-3xl py-5">
+          <div className="container mx-auto px-6 lg:px-8 max-w-5xl py-5">
             <div className="border-l-3 border-primary pl-5 inline-flex">
               <div className="flex gap-1.5">
                 <span className="w-2 h-2 bg-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
@@ -465,7 +465,7 @@ const ChatPortfolio = () => {
 
       {/* Input Panel (fixed bottom) */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t-2 border-border">
-        <div className="max-w-3xl mx-auto px-4 lg:px-6 py-3">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-3">
           <div className="flex gap-2 items-center">
             <input
               ref={inputRef}
