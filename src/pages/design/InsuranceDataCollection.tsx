@@ -198,8 +198,8 @@ const InsuranceDataCollection = () => {
           </FadeIn>
           <DesignImageCarousel images={[
             { src: imgFinalTest1, alt: "Final test 1" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615484839-EUO3BYK6MBLIV801B0CU/note-4a2fa2171d8d4b1081377cb7b64a01c8-file.jpeg", alt: "Final test 2" },
-            { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1528615485645-05566NHE5BJ2RO7GDD9I/note-4ca6cc92614845ad803608dbeab3382b-file.jpeg", alt: "Final test 3" },
+            { src: imgFinalTest2, alt: "Final test 2" },
+            { src: imgFinalTest3, alt: "Final test 3" },
           ]} />
         </section>
       </div>
