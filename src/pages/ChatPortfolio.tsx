@@ -313,7 +313,7 @@ const ChatPortfolio = () => {
       {/* Content Stream */}
       <div ref={contentStreamRef} className="flex-1 pb-32">
         {/* Onboarding / Welcome */}
-        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           {!hasStarted && (
             <FadeIn>
               <div className="py-10 space-y-8">
