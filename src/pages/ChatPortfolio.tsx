@@ -19,6 +19,14 @@ const DIRECT_PARTIAL_CHIPS: Record<string, string> = {
   "Download CV": "cv-download",
 };
 
+/** Contextual follow-ups shown after each direct partial */
+const DIRECT_PARTIAL_SUGGESTIONS: Record<string, string[]> = {
+  "bio": ["How do you approach complex products?", "Tell me about the Sphere reset"],
+  "career": ["What was your role at Designit?", "Tell me about the Mercurius exit"],
+  "skills": ["Show me a project that demonstrates these", "How do you approach product discovery?"],
+  "cv-download": ["Tell me about yourself", "Show me your product strategy work"],
+};
+
 const CHIPS = [
   "Tell me about yourself",
   "Walk me through your career",
@@ -28,6 +36,35 @@ const CHIPS = [
   "Show me your product UX work",
   "Download CV",
 ];
+
+const TARGET_SUGGESTIONS = { min: 4, max: 6 };
+
+/** Build a suggestion list of 4-6 items: contextual first, then unused initial chips */
+function buildSuggestions(contextual: string[], usedChips: Set<string>): string[] {
+  const pool: string[] = [];
+  const seen = new Set<string>();
+
+  // Add contextual suggestions first
+  for (const s of contextual) {
+    const key = s.toLowerCase();
+    if (!seen.has(key) && !usedChips.has(s)) {
+      pool.push(s);
+      seen.add(key);
+    }
+  }
+
+  // Fill with unused initial chips
+  for (const chip of CHIPS) {
+    if (pool.length >= TARGET_SUGGESTIONS.max) break;
+    const key = chip.toLowerCase();
+    if (!seen.has(key) && !usedChips.has(chip)) {
+      pool.push(chip);
+      seen.add(key);
+    }
+  }
+
+  return pool.slice(0, TARGET_SUGGESTIONS.max);
+}
 
 const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
 const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
@@ -136,9 +173,11 @@ const ChatPortfolio = () => {
   const [streamItems, setStreamItems] = useState<StreamItem[]>([]);
   const [renderedPartials, setRenderedPartials] = useState<Set<string>>(new Set());
   const [streamingContent, setStreamingContent] = useState<string | null>(null);
+  const [usedChips, setUsedChips] = useState<Set<string>>(new Set());
   const contentStreamRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
+  const usedChipsRef = useRef<Set<string>>(new Set());
 
   const injectPartial = useCallback((partialId: string): string | null => {
     if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return null;
@@ -149,17 +188,32 @@ const ChatPortfolio = () => {
     return domId;
   }, [renderedPartials]);
 
-  const handleTagsFromResponse = useCallback((fullText: string) => {
-    const { partialId, suggestions } = parseTags(fullText);
-    if (partialId) injectPartial(partialId);
+  const emitSuggestions = useCallback((contextual: string[]) => {
+    const suggestions = buildSuggestions(contextual, usedChipsRef.current);
     if (suggestions.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
     }
+  }, []);
+
+  const handleTagsFromResponse = useCallback((fullText: string) => {
+    const { partialId, suggestions } = parseTags(fullText);
+    if (partialId) injectPartial(partialId);
+    // Merge AI suggestions with unused chips to reach 4-6
+    const merged = buildSuggestions(suggestions, usedChipsRef.current);
+    if (merged.length > 0) {
+      setStreamItems(prev => [...prev, { type: "suggestions", suggestions: merged, id: nextItemId++ }]);
+    }
   }, [injectPartial]);
+
+  const markChipUsed = useCallback((text: string) => {
+    usedChipsRef.current = new Set(usedChipsRef.current).add(text);
+    setUsedChips(prev => new Set(prev).add(text));
+  }, []);
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
     const trimmed = text.trim();
+    markChipUsed(trimmed);
 
     // Direct partial shortcut — no AI call
     const directPartial = DIRECT_PARTIAL_CHIPS[trimmed];
@@ -168,6 +222,9 @@ const ChatPortfolio = () => {
       setInput("");
       setMessages(prev => [...prev, { role: "user", content: trimmed }, { role: "assistant", content: `[RENDER:${directPartial}]` }]);
       injectPartial(directPartial);
+      // Emit contextual + unused initial suggestions
+      const contextual = DIRECT_PARTIAL_SUGGESTIONS[directPartial] || [];
+      emitSuggestions(contextual);
       return;
     }
 
