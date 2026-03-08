@@ -110,7 +110,7 @@ const DesignImageCarousel = ({ images }: Props) => {
             </button>
             <button
               onClick={() => go(1)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/70 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background transition-colors"
               aria-label="Next"
             >
               <ChevronRight size={16} />
