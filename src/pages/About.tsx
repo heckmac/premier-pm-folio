@@ -1,17 +1,12 @@
-import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import profilePhoto from "@/assets/mario-ciardulli.jpeg";
-import { timeline } from "@/lib/careerTimeline";
-import { skillGroups } from "@/lib/skillGroups";
+import BioPartial from "@/components/partials/BioPartial";
+import CareerPartial from "@/components/partials/CareerPartial";
+import SkillsPartial from "@/components/partials/SkillsPartial";
 
-const About = () =>
-<div className="min-h-screen bg-background">
+const About = () => (
+  <div className="min-h-screen bg-background">
     <Navbar />
 
     {/* Hero */}
@@ -35,188 +30,12 @@ const About = () =>
       </div>
     </section>
 
-    {/* Bio + Photo */}
-    <section className="pb-20 lg:pb-28">
-      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-          {/* Photo placeholder */}
-          <FadeIn className="lg:col-span-1">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
-              <img
-              src={profilePhoto}
-              alt="Mario Ciardulli"
-              className="w-full h-full object-cover object-top" />
-            
-            </div>
-          </FadeIn>
-
-          {/* Bio */}
-          <FadeIn delay={0.1} className="lg:col-span-2">
-            <div className="space-y-6 text-foreground/85 text-base md:text-lg" style={{ lineHeight: 1.75 }}>
-              <p>
-                I'm a product strategist with a hands-on background in UX design and
-                strategic design. Over the past 12+ years, I've worked on products
-                ranging from zero-to-one MVPs to enterprise platforms — always at the
-                same level: what should this product be, for whom, and why.
-              </p>
-              <p>
-                I operate at the intersection of product vision, UX quality, and
-                engineering reality. I work best in high-ambiguity environments, where
-                the problem isn't yet well-defined and the solution requires judgment
-                more than process. My instinct is to get close to the work — challenging
-                design directions, co-creating with designers, aligning engineering on
-                what actually matters — while keeping the full product system coherent.
-              </p>
-              <p>
-                My foundation is in strategic design. Before moving into product
-                management, I spent years at Designit working at the intersection of
-                business strategy and experience — where every project started from a
-                business problem, not a brief. That approach never left.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-
-      </div>
-    </section>
-
-    {/* Career Timeline */}
-    <section className="pb-20 lg:pb-28">
-      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-        <FadeIn>
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-              Career
-            </h2>
-            <a href="/cv_ciardulli.pdf" download>
-              <Button variant="outline" size="sm" className="gap-2">
-                <Download size={16} />
-                Download CV
-              </Button>
-            </a>
-          </div>
-        </FadeIn>
-
-        <div className="space-y-0">
-          {timeline.map((item, i) =>
-        <FadeIn key={i} delay={i * 0.05}>
-              <div className="relative pl-8 border-l-2 border-primary/20 pb-[16px]">
-                <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
-                <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
-                  {item.period}
-                </p>
-                <h3 className="text-lg font-semibold text-foreground mx-0 mt-0 px-0">
-                  {item.role}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.url ?
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors underline underline-offset-2">
-                
-                      {item.company}
-                    </a> :
-
-              item.company
-              }
-                </p>
-                {item.description &&
-            <div className="prose-case-study prose-career mt-1 max-w-xl text-sm">
-                    <ReactMarkdown>{item.description}</ReactMarkdown>
-                  </div>
-            }
-              </div>
-            </FadeIn>
-        )}
-        </div>
-
-        {/* Education */}
-        <FadeIn>
-          <div className="mt-16 pt-10 border-t divider">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Education
-            </h2>
-            <div className="pl-8 border-l-2 border-primary/20 relative">
-              <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-primary" />
-              <p className="text-xs font-medium tracking-wider uppercase text-primary mb-1">
-                2005 – 2008
-              </p>
-              <h3 className="text-lg font-semibold text-foreground">
-                Master Degree in Communication Design
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Politecnico di Milano
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
-    {/* Skills */}
-    <section className="pb-20 lg:pb-28">
-      <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-        <FadeIn>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-            Skills & Expertise
-          </h2>
-        </FadeIn>
-
-        {/* Design Bridge Block */}
-        <FadeIn delay={0.05}>
-          <div className="mb-12 rounded-2xl bg-primary/5 border border-primary/15 px-6 py-8 md:px-10 md:py-10">
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary/70 mb-2">
-              From Design to Product
-            </p>
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">Strategic design is the foundation of everything I do
-
-          </h3>
-            <div className="space-y-4 text-foreground/75 text-[15px] md:text-base leading-relaxed max-w-3xl">
-              <p>
-                Before moving into product management, I spent years at Designit doing strategic design — working at the intersection of business strategy and experience, where every project started from a business problem and positioning came before a single screen.
-              </p>
-              <p>
-                That foundation never left. I still work closely on UX — challenging directions, co-creating with designers, making sure the experience holds together from first principle to final interaction. What has changed is the perimeter: today I operate across the full product, from vision to roadmap to execution. The method is the same. The scope is wider.
-              </p>
-            </div>
-            <Link
-            to="/design"
-            className="inline-flex items-center gap-1 text-primary hover:underline font-medium mt-6 text-sm">
-            
-              See my design work →
-            </Link>
-          </div>
-        </FadeIn>
-
-        <div className="space-y-8">
-          {skillGroups.map((group, i) =>
-        <FadeIn key={i} delay={i * 0.05}>
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                  {group.label}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) =>
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="bg-primary/10 text-primary border-transparent font-medium px-3 py-1 text-sm">
-                
-                      {skill}
-                    </Badge>
-              )}
-                </div>
-              </div>
-            </FadeIn>
-        )}
-        </div>
-      </div>
-    </section>
+    <BioPartial />
+    <CareerPartial />
+    <SkillsPartial />
 
     <Footer />
-  </div>;
-
+  </div>
+);
 
 export default About;
