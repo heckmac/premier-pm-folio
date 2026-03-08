@@ -10,23 +10,24 @@ const SkillsPartial = () => (
         </h2>
       </FadeIn>
 
-      <div className="flex flex-wrap items-baseline gap-x-6 gap-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {skillGroups.map((group, i) => (
-          <FadeIn key={i} delay={i * 0.04} className="contents">
-            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-primary mr-1">
-              {group.label}
-            </span>
-            {group.skills.map((skill) => (
-              <span
-                key={skill}
-                className="text-xs font-semibold text-muted-foreground uppercase tracking-wide hover:text-primary transition-colors cursor-default"
-              >
-                {skill}
-              </span>
-            ))}
-            {i < skillGroups.length - 1 && (
-              <span className="text-muted-foreground/30 select-none">/</span>
-            )}
+          <FadeIn key={i} delay={i * 0.04}>
+            <div>
+              <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-primary mb-3">
+                {group.label}
+              </h3>
+              <div className="flex flex-wrap gap-1.5">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-xs font-semibold text-muted-foreground uppercase tracking-wide hover:text-primary transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </FadeIn>
         ))}
       </div>
