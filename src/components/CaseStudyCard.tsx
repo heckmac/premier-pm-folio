@@ -16,7 +16,7 @@ const CaseStudyCard = ({ slug, title, subtitle, outcome, image, index = 0 }: Cas
     <FadeIn delay={index * 0.08}>
       <Link
         to={`/work/${slug}`}
-        className="group block border-2 border-foreground bg-background overflow-hidden hover:bg-foreground hover:text-background transition-colors duration-200"
+        className="group block border-2 border-foreground bg-background overflow-hidden transition-colors duration-200"
       >
         <div className="aspect-[16/10] bg-secondary overflow-hidden border-b-2 border-foreground">
           {image ? (
