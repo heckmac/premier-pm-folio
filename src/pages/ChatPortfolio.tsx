@@ -185,22 +185,26 @@ const ChatPortfolio = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Hero */}
-      <section className="pt-20 pb-10 lg:pt-32 lg:pb-14 flex-shrink-0 border-b-2 border-border">
-        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+      {/* Hero — same as Home/About */}
+      <section className="pt-28 pb-8 lg:pt-40 lg:pb-10 flex-shrink-0">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           <FadeIn>
-            <p className="text-[11px] font-black tracking-[0.3em] uppercase text-primary mb-3">
+            <p className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-8">
               Product Strategist
             </p>
           </FadeIn>
-          <FadeIn delay={0.05}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] uppercase tracking-tight">
-              Mario Ciardulli
+          <FadeIn delay={0.1}>
+            <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground leading-[0.85] tracking-tighter uppercase">
+              Mario<br />Ciardulli
             </h1>
           </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl leading-relaxed font-medium">
-              Product leader at the intersection of strategy, design, and engineering.
+          <FadeIn delay={0.2}>
+            <div className="mt-10 mb-10 h-[3px] w-20 bg-primary" />
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="text-base md:text-lg font-normal text-muted-foreground leading-relaxed max-w-md">
+              I turn complex systems into products people actually want to use —
+              at the intersection of strategy, design, and engineering.
             </p>
           </FadeIn>
         </div>
