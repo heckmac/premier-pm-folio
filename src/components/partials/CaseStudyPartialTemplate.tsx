@@ -8,7 +8,7 @@ import { caseStudyGalleries } from "@/lib/caseStudyGallery";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
-    <h2 className="text-sm font-black uppercase -tracking-[0.02em] text-foreground mb-5">
+    <h2 className="text-sm font-black uppercase -tracking-[0.02em] text-primary mb-5">
       {children}
     </h2>
   </FadeIn>
