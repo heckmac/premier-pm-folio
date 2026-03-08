@@ -38,7 +38,7 @@ export const caseStudies: CaseStudyData[] = [
   ],
   problem: [
     "Early clients were impressed by the vision. But when they tried to use it, they couldn't. The product reflected internal model logic, not how portfolio managers actually define and manage mandates.",
-    "Beta clients didn't renew autonomously. The product required active retention effort. Analytical depth wasn't translating into operational dependency. Incremental improvements would have preserved the incoherence. The product required an architectural reset.",
+    "Beta clients didn't renew autonomously. The product required active retention effort. Clients understood the value of the optimization. But they couldn't map their actual mandates into the system — asset class structures didn't match how they thought, constraints were limited to risk targets, and there was no way to express the rules that governed their real portfolios. The product needed to be rebuilt around professional workflows, not patched.",
   ],
   positioning: [
   "The product needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
@@ -112,8 +112,8 @@ export const caseStudies: CaseStudyData[] = [
     "The foundations for iteration were in place. But usability wasn't enough.",
     "Clients used Sphere when they chose to — not because their operations depended on it. The product didn't scale to how investment teams actually work: portfolios and market views are managed collaboratively, across many mandates. It couldn't represent how institutional portfolios are really structured — sleeves, hybrid instruments, bespoke taxonomies. And it remained disconnected from the systems clients already operated inside.",],
   positioning: [
-  "The product needed to shift from a model-centric demonstration of MDOTM's methodology to a process-centric tool that fit inside real investment workflows.",
-  "The objective was not to add capabilities but to restructure the product around how professionals actually define mandates — and to create the technical and commercial foundations that would allow it to evolve from there.",
+  "The strategic direction was to close the distance between the product and client operations — layer by layer. Not by adding features, but by making Sphere progressively more compatible with how institutional investment teams actually work.",
+  "Each intervention targeted a specific layer: organizational scale, data fidelity, or system connectivity. The goal was to make Sphere the environment clients operated inside, not a tool they visited occasionally.",
 ],
   myRole: [
     "Owned product direction for the embedability strategy. Identified structural gaps, sequenced interventions, and managed the trade-off between feature expansion and integration depth at each phase.",
@@ -230,87 +230,91 @@ export const caseStudies: CaseStudyData[] = [
   ],
 },
 {
-    slug: "mercurius",
-    company: "Mercurius",
-    project: "Building Toward a Fund You Cannot Yet Build",
-    role: "Co-Founder",
-    year: "2017–2021",
-    cardSubtitle: "Mercurius · Co-Founder · 2017–2021",
-    featured: true,
-    heroTagline:
-      "Co-founded a startup that turned sports betting into an alternative asset class — advancing toward a fund through sequential product approximations, each with its own metric architecture, legal constraints, and validation objective.",
-    impactCategories: [
-      {
-        category: "Advisor",
-        metrics: [
-          { value: "3,000+", label: "Accounts on Advisor" },
-          { value: "15,000+", label: "Unique signals used" },
-        ],
-      },
-      {
-        category: "Tradr",
-        metrics: [
-          { value: "€1.2M+", label: "Capital deployed by users" },
-          { value: "~€5M", label: "Total traded volumes" },
-        ],
-      },
-    ],
-    context: [
-      "Mercurius was a startup I co-founded in 2017 with the ambition of turning sports betting into an alternative asset class. The thesis was quantitative: systematic, data-driven strategies could generate uncorrelated returns, and the right technology could make this accessible to individuals who thought like investors rather than gamblers.",
-      "The end goal was always a fund. But the regulatory complexity of building an investment vehicle made it unreachable in the short term. Rather than waiting for conditions to align, we chose to advance by building the closest legal approximation at each stage — validating market demand, model performance, technology reliability, and regulatory viability in sequence. Each product phase had a specific job. Each job had a specific metric.",
-      "As co-founder, I owned product, design, front-end development, marketing, and customer operations across the full lifecycle of the company, from first concept to fundraising and acquisition.",
-    ],
-    problem: [
-      "Building toward a fund through consumer products creates a sequencing problem most startups ignore: the metric that proves your current phase is working is almost never the metric that will prove the next one. Use the wrong metric and you either move on too early or stay too long.",
-      "The regulatory dimension compounded this. A fund was off the table not because we lacked the ambition but because the legal infrastructure required — licensing, capital requirements, jurisdictional clearance across multiple European markets — was incompatible with our stage and timeline. Every decision about what to build next was therefore also a decision about what was legally buildable, with whom, and where.",
-      "The problem was not what to make. The problem was how to advance systematically toward an objective that couldn't be reached directly, in a space with no established playbook, measuring progress with metrics specific to each approximation — not to the destination.",
-    ],
-    positioning: [
-      "The optimization variable shifted at each phase, deliberately and necessarily.",
-      "Advisor was a subscription signal service. Its job was to prove market demand and model credibility. The north star was MRR, with two sub-metrics: signups (acquisition) and signal engagement per week — the number of betting recommendations a user actually added to their tracked portfolio (retention and trust signal).",
-      "Tradr was a fund approximation — capital deployed, strategies executed automatically, performance tracked against a high-watermark model. Its north star was AUM. MRR was structurally irrelevant here: the depth of trust was the signal, and trust was expressed in deployed capital.",
-      "Advisor was also designed as the top of a geographic funnel for Tradr. The signup flow detected the user's country and routed them to Tradr where Betfair was available — Advisor could be sold anywhere, Tradr only where the legal conditions were met.",
-    ],
-    myRole: [
-      "Co-founder with end-to-end ownership of product strategy, UX design, front-end development, content, marketing, and customer operations. I defined the metric architecture for both products, designed the acquisition and activation systems, managed the analytics infrastructure, and contributed to the commercial and regulatory work that unlocked Tradr — including the Betfair partnership.",
-    ],
-    strategy: [
-      {
-        title: "Advisor: Proving Market and Model",
-        description:
-          "Advisor surfaced betting signals — specific opportunities with odds and suggested stake — which users placed manually. The product tracked cumulative ROI against each strategy's declared risk/return profile, with every strategy carrying a KIID of realized and ex-ante metrics. The north star was MRR, but signal engagement was the metric that mattered for health: a user who subscribed but didn't act on signals was a churn risk invisible in revenue until it was too late. Acquisition was built around buyer personas developed through 50+ interviews and iterated across four years — persona-aligned content drove SEO to first-page rankings across all primary topic clusters, generating 30% of qualified traffic from organic search. Advisor reached 3,000+ accounts and 15,000+ signals used, and gave us the model performance data at scale needed to justify automating execution.",
-      },
-      {
-        title: "Tradr: A Step Closer to the Fund Experience",
-        description:
-          "The transition to Tradr required resolving a set of preconditions before anything could be built. We coordinated country-by-country legal analysis across five target markets with specialist advisors — prioritizing Italy, UK, Netherlands, Germany, and Spain. Betfair was the only platform that satisfied all three requirements simultaneously: a betting exchange marketplace for partner apps, their own licensing framework, and APIs for automated execution on a user's behalf — with money and legal decision-making remaining in the client's hands. Getting the partnership took six months of BD work. The key framing that unlocked it: because we operated on the exchange, our clients bet against other bettors — not against Betfair. A service design blueprint was produced as the critical alignment tool across product, engineering, and legal stakeholders.",
-      },
-      {
-        title: "Tradr: Pricing, Retention, and AUM Optimization",
-        description:
-          "Tradr's pricing followed fund logic from the start: management fee on AUM plus performance fee above a high-watermark. The optimization target was not maximum return but capital stability. High drawdowns triggered withdrawals; high ROI drove upselling. We chose to favor lower maximum drawdown over peak returns — because the real value of a systematic strategy can only be expressed over six to twelve months minimum. Activation required five sequential steps involving third-party systems and real capital commitment; rather than simplifying the steps, we supported each one through continuous A/B testing and Hubspot-driven re-engagement campaigns across all touchpoints. Once activated, an engagement program — webinars, model updates, performance communications — operated as AUM retention infrastructure, calibrated to user behavior during drawdown periods.",
-      },
-    ],
-    execution: [
-      "Defined separate north star metrics for each product — MRR for Advisor, AUM for Tradr — each derived from its own business model",
-      "Designed signal engagement tracking (betting suggestions added per week) as Advisor's leading retention and churn indicator",
-      "Built buyer personas through 50+ interviews, chat and email feedback, and questionnaires to 1,000+ users iterated across four years",
-      "Developed persona-aligned content achieving first-page SEO rankings across all primary topic clusters; organic search drove 30% of qualified traffic",
-      "Designed signup flow with country detection to route users to Tradr where available, making Advisor the geographic top-of-funnel",
-      "Coordinated country-by-country legal analysis across five target markets; scoped Tradr's operating footprint accordingly",
-      "Led six months of BD work to establish the Betfair partnership, including commercial framing around exchange-side alignment",
-      "Produced service design blueprint to align product, engineering, and legal stakeholders on a conceptually novel system",
-      "Instrumented the full Tradr activation funnel; ran continuous A/B tests on landing pages and email sequences at each drop-off point",
-      "Integrated Hubspot across all touchpoints for cross-product tracking and targeted re-engagement campaigns",
-      "Operated engagement program calibrated to AUM retention behavior during drawdown periods",
-    ],
-    impact: [],
-    learnings: [
-      "Constraints are not obstacles to the strategy — they are inputs to it. The Betfair partnership, the legal scoping, the geographic phasing were each a direct consequence of understanding the constraint map before committing to the roadmap.",
-      "The investment strategies were the real product — not the interface. A high-drawdown period was not a UX problem that better copy or a cleaner dashboard could solve. Designing strategies according to the business model, and managing user trust during stressful periods, were product problems that had nothing to do with the front end.",
-      "In an automated product, engagement is retention infrastructure. When users don't interact with the system daily, the relationship is maintained entirely through communication — calibrated to behavioral signals, not reach or impressions.",
-    ],
-  },
+  slug: "mercurius",
+  company: "Mercurius",
+  project: "Building an AI-Driven Sports Betting Platform Toward a Quantitative Fund",
+  role: "Co-Founder, Head of Product",
+  year: "2017–2021",
+  cardSubtitle: "Mercurius · Co-Founder · 2017–2021",
+  featured: true,
+  heroTagline:
+    "Turned sports betting into an investment-like activity — for 4,000+ users managing $1.4M in capital.",
+  impactCategories: [
+    {
+      category: "Advisor",
+      metrics: [
+        { value: "3,000+", label: "Accounts" },
+        { value: "15,000+", label: "Signals used" },
+      ],
+    },
+    {
+      category: "Tradr",
+      metrics: [
+        { value: "€1.2M+", label: "Capital deployed" },
+        { value: "~€5M", label: "Traded volume" },
+      ],
+    },
+  ],
+  context: [
+    "Mercurius was a startup I co-founded in 2017 to turn sports betting into an alternative asset class. The thesis was quantitative: systematic, data-driven strategies could generate uncorrelated returns — and the right technology could make this accessible to individuals who thought like investors rather than gamblers.",
+    "The end goal was always a fund. But the regulatory complexity made it unreachable in the short term. Rather than waiting, we chose to advance by building the closest legal approximation at each stage — validating market demand, model performance, and regulatory viability in sequence. Each product phase had a specific job. Each job had a specific metric.",
+    "The company scaled to 4,000+ users, €1.2M+ in deployed capital, raised over €1M, and was acquired by Wall Street Football.",
+  ],
+  problem: [],
+  positioning: [
+    "We built two products in sequence, each optimized for a different north star.",
+    "Advisor was a subscription signal service. Its job was to prove market demand and model credibility. North star: MRR. Health metric: signal engagement — how many betting recommendations a user actually acted on per week.",
+    "Tradr was a fund approximation — automated execution, capital deployed, performance tracked against a high-watermark model. North star: AUM. MRR was structurally irrelevant here. Trust was expressed in deployed capital, not subscription renewals.",
+    "Advisor also served as the geographic funnel for Tradr. The signup flow detected the user's country and routed them to Tradr where Betfair was legally available.",
+  ],
+  myRole: [
+    "Co-founder with end-to-end ownership of product strategy, UX design, front-end development, marketing, and customer operations.",
+    "Defined the metric architecture for both products. Designed acquisition and activation systems. Managed analytics infrastructure. Led the BD work that unlocked the Betfair partnership.",
+  ],
+  strategy: [
+    {
+      title: "Advisor: Validated market demand and model credibility",
+      description:
+        "Advisor surfaced betting signals — specific opportunities with odds and suggested stake — which users placed manually. Every strategy carried a KIID with realized and ex-ante metrics. Signal engagement was the leading indicator: a user who subscribed but didn't act was a churn risk invisible in revenue until too late. Built buyer personas through 50+ interviews, iterated over four years. Persona-aligned content drove SEO to first-page rankings across primary topic clusters — 30% of qualified traffic came from organic search. Reached 3,000+ accounts and 15,000+ signals used.",
+    },
+    {
+      title: "Tradr: Built a legal fund approximation with automated execution",
+      description:
+        "Transitioning to Tradr required solving regulatory, partnership, and technical preconditions before building anything. Coordinated country-by-country legal analysis across five markets. Betfair was the only platform that satisfied all requirements: exchange marketplace, licensing framework, and APIs for automated execution — with capital remaining in the user's hands. Six months of BD work unlocked the partnership. Key framing: because we operated on the exchange, clients bet against other bettors, not against Betfair. Produced a service design blueprint as the alignment tool across product, engineering, and legal.",
+    },
+    {
+      title: "Tradr: Optimized for capital stability, not peak returns",
+      description:
+        "Pricing followed fund logic: management fee on AUM plus performance fee above a high-watermark. The optimization target was capital stability — high drawdowns triggered withdrawals. We chose lower maximum drawdown over peak returns because the real value of a systematic strategy only expresses over six to twelve months. Activation required five sequential steps with real capital commitment. Rather than simplifying, we supported each step through continuous A/B testing and Hubspot-driven re-engagement. Once activated, an engagement program — webinars, model updates, performance communications — operated as AUM retention infrastructure, calibrated to user behavior during drawdown periods.",
+    },
+  ],
+  execution: [
+    "Defined separate north star metrics for each product — MRR for Advisor, AUM for Tradr",
+    "Designed signal engagement tracking as Advisor's leading retention indicator",
+    "Built buyer personas through 50+ interviews, iterated across four years",
+    "Achieved first-page SEO rankings across primary topic clusters; organic search drove 30% of qualified traffic",
+    "Designed signup flow with country detection to route users to Tradr where legally available",
+    "Coordinated country-by-country legal analysis across five target markets",
+    "Led six months of BD work to establish the Betfair partnership",
+    "Produced service design blueprint to align product, engineering, and legal stakeholders",
+    "Instrumented full Tradr activation funnel with continuous A/B testing at each drop-off point",
+    "Integrated Hubspot across all touchpoints for cross-product tracking and re-engagement",
+    "Operated engagement program calibrated to AUM retention during drawdown periods",
+  ],
+  impact: [
+    "Scaled to 4,000+ users across two products",
+    "€1.2M+ capital deployed through automated strategies",
+    "~€5M total traded volume",
+    "30% of qualified traffic from organic search through persona-driven content strategy",
+    "Raised €1M+ in funding",
+    "Acquired by Wall Street Football",
+  ],
+  learnings: [
+    "Constraints are inputs to the strategy, not obstacles. The Betfair partnership, legal scoping, and geographic phasing were direct consequences of understanding the constraint map before committing to the roadmap.",
+    "The investment strategies were the real product — not the interface. A high-drawdown period wasn't a UX problem that better copy could solve. Managing user trust during stressful periods was a product problem that had nothing to do with the front end.",
+    "In an automated product, engagement is retention infrastructure. When users don't interact daily, the relationship is maintained entirely through communication — calibrated to behavioral signals, not reach.",
+  ],
+},
 ];
 
 export function getFeaturedCaseStudies(): CaseStudyData[] {
