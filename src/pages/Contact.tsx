@@ -45,7 +45,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tighter">
               Let's Talk
             </h1>
-            <div className="mt-6 mb-6 h-[3px] w-16 bg-foreground" />
+            <div className="mt-6 mb-6 h-[3px] w-16 bg-primary" />
             <p className="text-muted-foreground text-base max-w-md">
               Whether you're looking for a product leader, a strategic advisor,
               or just want to connect — I'd love to hear from you.
@@ -119,7 +119,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="rounded-none border-2 border-foreground bg-foreground text-background font-bold text-xs tracking-[0.15em] uppercase hover:bg-muted-foreground px-8 py-3 h-auto"
+                  className="rounded-none border-2 border-primary bg-primary text-primary-foreground font-bold text-xs tracking-[0.15em] uppercase hover:opacity-80 px-8 py-3 h-auto"
                 >
                   {loading ? (
                     <>
