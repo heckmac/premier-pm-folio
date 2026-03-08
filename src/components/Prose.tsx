@@ -13,12 +13,25 @@ import FadeIn from "@/components/FadeIn";
 interface ProseProps {
   paragraphs: string[];
   variant?: "default" | "sm";
+  /** When true, render the array as a single markdown bullet list */
+  asList?: boolean;
 }
 
-const Prose = ({ paragraphs, variant = "default" }: ProseProps) => {
+const Prose = ({ paragraphs, variant = "default", asList = false }: ProseProps) => {
   if (!paragraphs || paragraphs.length === 0) return null;
 
   const sizeClass = variant === "sm" ? "prose-case-study--sm" : "";
+
+  if (asList) {
+    const markdown = paragraphs.map((item) => `- ${item}`).join("\n");
+    return (
+      <FadeIn>
+        <div className={`prose-case-study ${sizeClass}`}>
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </div>
+      </FadeIn>
+    );
+  }
 
   return (
     <div className="space-y-4">
