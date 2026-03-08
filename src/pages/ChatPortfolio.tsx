@@ -197,7 +197,10 @@ const ChatPortfolio = () => {
 
   const hasStarted = streamItems.length > 0 || streamingContent !== null;
 
+  const chatStreamActions = useMemo(() => ({ injectPartial }), [injectPartial]);
+
   return (
+    <ChatStreamContext.Provider value={chatStreamActions}>
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero — same as Home/About */}
       <section className="pt-28 pb-8 lg:pt-40 lg:pb-10 flex-shrink-0">
