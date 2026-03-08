@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PARTIALS_REGISTRY } from "@/components/partials/registry";
+import ExpandablePartial from "@/components/partials/ExpandablePartial";
 import FadeIn from "@/components/FadeIn";
 
 type Msg = { role: "user" | "assistant"; content: string };
