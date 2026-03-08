@@ -4,6 +4,10 @@ export interface CaseStudyData {
   project: string;
   role: string;
   year: string;
+  /** One-line subtitle shown on cards, e.g. "Sphere · VP of Product · MDOTM · 2021–2023" */
+  cardSubtitle: string;
+  /** Whether this case study appears in the homepage featured section */
+  featured: boolean;
   heroTagline: string;
   context: string[];
   problem: string[];
@@ -24,6 +28,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "From Quantitative Engine to Adoptable Product",
     role: "VP of Product",
     year: "2021–2023",
+    cardSubtitle: "Sphere · VP of Product · MDOTM · 2021–2023",
+    featured: true,
     heroTagline:
       "Diagnosed structural misalignment in a fintech platform and led a full architectural reset — turning a model-centric engine into a process-centric tool portfolio managers could actually adopt.",
     context: [
@@ -97,6 +103,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "From Adoptable Product to Investment Infrastructure",
     role: "CPO",
     year: "2023–2025",
+    cardSubtitle: "Sphere · CPO · MDOTM · 2023–2025",
+    featured: true,
     heroTagline:
       "Closed every layer of distance between Sphere and institutional operational reality — organizational, structural, data and systemic — transforming the platform from a tool professionals visit into infrastructure they operate inside.",
     context: [
@@ -164,6 +172,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "Productizing Narrative Explanation for Investment Decisions",
     role: "CPO",
     year: "2024–2025",
+    cardSubtitle: "Storyfolio · CPO · MDOTM · 2024–2025",
+    featured: true,
     heroTagline:
       "Introduced an AI-driven narrative layer that transformed portfolio logic into reliable, decision-consistent explanations — cutting mass reporting time from ~2 hours to ~2 minutes per portfolio.",
     highlightMetrics: [
@@ -232,6 +242,8 @@ export const caseStudies: CaseStudyData[] = [
     project: "Building Toward a Fund You Cannot Yet Build",
     role: "Co-Founder",
     year: "2017–2021",
+    cardSubtitle: "Mercurius · Co-Founder · 2017–2021",
+    featured: true,
     heroTagline:
       "Co-founded a startup that turned sports betting into an alternative asset class — advancing toward a fund through sequential product approximations, each with its own metric architecture, legal constraints, and validation objective.",
     impactCategories: [
@@ -307,6 +319,10 @@ export const caseStudies: CaseStudyData[] = [
     ],
   },
 ];
+
+export function getFeaturedCaseStudies(): CaseStudyData[] {
+  return caseStudies.filter((cs) => cs.featured);
+}
 
 export function getCaseStudy(slug: string): CaseStudyData | undefined {
   return caseStudies.find((cs) => cs.slug === slug);
