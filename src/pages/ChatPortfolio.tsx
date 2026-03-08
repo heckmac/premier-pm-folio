@@ -113,6 +113,7 @@ async function streamChat({
 
 // A stream item is either an assistant message, a rendered partial, or suggestions
 type StreamItem =
+  | { type: "user-message"; content: string; id: number }
   | { type: "assistant-message"; content: string; id: number }
   | { type: "partial"; partialId: string; id: number }
   | { type: "suggestions"; suggestions: string[]; id: number };
