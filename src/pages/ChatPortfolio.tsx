@@ -128,11 +128,6 @@ const ChatPortfolio = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
 
-  const scrollToBottom = useCallback(() => {
-    setTimeout(() => {
-      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "end" });
-    }, 100);
-  }, []);
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
