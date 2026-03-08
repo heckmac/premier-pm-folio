@@ -1,17 +1,17 @@
 import FadeIn from "@/components/FadeIn";
 import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 
-const BioPartial = () => (
-  <section className="py-16 lg:py-20">
+const BioPartial = () =>
+<section className="py-16 lg:py-20 pt-0">
     <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
         <FadeIn className="lg:col-span-1">
           <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
             <img
-              src={profilePhoto}
-              alt="Mario Ciardulli"
-              className="w-full h-full object-cover object-top"
-            />
+            src={profilePhoto}
+            alt="Mario Ciardulli"
+            className="w-full h-full object-cover object-top" />
+          
           </div>
         </FadeIn>
 
@@ -41,7 +41,7 @@ const BioPartial = () => (
         </FadeIn>
       </div>
     </div>
-  </section>
-);
+  </section>;
+
 
 export default BioPartial;
