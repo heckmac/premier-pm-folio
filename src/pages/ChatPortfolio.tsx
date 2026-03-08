@@ -366,7 +366,7 @@ const ChatPortfolio = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="max-w-3xl py-5"
+                  className="container mx-auto px-6 lg:px-8 max-w-5xl py-5"
                 >
                   <div className="border-l-3 border-primary pl-5 max-w-[85%]">
                     <div className="prose-chat max-w-none">
