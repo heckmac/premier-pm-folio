@@ -217,15 +217,11 @@ const About = () =>
               item.company
               }
                 </p>
-                {item.description &&
-            <p className="text-sm text-foreground/70 max-w-xl leading-relaxed my-0 py-0 pt-0 mt-[4px] pb-0">
-                    {item.description}
-                  </p>
-            }
-
-
-
-            }
+                {item.description && (
+                  <div className="text-sm text-foreground/70 max-w-xl leading-relaxed mt-1 prose-case-study prose-case-study--sm">
+                    <ReactMarkdown>{item.description}</ReactMarkdown>
+                  </div>
+                )}
               </div>
             </FadeIn>
         )}
