@@ -173,9 +173,11 @@ const ChatPortfolio = () => {
   const [streamItems, setStreamItems] = useState<StreamItem[]>([]);
   const [renderedPartials, setRenderedPartials] = useState<Set<string>>(new Set());
   const [streamingContent, setStreamingContent] = useState<string | null>(null);
+  const [usedChips, setUsedChips] = useState<Set<string>>(new Set());
   const contentStreamRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
+  const usedChipsRef = useRef<Set<string>>(new Set());
 
   const injectPartial = useCallback((partialId: string): string | null => {
     if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return null;
@@ -186,17 +188,32 @@ const ChatPortfolio = () => {
     return domId;
   }, [renderedPartials]);
 
-  const handleTagsFromResponse = useCallback((fullText: string) => {
-    const { partialId, suggestions } = parseTags(fullText);
-    if (partialId) injectPartial(partialId);
+  const emitSuggestions = useCallback((contextual: string[]) => {
+    const suggestions = buildSuggestions(contextual, usedChipsRef.current);
     if (suggestions.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
     }
+  }, []);
+
+  const handleTagsFromResponse = useCallback((fullText: string) => {
+    const { partialId, suggestions } = parseTags(fullText);
+    if (partialId) injectPartial(partialId);
+    // Merge AI suggestions with unused chips to reach 4-6
+    const merged = buildSuggestions(suggestions, usedChipsRef.current);
+    if (merged.length > 0) {
+      setStreamItems(prev => [...prev, { type: "suggestions", suggestions: merged, id: nextItemId++ }]);
+    }
   }, [injectPartial]);
+
+  const markChipUsed = useCallback((text: string) => {
+    usedChipsRef.current = new Set(usedChipsRef.current).add(text);
+    setUsedChips(prev => new Set(prev).add(text));
+  }, []);
 
   const send = async (text: string) => {
     if (!text.trim() || isLoading) return;
     const trimmed = text.trim();
+    markChipUsed(trimmed);
 
     // Direct partial shortcut — no AI call
     const directPartial = DIRECT_PARTIAL_CHIPS[trimmed];
@@ -205,6 +222,9 @@ const ChatPortfolio = () => {
       setInput("");
       setMessages(prev => [...prev, { role: "user", content: trimmed }, { role: "assistant", content: `[RENDER:${directPartial}]` }]);
       injectPartial(directPartial);
+      // Emit contextual + unused initial suggestions
+      const contextual = DIRECT_PARTIAL_SUGGESTIONS[directPartial] || [];
+      emitSuggestions(contextual);
       return;
     }
 
