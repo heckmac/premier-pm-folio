@@ -2,6 +2,11 @@ import FadeIn from "@/components/FadeIn";
 import DesignImage from "@/components/design/DesignImage";
 import DesignImageCarousel from "@/components/design/DesignImageCarousel";
 
+import imgProcess from "@/assets/allianz/note-bd92d86976a34b0da1ed973689f3e7ae-file.jpg";
+import imgIdeation1 from "@/assets/allianz/Schermata+2018-05-31+alle+12.34.33.png";
+import imgIdeation2 from "@/assets/allianz/Schermata+2018-05-31+alle+12.33.33.png";
+import imgIdeation3 from "@/assets/allianz/Schermata+2018-05-31+alle+12.34.53.png";
+
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
     <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">{children}</h2>
@@ -67,7 +72,7 @@ const InsuranceDataCollectionPartial = () => (
           </p>
         </FadeIn>
         <DesignImage
-          src="https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527752435891-Z2KH13UB931TCQA945H4/note-bd92d86976a34b0da1ed973689f3e7ae-file.jpeg"
+          src={imgProcess}
           alt="Process overview"
         />
 
@@ -85,9 +90,9 @@ const InsuranceDataCollectionPartial = () => (
           </p>
         </FadeIn>
         <DesignImageCarousel images={[
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763852963-XQWQVAC4LA0GHBANUTMN/Schermata+2018-05-31+alle+12.34.33.png", alt: "Ideation 1" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763841807-UFH0CM2UBV2LDY8MBVTU/Schermata+2018-05-31+alle+12.33.33.png", alt: "Ideation 2" },
-          { src: "https://images.squarespace-cdn.com/content/v1/5af2ffb9365f02713e5fcb98/1527763847820-CZVO1FU3RXM3VQ2PD9XG/Schermata+2018-05-31+alle+12.34.53.png", alt: "Ideation 3" },
+          { src: imgIdeation1, alt: "Ideation 1" },
+          { src: imgIdeation2, alt: "Ideation 2" },
+          { src: imgIdeation3, alt: "Ideation 3" },
         ]} />
       </section>
     </div>
