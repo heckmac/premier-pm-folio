@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PARTIALS_REGISTRY } from "@/components/partials/registry";
+import ExpandablePartial from "@/components/partials/ExpandablePartial";
 import FadeIn from "@/components/FadeIn";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -131,7 +132,7 @@ const ChatPortfolio = () => {
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
     const { partialId, suggestions } = parseTags(fullText);
-    if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.has(partialId)) {
+    if (partialId && PARTIALS_REGISTRY[partialId]?.component && !renderedPartials.has(partialId)) {
       setRenderedPartials(prev => new Set(prev).add(partialId));
       setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
     }
@@ -270,8 +271,9 @@ const ChatPortfolio = () => {
             }
 
             if (item.type === "partial") {
-              const Component = PARTIALS_REGISTRY[item.partialId];
-              if (!Component) return null;
+              const entry = PARTIALS_REGISTRY[item.partialId];
+              if (!entry?.component) return null;
+              const PartialComponent = entry.component;
               return (
                 <motion.div
                   key={item.id}
@@ -280,13 +282,21 @@ const ChatPortfolio = () => {
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   className="border-t-2 border-border"
                 >
-                  <Suspense fallback={
-                    <div className="py-20 flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-primary/30 border-t-primary animate-spin" />
-                    </div>
-                  }>
-                    <Component />
-                  </Suspense>
+                  {entry.expandable ? (
+                    <ExpandablePartial
+                      Component={PartialComponent}
+                      previewHeight={entry.previewHeight}
+                      label={entry.expandLabel}
+                    />
+                  ) : (
+                    <Suspense fallback={
+                      <div className="py-20 flex items-center justify-center">
+                        <div className="w-6 h-6 border-2 border-primary/30 border-t-primary animate-spin" />
+                      </div>
+                    }>
+                      <PartialComponent />
+                    </Suspense>
+                  )}
                 </motion.div>
               );
             }
