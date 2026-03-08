@@ -229,7 +229,7 @@ const ChatPortfolio = () => {
               <div className="py-10 space-y-8">
                 <div className="border-l-3 border-primary pl-5 max-w-[85%]">
                   <p className="text-foreground text-sm font-semibold leading-relaxed">
-                    Ciao. Sono Mario. Da dove partiamo?
+                    Hi. I'm Mario. Where shall we start?
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
