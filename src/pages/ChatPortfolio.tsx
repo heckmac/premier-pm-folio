@@ -159,7 +159,7 @@ const ChatPortfolio = () => {
           const { cleanText } = parseTags(assistantSoFar);
           streamingRef.current = cleanText;
           setStreamingContent(cleanText);
-          scrollToBottom();
+          // no auto-scroll — user controls scrolling
         },
         onDone: () => {
           const { cleanText } = parseTags(assistantSoFar);
