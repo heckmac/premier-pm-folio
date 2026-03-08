@@ -159,7 +159,7 @@ const CaseStudy = () => {
         {study.execution.length > 0 && (
           <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Execution</SectionHeading>
-            <Prose paragraphs={study.execution} variant="sm" />
+            <Prose paragraphs={study.execution} variant="sm" asList />
           </section>
         )}
 
@@ -189,7 +189,7 @@ const CaseStudy = () => {
                     ))}
                   </div>
                 )}
-                <Prose paragraphs={study.impact} variant="sm" />
+                <Prose paragraphs={study.impact} variant="sm" asList />
               </>
             )}
           </section>
@@ -199,7 +199,7 @@ const CaseStudy = () => {
         {study.learnings.length > 0 && (
           <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Learnings</SectionHeading>
-            <Prose paragraphs={study.learnings} variant="sm" />
+            <Prose paragraphs={study.learnings} variant="sm" asList />
           </section>
         )}
       </div>
