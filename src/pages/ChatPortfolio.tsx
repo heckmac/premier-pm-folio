@@ -18,14 +18,26 @@ const CHIPS = [
   "Scarica il CV",
 ];
 
-const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]\s*$/;
+const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
+const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
 
-function parseRenderTag(text: string): { cleanText: string; partialId: string | null } {
-  const match = text.match(RENDER_REGEX);
-  if (match) {
-    return { cleanText: text.replace(RENDER_REGEX, "").trim(), partialId: match[1] };
+function parseTags(text: string): { cleanText: string; partialId: string | null; suggestions: string[] } {
+  let partialId: string | null = null;
+  let suggestions: string[] = [];
+
+  const renderMatch = text.match(RENDER_REGEX);
+  if (renderMatch) {
+    partialId = renderMatch[1];
+    text = text.replace(RENDER_REGEX, "");
   }
-  return { cleanText: text, partialId: null };
+
+  const suggestionsMatch = text.match(SUGGESTIONS_REGEX);
+  if (suggestionsMatch) {
+    suggestions = suggestionsMatch[1].split("|").map(s => s.trim()).filter(Boolean);
+    text = text.replace(SUGGESTIONS_REGEX, "");
+  }
+
+  return { cleanText: text.trim(), partialId, suggestions };
 }
 
 async function streamChat({
@@ -97,10 +109,11 @@ async function streamChat({
   onDone();
 }
 
-// A stream item is either an assistant message or a rendered partial
+// A stream item is either an assistant message, a rendered partial, or suggestions
 type StreamItem =
   | { type: "assistant-message"; content: string; id: number }
-  | { type: "partial"; partialId: string; id: number };
+  | { type: "partial"; partialId: string; id: number }
+  | { type: "suggestions"; suggestions: string[]; id: number };
 
 let nextItemId = 0;
 
@@ -121,15 +134,18 @@ const ChatPortfolio = () => {
     }, 100);
   }, []);
 
-  const handlePartialFromResponse = useCallback((fullText: string) => {
-    const { partialId } = parseRenderTag(fullText);
+  const handleTagsFromResponse = useCallback((fullText: string) => {
+    const { partialId, suggestions } = parseTags(fullText);
     if (partialId && PARTIALS_REGISTRY[partialId] && !renderedPartials.has(partialId)) {
       setRenderedPartials(prev => new Set(prev).add(partialId));
       setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
-      setTimeout(() => {
-        contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 300);
     }
+    if (suggestions.length > 0) {
+      setStreamItems(prev => [...prev, { type: "suggestions", suggestions, id: nextItemId++ }]);
+    }
+    setTimeout(() => {
+      contentStreamRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
   }, [renderedPartials]);
 
   const send = async (text: string) => {
@@ -148,20 +164,18 @@ const ChatPortfolio = () => {
         messages: [...messages, userMsg],
         onDelta: (chunk) => {
           assistantSoFar += chunk;
-          const { cleanText } = parseRenderTag(assistantSoFar);
+          const { cleanText } = parseTags(assistantSoFar);
           streamingRef.current = cleanText;
           setStreamingContent(cleanText);
           scrollToBottom();
         },
         onDone: () => {
-          const { cleanText } = parseRenderTag(assistantSoFar);
-          // Add the final message to stream items
+          const { cleanText } = parseTags(assistantSoFar);
           setStreamItems(prev => [...prev, { type: "assistant-message", content: cleanText, id: nextItemId++ }]);
           setStreamingContent(null);
-          // Add to messages for context
           setMessages(prev => [...prev, { role: "assistant", content: cleanText }]);
           setIsLoading(false);
-          handlePartialFromResponse(assistantSoFar);
+          handleTagsFromResponse(assistantSoFar);
         },
       });
     } catch (e) {
@@ -277,6 +291,31 @@ const ChatPortfolio = () => {
                   }>
                     <Component />
                   </Suspense>
+                </motion.div>
+              );
+            }
+
+            if (item.type === "suggestions") {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-3"
+                >
+                  <div className="flex flex-wrap gap-2 pl-5">
+                    {item.suggestions.map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => send(s)}
+                        disabled={isLoading}
+                        className="text-[11px] font-bold uppercase tracking-wide px-3 py-2 border-2 border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground transition-colors disabled:opacity-40"
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
                 </motion.div>
               );
             }
