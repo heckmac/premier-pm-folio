@@ -90,17 +90,9 @@ const CareerPartial = () => (
                 )}
               </p>
               {item.description && (
-                <p className="text-sm text-foreground/70 mt-2 max-w-xl leading-relaxed">
-                  {item.description}
-                </p>
-              )}
-              {item.projectLink && (
-                <Link
-                  to={item.projectLink}
-                  className="inline-block text-sm text-primary hover:underline mt-2 font-medium"
-                >
-                  {item.projectLabel}
-                </Link>
+                <div className="text-sm text-foreground/70 mt-1 max-w-xl leading-relaxed prose-case-study prose-case-study--sm">
+                  <ReactMarkdown>{item.description}</ReactMarkdown>
+                </div>
               )}
             </div>
           </FadeIn>
