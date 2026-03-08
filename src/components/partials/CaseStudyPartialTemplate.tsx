@@ -27,7 +27,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
       <section className="py-16 lg:py-20 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn delay={0.05}>
-            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-3">
+            <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
               {study.company} · {study.role} · {study.year}
             </p>
           </FadeIn>
