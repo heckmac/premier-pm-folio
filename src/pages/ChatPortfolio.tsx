@@ -131,10 +131,13 @@ const ChatPortfolio = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const streamingRef = useRef<string>("");
 
-  const injectPartial = useCallback((partialId: string) => {
-    if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return;
+  const injectPartial = useCallback((partialId: string): string | null => {
+    if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return null;
+    const itemId = nextItemId++;
+    const domId = `stream-item-${itemId}`;
     setRenderedPartials(prev => new Set(prev).add(partialId));
-    setStreamItems(prev => [...prev, { type: "partial", partialId, id: nextItemId++ }]);
+    setStreamItems(prev => [...prev, { type: "partial", partialId, id: itemId }]);
+    return domId;
   }, [renderedPartials]);
 
   const handleTagsFromResponse = useCallback((fullText: string) => {
@@ -302,6 +305,7 @@ const ChatPortfolio = () => {
               const PartialComponent = entry.component;
               return (
                 <motion.div
+                  id={`stream-item-${item.id}`}
                   key={item.id}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
