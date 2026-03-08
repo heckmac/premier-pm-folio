@@ -386,6 +386,7 @@ const ChatPortfolio = () => {
         </div>
       </div>
     </div>
+    </ChatStreamContext.Provider>
   );
 };
 
