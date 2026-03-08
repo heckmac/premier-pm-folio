@@ -113,6 +113,7 @@ async function streamChat({
 
 // A stream item is either an assistant message, a rendered partial, or suggestions
 type StreamItem =
+  | { type: "user-message"; content: string; id: number }
   | { type: "assistant-message"; content: string; id: number }
   | { type: "partial"; partialId: string; id: number }
   | { type: "suggestions"; suggestions: string[]; id: number };
@@ -148,6 +149,7 @@ const ChatPortfolio = () => {
     if (!text.trim() || isLoading) return;
     const userMsg: Msg = { role: "user", content: text.trim() };
     setMessages(prev => [...prev, userMsg]);
+    setStreamItems(prev => [...prev, { type: "user-message", content: text.trim(), id: nextItemId++ }]);
     setInput("");
     setIsLoading(true);
     streamingRef.current = "";
@@ -255,9 +257,27 @@ const ChatPortfolio = () => {
           )}
         </div>
 
-        {/* Stream items: messages and partials */}
+        {/* Stream items: messages, user messages, and partials */}
         <AnimatePresence>
           {streamItems.map((item) => {
+            if (item.type === "user-message") {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="container mx-auto px-6 lg:px-8 max-w-3xl py-4"
+                >
+                  <div className="flex justify-end">
+                    <div className="bg-primary text-primary-foreground px-4 py-2.5 text-sm font-bold uppercase tracking-wide max-w-[85%]">
+                      {item.content}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            }
+
             if (item.type === "assistant-message") {
               return (
                 <motion.div
