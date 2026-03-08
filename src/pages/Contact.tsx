@@ -39,13 +39,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
+      <section className="pt-28 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-6 lg:px-8 max-w-2xl">
           <FadeIn>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              Let's build something great.
+            <h1 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tighter">
+              Let's Talk
             </h1>
-            <p className="text-muted-foreground mt-3 text-lg">
+            <div className="mt-6 mb-6 h-[3px] w-16 bg-foreground" />
+            <p className="text-muted-foreground text-base max-w-md">
               Whether you're looking for a product leader, a strategic advisor,
               or just want to connect — I'd love to hear from you.
             </p>
@@ -53,20 +54,23 @@ const Contact = () => {
 
           {sent ? (
             <FadeIn delay={0.1}>
-              <div className="mt-10 flex flex-col items-center justify-center text-center py-16 space-y-4">
-                <CheckCircle className="text-primary" size={48} />
-                <h2 className="text-xl font-semibold text-foreground">Message sent!</h2>
-                <p className="text-muted-foreground">Thanks for reaching out. I'll get back to you shortly.</p>
-                <Button variant="outline" onClick={() => setSent(false)} className="mt-4">
-                  Send another message
-                </Button>
+              <div className="mt-10 flex flex-col items-start py-16 space-y-4 border-2 border-foreground p-8">
+                <CheckCircle size={32} />
+                <h2 className="text-xl font-black uppercase tracking-tight">Message sent</h2>
+                <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you shortly.</p>
+                <button
+                  onClick={() => setSent(false)}
+                  className="text-xs font-bold tracking-[0.15em] uppercase text-foreground underline underline-offset-4 decoration-2 mt-4"
+                >
+                  Send another
+                </button>
               </div>
             </FadeIn>
           ) : (
             <FadeIn delay={0.1}>
               <form onSubmit={handleSubmit} className="mt-10 space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="name" className="block text-xs font-bold tracking-[0.1em] uppercase text-foreground mb-2">
                     Name
                   </label>
                   <Input
@@ -77,10 +81,11 @@ const Contact = () => {
                     required
                     maxLength={100}
                     disabled={loading}
+                    className="border-2 border-foreground bg-background text-foreground placeholder:text-muted-foreground rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-muted-foreground"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="email" className="block text-xs font-bold tracking-[0.1em] uppercase text-foreground mb-2">
                     Email
                   </label>
                   <Input
@@ -92,10 +97,11 @@ const Contact = () => {
                     required
                     maxLength={255}
                     disabled={loading}
+                    className="border-2 border-foreground bg-background text-foreground placeholder:text-muted-foreground rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-muted-foreground"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="message" className="block text-xs font-bold tracking-[0.1em] uppercase text-foreground mb-2">
                     Message
                   </label>
                   <Textarea
@@ -107,9 +113,14 @@ const Contact = () => {
                     required
                     maxLength={5000}
                     disabled={loading}
+                    className="border-2 border-foreground bg-background text-foreground placeholder:text-muted-foreground rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-muted-foreground"
                   />
                 </div>
-                <Button type="submit" className="w-full sm:w-auto" disabled={loading}>
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="rounded-none border-2 border-foreground bg-foreground text-background font-bold text-xs tracking-[0.15em] uppercase hover:bg-muted-foreground px-8 py-3 h-auto"
+                >
                   {loading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -124,22 +135,22 @@ const Contact = () => {
           )}
 
           <FadeIn delay={0.2}>
-            <div className="mt-14 pt-10 border-t divider flex flex-wrap gap-6">
+            <div className="mt-14 pt-8 border-t-2 border-foreground flex flex-wrap gap-6">
               <a
                 href="https://www.linkedin.com/in/mariociardulli"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Linkedin size={16} /> LinkedIn
+                <Linkedin size={14} /> LinkedIn
               </a>
               <a
                 href="https://mariociardulli.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Globe size={16} /> mariociardulli.com
+                <Globe size={14} /> mariociardulli.com
               </a>
             </div>
           </FadeIn>
