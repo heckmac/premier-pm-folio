@@ -218,7 +218,7 @@ const About = () =>
               }
                 </p>
                 {item.description && (
-                  <div className="text-sm text-foreground/70 max-w-xl leading-relaxed mt-1 prose-case-study prose-case-study--sm">
+                  <div className="prose-case-study prose-career mt-1 max-w-xl">
                     <ReactMarkdown>{item.description}</ReactMarkdown>
                   </div>
                 )}
