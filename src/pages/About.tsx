@@ -222,9 +222,9 @@ const About = () =>
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary/70 mb-2">
               From Design to Product
             </p>
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">
-              The method hasn't changed. The output has.
-            </h3>
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 leading-snug">Strategic design is the foundation of everything I do
+
+          </h3>
             <div className="space-y-4 text-foreground/75 text-[15px] md:text-base leading-relaxed max-w-3xl">
               <p>
                 Before moving into product management, I spent years at Designit doing strategic design — working at the intersection of business strategy and experience, where every project started from a business problem and positioning came before a single screen.
