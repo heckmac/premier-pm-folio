@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import PartialCTAs from "./PartialCTAs";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
