@@ -6,6 +6,7 @@ import { designProjects } from "@/lib/designProjects";
 import { caseStudyImages } from "@/lib/caseStudyImages";
 import { SLUG_TO_PARTIAL } from "@/lib/slugToPartial";
 import { useChatStream } from "./ChatStreamContext";
+import PartialCTAs from "./PartialCTAs";
 
 interface ProjectCardsPartialProps {
   filter?: "pm" | "design" | "all";
