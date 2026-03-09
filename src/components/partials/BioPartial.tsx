@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import PartialCTAs from "./PartialCTAs";
 import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 
 const BioPartial = () =>
