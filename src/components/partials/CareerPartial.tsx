@@ -76,9 +76,6 @@ const CareerPartial = () => (
         </FadeIn>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 

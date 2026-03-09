@@ -42,9 +42,6 @@ const BioPartial = () => (
         </div>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 
