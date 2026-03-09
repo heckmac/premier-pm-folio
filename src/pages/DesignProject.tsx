@@ -150,14 +150,39 @@ const DesignProject = ({ overrideSlug }: Props = {}) => {
         </div>
       </section>
 
-      {/* Sections */}
-      {project.sections.map((section, si) => {
+      {/* Initial sections grouped together */}
+      {project.sections.length > 0 && (
+        <section className="border-b divider">
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <div className="py-16 lg:py-20 space-y-10">
+              {project.sections.slice(0, Math.min(3, project.sections.length)).map((section, si) => {
+                const hasSubSections = section.subSections && section.subSections.length > 0;
+                return (
+                  <div key={si}>
+                    <SectionHeading>{section.heading}</SectionHeading>
+                    {section.blocks?.map((block, bi) => (
+                      <Block key={bi} block={block} />
+                    ))}
+                    {hasSubSections &&
+                      section.subSections!.map((sub, ssi) => (
+                        <SubSectionRenderer key={ssi} sub={sub} />
+                      ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Remaining sections with individual borders */}
+      {project.sections.slice(3).map((section, si) => {
         const isFullWidth = section.fullWidth;
         const hasSubSections =
           section.subSections && section.subSections.length > 0;
 
         return (
-          <section key={si} className="border-b divider">
+          <section key={si + 3} className="border-b divider">
             <div
               className={`container mx-auto px-6 lg:px-8 ${
                 isFullWidth ? "max-w-6xl" : "max-w-3xl"
@@ -165,13 +190,9 @@ const DesignProject = ({ overrideSlug }: Props = {}) => {
             >
               <div className="py-16 lg:py-20">
                 <SectionHeading>{section.heading}</SectionHeading>
-
-                {/* Direct blocks */}
                 {section.blocks?.map((block, bi) => (
                   <Block key={bi} block={block} />
                 ))}
-
-                {/* Sub-sections */}
                 {hasSubSections &&
                   section.subSections!.map((sub, ssi) => (
                     <SubSectionRenderer key={ssi} sub={sub} />
