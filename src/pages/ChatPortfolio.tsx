@@ -27,6 +27,8 @@ const DIRECT_PARTIAL_SUGGESTIONS: Record<string, string[]> = {
   "career": ["What was your role at Designit?", "Tell me about the Mercurius exit"],
   "skills": ["Show me a project that demonstrates these", "How do you approach product discovery?"],
   "cv-download": ["Tell me about yourself", "Show me your product strategy work"],
+  "project-cards-pm": ["Tell me about the Sphere reset", "Show me your product UX work"],
+  "project-cards-design": ["Show me the telepresence project", "Show me your product strategy work"],
 };
 
 const CHIPS = [
