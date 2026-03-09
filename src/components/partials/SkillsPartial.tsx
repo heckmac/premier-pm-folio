@@ -1,5 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import { skillGroups } from "@/lib/skillGroups";
+import PartialCTAs from "./PartialCTAs";
 
 const SkillsPartial = () => (
   <section className="py-16 lg:py-20">
