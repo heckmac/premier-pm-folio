@@ -85,7 +85,7 @@ export function createDesignProjectPartial(slug: string): ComponentType {
     return (
       <div>
         {/* Hero */}
-        <section className="py-12 lg:py-16">
+        <section className="py-16 lg:py-20 border-b divider">
           <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
             <FadeIn delay={0.05}>
               <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
@@ -93,7 +93,7 @@ export function createDesignProjectPartial(slug: string): ComponentType {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[0.95] tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.95] tracking-tighter uppercase">
                 {project.title}
               </h2>
             </FadeIn>
@@ -108,34 +108,32 @@ export function createDesignProjectPartial(slug: string): ComponentType {
         </section>
 
         {/* Sections */}
-        <div className="pb-12 space-y-12 lg:space-y-16">
-          {project.sections.map((section, si) => {
-            const isFullWidth = section.fullWidth;
-            const hasSubSections =
-              section.subSections && section.subSections.length > 0;
+        {project.sections.map((section, si) => {
+          const isFullWidth = section.fullWidth;
+          const hasSubSections =
+            section.subSections && section.subSections.length > 0;
 
-            return (
-              <section key={si}>
-                <div
-                  className={`container mx-auto px-6 lg:px-8 ${
-                    isFullWidth ? "max-w-6xl" : "max-w-3xl"
-                  }`}
-                >
-                  <div>
-                    <SectionHeading>{section.heading}</SectionHeading>
-                    {section.blocks?.map((block, bi) => (
-                      <Block key={bi} block={block} />
+          return (
+            <section key={si} className="border-b divider">
+              <div
+                className={`container mx-auto px-6 lg:px-8 ${
+                  isFullWidth ? "max-w-6xl" : "max-w-3xl"
+                }`}
+              >
+                <div className="py-16 lg:py-20">
+                  <SectionHeading>{section.heading}</SectionHeading>
+                  {section.blocks?.map((block, bi) => (
+                    <Block key={bi} block={block} />
+                  ))}
+                  {hasSubSections &&
+                    section.subSections!.map((sub, ssi) => (
+                      <SubSectionRenderer key={ssi} sub={sub} />
                     ))}
-                    {hasSubSections &&
-                      section.subSections!.map((sub, ssi) => (
-                        <SubSectionRenderer key={ssi} sub={sub} />
-                      ))}
-                  </div>
                 </div>
-              </section>
-            );
-          })}
-        </div>
+              </div>
+            </section>
+          );
+        })}
       </div>
     );
   };

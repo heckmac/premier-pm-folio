@@ -66,13 +66,6 @@ function buildSuggestions(contextual: string[], usedChips: Set<string>): string[
   return pool.slice(0, TARGET_SUGGESTIONS.max);
 }
 
-/** Partials that are unique project case studies — only show once */
-const DEDUPE_PARTIALS = new Set([
-  "sphere-case-study-1", "sphere-case-study-2", "storyfolio-case-study",
-  "mercurius-case-study", "sharaf-dg", "smartwatch-gestures",
-  "insurance-data-collection", "fusion-telepresence",
-]);
-
 const RENDER_REGEX = /\[RENDER:([a-z0-9-]+)\]/;
 const SUGGESTIONS_REGEX = /\[SUGGESTIONS:\s*([^\]]+)\]/;
 
@@ -187,14 +180,10 @@ const ChatPortfolio = () => {
   const usedChipsRef = useRef<Set<string>>(new Set());
 
   const injectPartial = useCallback((partialId: string): string | null => {
-    if (!PARTIALS_REGISTRY[partialId]?.component) return null;
-    // Only dedupe individual project case studies
-    if (DEDUPE_PARTIALS.has(partialId) && renderedPartials.has(partialId)) return null;
+    if (!PARTIALS_REGISTRY[partialId]?.component || renderedPartials.has(partialId)) return null;
     const itemId = nextItemId++;
     const domId = `stream-item-${itemId}`;
-    if (DEDUPE_PARTIALS.has(partialId)) {
-      setRenderedPartials(prev => new Set(prev).add(partialId));
-    }
+    setRenderedPartials(prev => new Set(prev).add(partialId));
     setStreamItems(prev => [...prev, { type: "partial", partialId, id: itemId }]);
     return domId;
   }, [renderedPartials]);
@@ -211,16 +200,8 @@ const ChatPortfolio = () => {
     if (partialId) injectPartial(partialId);
     // Merge AI suggestions with unused chips to reach 4-6
     const merged = buildSuggestions(suggestions, usedChipsRef.current);
-    console.log('Debug suggestions:', { 
-      aiSuggestions: suggestions, 
-      usedChips: Array.from(usedChipsRef.current), 
-      merged, 
-      mergedLength: merged.length 
-    });
     if (merged.length > 0) {
       setStreamItems(prev => [...prev, { type: "suggestions", suggestions: merged, id: nextItemId++ }]);
-    } else {
-      console.log('No suggestions emitted - all chips used or no AI suggestions');
     }
   }, [injectPartial]);
 

@@ -24,7 +24,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
   return (
     <div>
       {/* Hero */}
-      <section className="py-12 lg:py-16">
+      <section className="py-16 lg:py-20 border-b divider">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <FadeIn delay={0.05}>
             <p className="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-4">
@@ -54,7 +54,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
       {/* Narrative block: Context → Problem → Positioning */}
       {(study.context.length > 0 || study.problem.length > 0 || study.positioning.length > 0) && (
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
-          <div className="pb-8 space-y-8">
+          <div className="py-16 lg:py-20 border-b divider space-y-10">
             {study.context.length > 0 && (
               <div>
                 <SectionHeading>Context</SectionHeading>
@@ -80,7 +80,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
       {/* My Role */}
       {study.myRole.length > 0 && (
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
-          <section className="pb-8">
+          <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>My Role</SectionHeading>
             <Prose paragraphs={study.myRole} />
           </section>
@@ -89,7 +89,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
 
       {/* Gallery */}
       {caseStudyGalleries[slug] && (
-        <section className="py-8">
+        <section className="py-16 lg:py-20 border-b divider">
           <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
             <SectionHeading>Product Gallery</SectionHeading>
             <FadeIn>
@@ -102,7 +102,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
       <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
         {/* Strategy */}
         {study.strategy.length > 0 && (
-          <section className="pb-8">
+          <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Strategy</SectionHeading>
             <div className="space-y-8 mt-2">
               {study.strategy.map((step, i) => (
@@ -119,7 +119,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
 
         {/* Execution */}
         {study.execution.length > 0 && (
-          <section className="pb-8">
+          <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Execution</SectionHeading>
             <Prose paragraphs={study.execution} variant="sm" asList />
           </section>
@@ -127,7 +127,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
 
         {/* Impact */}
         {((study.impactCategories && study.impactCategories.length > 0) || (study.highlightMetrics && study.highlightMetrics.length > 0) || study.impact.length > 0) && (
-          <section className="pb-8">
+          <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Impact</SectionHeading>
             {study.impactCategories && study.impactCategories.length > 0 ? (
               <div className="space-y-10">
@@ -159,7 +159,7 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
 
         {/* Learnings */}
         {study.learnings.length > 0 && (
-          <section className="pb-10">
+          <section className="py-16 lg:py-20 border-b divider">
             <SectionHeading>Learnings</SectionHeading>
             <Prose paragraphs={study.learnings} variant="sm" asList />
           </section>
