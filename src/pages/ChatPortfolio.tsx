@@ -370,7 +370,9 @@ const ChatPortfolio = () => {
                 >
                   <div className="border-l-3 border-primary pl-5 max-w-[85%]">
                     <div className="prose-chat max-w-none">
-                      <ReactMarkdown>{item.content}</ReactMarkdown>
+                      <div>
+                        <ReactMarkdown>{item.content}</ReactMarkdown>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -443,7 +445,9 @@ const ChatPortfolio = () => {
           <div className="container mx-auto px-6 lg:px-8 max-w-5xl py-5">
             <div className="border-l-3 border-primary pl-5 max-w-[85%]">
               <div className="prose-chat max-w-none">
-                <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
+                <div>
+                  <ReactMarkdown>{streamingContent || "…"}</ReactMarkdown>
+                </div>
               </div>
             </div>
           </div>
