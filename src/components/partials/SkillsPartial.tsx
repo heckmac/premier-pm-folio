@@ -1,6 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import { skillGroups } from "@/lib/skillGroups";
-import PartialCTAs from "./PartialCTAs";
+
 
 const SkillsPartial = () => (
   <div>
