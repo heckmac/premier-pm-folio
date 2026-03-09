@@ -3,6 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { timeline } from "@/lib/careerTimeline";
+import PartialCTAs from "./PartialCTAs";
 const CareerPartial = () =>
 <section className="py-16 lg:py-20">
     <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
