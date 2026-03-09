@@ -161,8 +161,6 @@ export function createDesignProjectPartial(slug: string): ComponentType {
           );
         })}
         
-        {/* CTAs at the end */}
-        <PartialCTAs />
       </div>
     );
   };
