@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, ComponentType, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import PartialCTAs from "./PartialCTAs";
 
 interface ExpandablePartialProps {
   Component: ComponentType;
@@ -55,6 +56,9 @@ const ExpandablePartial = ({
             </div>
           }>
             <Component />
+            
+            {/* Always show CTAs at the end */}
+            <PartialCTAs />
           </Suspense>
         </div>
       </motion.div>
