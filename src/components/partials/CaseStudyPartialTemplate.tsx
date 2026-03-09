@@ -166,6 +166,9 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
           </section>
         )}
       </div>
+      
+      {/* CTAs at the end */}
+      <PartialCTAs />
     </div>
   );
 };
