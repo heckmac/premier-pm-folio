@@ -7,6 +7,7 @@ import {
   type ContentBlock,
   type DesignSubSection,
 } from "@/lib/designProjects";
+import PartialCTAs from "./PartialCTAs";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
