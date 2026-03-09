@@ -1,5 +1,5 @@
 import FadeIn from "@/components/FadeIn";
-import PartialCTAs from "./PartialCTAs";
+
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -23,9 +23,6 @@ const CVDownloadPartial = () => (
         </FadeIn>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 

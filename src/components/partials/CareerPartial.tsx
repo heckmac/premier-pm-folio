@@ -3,7 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { timeline } from "@/lib/careerTimeline";
-import PartialCTAs from "./PartialCTAs";
+
 const CareerPartial = () => (
   <div>
     <section className="py-16 lg:py-20">
@@ -76,9 +76,6 @@ const CareerPartial = () => (
         </FadeIn>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 

@@ -1,6 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import { skillGroups } from "@/lib/skillGroups";
-import PartialCTAs from "./PartialCTAs";
+
 
 const SkillsPartial = () => (
   <div>
@@ -35,9 +35,6 @@ const SkillsPartial = () => (
         </div>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 

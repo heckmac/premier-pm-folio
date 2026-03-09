@@ -1,5 +1,4 @@
 import FadeIn from "@/components/FadeIn";
-import PartialCTAs from "./PartialCTAs";
 import profilePhoto from "@/assets/mario-ciardulli.jpeg";
 
 const BioPartial = () => (
@@ -43,9 +42,6 @@ const BioPartial = () => (
         </div>
       </div>
     </section>
-    
-    {/* CTAs at the end */}
-    <PartialCTAs />
   </div>
 );
 

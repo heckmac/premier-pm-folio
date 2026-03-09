@@ -5,7 +5,7 @@ import Prose from "@/components/Prose";
 import { CaseStudyData } from "@/lib/caseStudies";
 import { caseStudyImages } from "@/lib/caseStudyImages";
 import { caseStudyGalleries } from "@/lib/caseStudyGallery";
-import PartialCTAs from "./PartialCTAs";
+
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <FadeIn>
@@ -166,9 +166,6 @@ const CaseStudyPartialTemplate = ({ study }: Props) => {
           </section>
         )}
       </div>
-      
-      {/* CTAs at the end */}
-      <PartialCTAs />
     </div>
   );
 };
