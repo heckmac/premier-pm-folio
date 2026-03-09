@@ -122,9 +122,6 @@ const ProjectCardsPartial = ({ filter = "all" }: ProjectCardsPartialProps) => {
           </div>
         </div>
       </section>
-      
-      {/* CTAs at the end */}
-      <PartialCTAs />
     </div>
   );
 };
