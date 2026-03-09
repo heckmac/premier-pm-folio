@@ -17,6 +17,8 @@ const DIRECT_PARTIAL_CHIPS: Record<string, string> = {
   "Walk me through your career": "career",
   "What are your main skills?": "skills",
   "Download CV": "cv-download",
+  "Show me your product strategy work": "project-cards-pm",
+  "Show me your product UX work": "project-cards-design",
 };
 
 /** Contextual follow-ups shown after each direct partial */
