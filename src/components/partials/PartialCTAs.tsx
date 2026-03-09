@@ -2,10 +2,14 @@ import { useContext } from "react";
 import { ChatStreamContext } from "./ChatStreamContext";
 
 const PartialCTAs = () => {
-  const { emitSuggestions } = useContext(ChatStreamContext);
+  const chatStream = useContext(ChatStreamContext);
 
   const handleCTAClick = (suggestion: string) => {
-    emitSuggestions([suggestion]);
+    if (chatStream) {
+      // Use the same suggestion chip interface by emitting suggestions
+      const event = new CustomEvent('suggestion-click', { detail: suggestion });
+      window.dispatchEvent(event);
+    }
   };
 
   const ctas = [

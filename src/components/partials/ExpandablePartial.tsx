@@ -56,6 +56,9 @@ const ExpandablePartial = ({
             </div>
           }>
             <Component />
+            
+            {/* Always show CTAs at the end */}
+            <PartialCTAs />
           </Suspense>
         </div>
       </motion.div>
